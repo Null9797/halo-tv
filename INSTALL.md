@@ -84,16 +84,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/aerial-universal-1.58-standard.apk"
+adb install -r "$HOME/Downloads/HaloTV-2.0-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\aerial-universal-1.58-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\HaloTV-2.0-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `aerial-universal-1.58-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
+选择 Guard 时，把文件名换成 `HaloTV-2.0-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
 
 可选：用 ADB 打开已安装的应用：
 
@@ -105,7 +105,7 @@ adb shell monkey -p app.orchard.tv 1
 
 - **Standard**：按 Home 键，在 Android 的桌面选择器中选 Halo TV；确认要作为长期桌面后，再选择“始终”。也可从系统默认应用设置里更改主屏幕应用。
 - **Guard**：此构建不注册常规 HOME 桌面入口。打开 Halo TV，按其设置页提示配置守护桌面。某些设备会要求无障碍服务、使用情况访问或其他系统授权；只有理解授权用途并确认要使用守护功能后再逐项启用。
-- 在 Halo TV 设置里选择翻页时钟等屏保，并设定空闲进入时间。屏保后待机是否生效由电视固件决定。
+- 在 Halo TV 设置里选择翻页时钟等屏保，并设定空闲进入时间。2.0 已移除屏保后自动待机选项。
 
 ## 7. 更新提示、变体切换与卸载
 

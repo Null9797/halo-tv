@@ -1,57 +1,21 @@
-# Halo TV — Unofficial Aerial Derivative
+# Halo TV 2.0
 
-> **Halo TV is not an original Aerial release and is not created, published, or endorsed by the upstream author.** It is a derivative build based on the open-source [Aerial project by pengchujin](https://github.com/pengchujin/aerial-tv), maintained and packaged independently by Null_. See the included upstream MIT license.
+Halo TV is an independent derivative of [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv), maintained by Null_. It is not an official Aerial release and has no affiliation with or endorsement from Aerial's author, Apple, or television manufacturers. The upstream MIT license is included in [LICENSE](LICENSE).
 
-**中文说明：** [README.md](README.md) · **Installation:** [INSTALL.md](INSTALL.md) · **FAQ:** [FAQ.md](FAQ.md)
+![Halo TV 2.0 home screen captured on TCL Q10G Pro](screenshots/home-tcl-q10g-pro-2.0.png)
 
 ## Downloads
 
-Get the APKs from [GitHub Releases](https://github.com/Null9797/halo-tv/releases/latest). Install only one variant: they share the same Android package name and cannot coexist.
+Get the latest release from [Releases](https://github.com/Null9797/halo-tv/releases/latest).
 
-| Variant | File | Use case |
+| Package | Android | Use |
 |---|---|---|
-| Standard | `aerial-universal-1.58-standard.apk` | Declares Android's regular HOME launcher entry. Try this first on Android TV / Google TV. |
-| Guard | `aerial-universal-1.58-guard.apk` | Omits the HOME entry for firmware that blocks launcher packages. Follow the in-app setup and grant only permissions you understand and need. |
+| [Standard](https://github.com/Null9797/halo-tv/releases/download/v2.0-halo/HaloTV-2.0-standard.apk) | 5.0+ | Standard HOME launcher; try this first. |
+| [Guard](https://github.com/Null9797/halo-tv/releases/download/v2.0-halo/HaloTV-2.0-guard.apk) | 5.0+ | For some firmwares that block standard launchers; follow the in-app consent and setup. |
+| [Lite](https://github.com/Null9797/halo-tv/releases/download/v2.0-halo/HaloTV-2.0-lite.apk) | 4.0–4.4 | Lightweight variant; not yet verified on physical Android 4.x hardware. |
 
-## Halo TV branding and features
+Standard and Guard share the same package name. Keep the original launcher available. Legacy-named release assets are byte-identical copies for older Halo TV updaters.
 
-- Rebranded the app label, launcher icon, Android TV banner, update screen, and phone setup page as Halo TV.
-- Added an in-app notice that Halo TV is an unofficial derivative of the open-source Aerial project.
-- Kept the package name, signing identity, and updater-compatible APK filename prefix so existing 1.57 installs can update in place.
-- TV layout that adapts to the available display area, with time, date, weather, network/settings controls, and a five-app dock.
-- Bundled 14 TV-sized icons for recognized apps, with original-icon fallback for all others.
-- Refined dock sizing, focus animation, and spacing for remote navigation.
-- Added Auto / 30 / 60 / 120 Hz refresh preferences where supported by the TV firmware.
-- Retained the flip-clock screensaver, video wallpaper options, and a release-based update prompt; installation is confirmed by Android.
-- Flip-clock screensaver with configurable idle-to-screensaver and screensaver-to-standby delays.
-- Upstream Aerial wallpaper, app organization, and screensaver capabilities.
+2.0 introduces liquid glass Dock and focus styles, clock positioning, text colors, a redesigned control center and settings, performance modes, wallpaper categories and a flip clock screensaver. Features and compatibility vary by edition and device. See [INSTALL.md](INSTALL.md) and [FAQ.md](FAQ.md).
 
-![Halo TV 1.58 home screen (TCL Q10G Pro, captured via ADB)](screenshots/home-tcl-q10g-pro-1.58.png)
-
-Only this current 1.58 Guard home-screen capture is shown. Weather depends on device settings; layout and feature support may vary by firmware and display.
-
-## Installation
-
-The detailed [installation guide](INSTALL.md) covers Android TV / Google TV developer options, common brand menus, Android 11+ wireless ADB pairing, ADB commands, and a copyable prompt for a local AI assistant that can run commands on your computer.
-
-Short version: enable ADB debugging on the TV, connect the TV and computer to the same local network, authorize the computer on the TV, then install one APK with:
-
-```shell
-adb install -r "/path/to/aerial-universal-1.58-standard.apk"
-```
-
-Do not assume every TV uses port 5555. Android 11+ wireless debugging generally shows a pairing port and a separate connection port on the TV. See [Android's official ADB guide](https://developer.android.com/tools/adb).
-
-## Compatibility
-
-- Primary test device: TCL Q10G Pro.
-- Other Android TV / Google TV devices have not all been verified; vendor firmware may limit launcher takeover, screensaver scheduling, or standby behavior.
-- Samsung Tizen, LG webOS, and Hisense VIDAA are not Android TV platforms and cannot install this APK through Android ADB.
-
-## Attribution and license
-
-This derivative build is based on [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv). The original project and its contributors retain their own copyrights. The upstream MIT license is included in [LICENSE](LICENSE). This independent build is not affiliated with the upstream author or any TV manufacturer.
-
-## Checksums
-
-See [SHA256SUMS.txt](SHA256SUMS.txt) to verify downloaded APK files. Full model-by-model ADB and installation notes are in [INSTALL.md](INSTALL.md).
+Source is available under [HaloTV-2.0-source.zip](HaloTV-2.0-source.zip). Verify downloads against [SHA256SUMS.txt](SHA256SUMS.txt).

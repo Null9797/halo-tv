@@ -1,24 +1,13 @@
-# Halo TV 1.58（Standard + Guard）
+# Halo TV 2.0
 
-**Halo TV 是基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 二次开发的非官方版本，不是 Aerial 原作或原作者发行版。** 上游 MIT 许可和版权声明保留在本仓库。上游作者未参与、未背书本版本。
+Halo TV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 开源项目二次开发，由 Null_ 维护；并非上游作者作品或官方发行版。感谢原作者和贡献者。
 
-## 下载
+- 基于 Aerial 1.76，新增首次使用引导、液态玻璃 Dock 和滑动焦点。
+- 时钟栏支持左上、居中、右上及状态栏位置；时间、日期、天气和运存存储信息可按需调整，桌面文字颜色可选。
+- 更新控制中心和分类设置页，提供效果预览、文字颜色与流畅优先 / 均衡 / 效果优先模式。
+- 重新整理静态壁纸、动态壁纸和屏保；默认翻页时钟、5 分钟进入屏保。删除旧版普通时钟与系统内置屏保选项。
+- 新安装默认单排、第二排不露出、每排 5 个应用、液态玻璃底板，只显示选中名称，返回键可启动屏保，按键声音为 Halo TV；已保存设置会保留，原来选中被移除屏保的设置会迁移至翻页时钟。
+- Lite 适用于 Android 4.0–4.4，使用独立包名；精简选项，提供照片、时钟和翻页时钟，Android 4.x 真机尚未验证。
+- 三个版本构建均显示 2.0。Standard 与 Guard 适用于 Android 5.0+；同包名只能选其一。
 
-每台电视只安装一个变体；Standard 与 Guard 使用相同包名，不能并存。APK 文件仍使用 `aerial-universal-` 前缀，以便已发布的 1.57 更新器找到匹配变体。
-
-- `aerial-universal-1.58-standard.apk` — Android TV / Google TV 常规桌面入口。
-- `aerial-universal-1.58-guard.apk` — 仅供固件拦截桌面类应用时使用，需要按应用内指引完成 Guard 设置。
-
-## 1.58 更新
-
-- 应用名称、启动图标、Android TV 横幅、控制中心版本标识和手机设置页标题统一为 Halo TV。
-- 更新页面增加醒目的来源说明：Halo TV 基于 Aerial 开源项目二次开发，非官方版本。
-- 保持包名 `app.orchard.tv`、原签名身份和更新器可识别的 APK 命名前缀，以支持 1.57 覆盖更新并保留设置与数据。
-- 继续包含自适应电视桌面、五应用 Dock、14 款内置电视图标、天气日期、壁纸和视频壁纸、翻页时钟屏保及刷新率选项。
-- 两个 APK 的版本号相同，`versionCode=81`；新包不会静默安装，更新仍须在电视系统安装器中确认。
-
-其他适配、功能及已知限制见 [README](README.md)、[安装指南](INSTALL.md) 和 [FAQ](FAQ.md)。
-
-## 兼容性说明
-
-TCL Q10G Pro 是当前实测设备。其他 Android TV / Google TV 机型尚未逐台回归；布局、安全区域、屏保调度、刷新率与待机行为可能因固件不同。非 Android TV 系统（如 Tizen、webOS、VIDAA）不能安装 Android APK。
+2.0 画面截图来自 TCL Q10G Pro；新默认设置及其他设备兼容性仍需实机验证。屏保后待机选项已移除。旧版识别更新时使用 `aerial-universal-` 兼容文件名，内容与同版本 HaloTV 命名 APK 一致。
