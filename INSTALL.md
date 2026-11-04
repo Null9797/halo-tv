@@ -84,16 +84,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/HaloTV-2.0.4-standard.apk"
+adb install -r "$HOME/Downloads/HaloTV-2.1-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\HaloTV-2.0.4-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\HaloTV-2.1-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `HaloTV-2.0.4-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
+选择 Guard 时，把文件名换成 `HaloTV-2.1-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
 
 可选：用 ADB 打开已安装的应用：
 
