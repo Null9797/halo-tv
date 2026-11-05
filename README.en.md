@@ -1,10 +1,10 @@
-# Halo TV 2.1
+# Halo TV 2.1.3
 
 Halo TV is an independent derivative of [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv), maintained by Null_. It is not an official Aerial release and has no affiliation with or endorsement from Aerial's author, Apple, or television manufacturers. The upstream MIT license is included in [LICENSE](LICENSE).
 
 ![Halo TV 2.0.5 home screen captured in MuMu](screenshots/home-mumu-2.0.5.png)
 
-The screenshot shows 2.0.5 in the MuMu emulator; 2.1 has not yet been validated on physical TVs.
+The screenshot shows 2.0.5 in the MuMu emulator; the changes in 2.1.3 have not yet been validated on physical TVs.
 
 ## Downloads
 
@@ -12,12 +12,14 @@ Get the latest release from [Releases](https://github.com/Null9797/halo-tv/relea
 
 | Package | Android | Use |
 |---|---|---|
-| [Standard](https://github.com/Null9797/halo-tv/releases/download/v2.1-halo/HaloTV-2.1-standard.apk) | 5.0+ | Standard HOME launcher; try this first. |
-| [Guard](https://github.com/Null9797/halo-tv/releases/download/v2.1-halo/HaloTV-2.1-guard.apk) | 5.0+ | For some firmwares that block standard launchers; follow the in-app consent and setup. |
-| [Lite](https://github.com/Null9797/halo-tv/releases/download/v2.1-halo/HaloTV-2.1-lite.apk) | 4.0–4.4 | Lightweight variant; not yet verified on physical Android 4.x hardware. |
+| [Standard](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-standard.apk) | 5.0+ | Standard HOME launcher; try this first. |
+| [Guard](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-guard.apk) | 5.0+ | For some firmwares that block standard launchers; follow the in-app consent and setup. |
+| [Lite](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-lite.apk) | 4.0–4.4 | Lightweight variant; not yet verified on physical Android 4.x hardware. |
 
 Standard and Guard share the same package name. Keep the original launcher available. Legacy-named release assets are byte-identical copies for older Halo TV updaters.
 
+2.1.3 improves uploaded-video posters and the video-wallpaper/flip-clock handoff; device-specific playback still needs physical testing. The Standard and Guard unit suites, Lite lint and unit tests passed; a video upload and flip-clock handoff were checked in an Android TV emulator. Lite remains unverified on physical Android 4.x devices.
+
 2.1 adds Aerial’s Kids and Elders mode with a parental PIN, app selection and time limits, and refines clock sizes and text shadows, settings icon visibility, video upload limits and network safeguards, and includes mitigations for reported scrolling flicker. These changes have not been verified on physical devices. The earlier 2.0 introduced liquid glass Dock and focus styles, clock positioning, text colors, a redesigned control center and settings, performance modes, wallpaper categories and a flip clock screensaver. Features and compatibility vary by edition and device. See [INSTALL.md](INSTALL.md) and [FAQ.md](FAQ.md).
 
-Source is available under [HaloTV-2.1-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1-halo/HaloTV-2.1-source.zip). Verify downloads against [SHA256SUMS.txt](SHA256SUMS.txt).
+Source is available under [HaloTV-2.1.3-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-source.zip). Verify downloads against [SHA256SUMS.txt](SHA256SUMS.txt).
