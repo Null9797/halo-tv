@@ -84,16 +84,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/HaloTV-2.1.3-standard.apk"
+adb install -r "$HOME/Downloads/HaloTV-2.1.4-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\HaloTV-2.1.3-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\HaloTV-2.1.4-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `HaloTV-2.1.3-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
+选择 Guard 时，把文件名换成 `HaloTV-2.1.4-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
 
 可选：用 ADB 打开已安装的应用：
 
@@ -109,7 +109,7 @@ adb shell monkey -p app.orchard.tv 1
 
 ## 7. 更新提示、变体切换与卸载
 
-本版本会定期查询 `Null9797/aerial-tv-universal` 的最新正式 Release；联网并打开 Halo TV/控制中心时会检查更新。发现新版本后选择下载，电视系统安装器会显示确认界面。应用只选取与当前 flavor 匹配的 APK，不会静默安装。发布者必须继续使用相同签名证书，否则 Android 会拒绝覆盖更新。
+本版本会定期查询 `Null9797/halo-tv` 的最新正式 Release；联网并打开 Halo TV/控制中心时会检查更新。发现新版本后选择下载，电视系统安装器会显示确认界面。应用只选取与当前 flavor 匹配的 APK，不会静默安装。发布者必须继续使用相同签名证书，否则 Android 会拒绝覆盖更新。
 
 - 安装新版本时使用 `adb install -r <APK路径>`，这会尝试保留应用数据。
 - Standard 与 Guard 共用包名，安装另一个变体会替换当前变体，不能并行使用。
