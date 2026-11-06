@@ -1,4 +1,4 @@
-# Halo TV 2.1.3
+# Halo TV 2.1.4
 
 > Halo TV 基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 开源项目二次开发，由 Null_ 整理和发布；不是 Aerial 原作者作品或官方发行版，与上游作者、Apple 及电视厂商没有隶属或背书关系。感谢 Aerial 原作者和所有贡献者。项目免费分享。
 
@@ -6,21 +6,27 @@
 
 ![Halo TV 2.0.5 桌面，MuMu 模拟器截图](screenshots/home-mumu-2.0.5.png)
 
-截图来自 MuMu 模拟器中的 Halo TV 2.0.5；2.1.3 部分壁纸和屏保改动尚未完成实体电视回归。截图中的应用图标和天气由设备个性化设置决定。其他设备外观与功能会受分辨率、Android 版本和厂商固件影响。
+截图来自 MuMu 模拟器中的 Halo TV 2.0.5；2.1.4 部分壁纸和屏保改动尚未完成实体电视回归。截图中的应用图标和天气由设备个性化设置决定。其他设备外观与功能会受分辨率、Android 版本和厂商固件影响。
 
 ## 下载与版本选择
 
-在 [Releases](https://github.com/Null9797/halo-tv/releases/latest) 下载 2.1.3 安装包，安装后显示 2.1.3。
+在 [Releases](https://github.com/Null9797/halo-tv/releases/latest) 下载 2.1.4 安装包，安装后显示 2.1.4。
 
 | 版本 | 下载 | 适用系统与情况 |
 |---|---|---|
-| Standard | [HaloTV-2.1.3-standard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-standard.apk) | Android 5.0 及以上，系统允许第三方桌面时优先使用。 |
-| Guard | [HaloTV-2.1.3-guard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-guard.apk) | Android 5.0 及以上；部分固件拦截桌面安装时可尝试，按应用引导自愿设置守护权限。 |
-| Lite | [HaloTV-2.1.3-lite.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-lite.apk) | Android 4.0–4.4 使用的轻量版；Android 4.x 真机尚未验证。 |
+| Standard | [HaloTV-2.1.4-standard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-standard.apk) | Android 5.0 及以上，系统允许第三方桌面时优先使用。 |
+| Guard | [HaloTV-2.1.4-guard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-guard.apk) | Android 5.0 及以上；部分固件拦截桌面安装时可尝试，按应用引导自愿设置守护权限。 |
+| Lite | [HaloTV-2.1.4-lite.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-lite.apk) | Android 4.0–4.4 使用的轻量版；Android 4.x 真机尚未验证。 |
 
 Standard 与 Guard 使用同一包名，每台设备安装其中一个。Lite 使用独立包名，功能和设置页面与完整版有差异。请先保留电视原有桌面。版本和校验信息见 [SHA256SUMS.txt](SHA256SUMS.txt)。
 
-为了兼容旧版 Halo TV 的电视端更新器，Release 同时提供 `aerial-universal-2.1.3-standard.apk` 和 `aerial-universal-2.1.3-guard.apk`，它们与对应的 HaloTV 命名安装包内容完全相同。
+为了兼容旧版 Halo TV 的电视端更新器，Release 同时提供 `aerial-universal-2.1.4-standard.apk` 和 `aerial-universal-2.1.4-guard.apk`，它们与对应的 HaloTV 命名安装包内容完全相同。
+
+## 2.1.4 更新内容
+
+- 正式版合入 Aerial 1.85 的主页键、开机和遥控焦点兼容改进；Lite 合入相应老电视设置入口改进。
+- Lite 控制中心整理常用入口，音量与亮度、壁纸与屏保以及打赏和关于并排显示。
+- 保留 Halo TV 的个性化功能；动态壁纸和设备兼容仍需在不同机型实测。
 
 ## 2.1.3 更新内容
 
@@ -88,13 +94,13 @@ Standard 与 Guard 使用同一包名，每台设备安装其中一个。Lite �
 
 ## 设备兼容
 
-- 此前在 TCL Q10G Pro 上测试过 2.0；2.1.3 的新增改动尚未完成电视实机回归，Lite 也尚未在 Android 4.x 真机验证。
+- 此前在 TCL Q10G Pro 上测试过 2.0；2.1.4 的新增改动尚未完成电视实机回归，Lite 也尚未在 Android 4.x 真机验证。
 - 上游 Aerial 的机型记录可供参考，并不代表 Halo TV 已在各型号逐一验证。厂商固件可能限制第三方桌面、守护和屏保。
 - Samsung Tizen、LG webOS 和非 Android 的 VIDAA 不能安装 Android APK。Android 4.0–4.4 可尝试 Lite，兼容性以实际设备为准。
 - 不建议关闭系统安全保护、删除系统桌面或尝试不熟悉的工程菜单。常见问题见 [FAQ.md](FAQ.md)。
 
 ## 源码与许可
 
-- Halo TV 2.1.3 对应源码：[HaloTV-2.1.3-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1.3-halo/HaloTV-2.1.3-source.zip)。
+- Halo TV 2.1.4 对应源码：[HaloTV-2.1.4-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-source.zip)。
 - 上游：[Aerial](https://github.com/pengchujin/aerial-tv)，保留 [MIT 许可](LICENSE)与原作者版权声明。
 - 第三方字体、图标、壁纸、视频和天气数据受各自许可约束；品牌名称归各自权利人所有。项目与相关品牌没有隶属或背书关系。
