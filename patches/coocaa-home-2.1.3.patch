@@ -1,0 +1,87 @@
+diff --git a/app/src/main/java/app/orchard/tv/MainActivity.kt b/app/src/main/java/app/orchard/tv/MainActivity.kt
+index aebda3b..e2a6cbb 100644
+--- a/app/src/main/java/app/orchard/tv/MainActivity.kt
++++ b/app/src/main/java/app/orchard/tv/MainActivity.kt
+@@ -61,6 +61,7 @@ import app.orchard.tv.apps.SourceLooks
+ import app.orchard.tv.apps.StandIn
+ import app.orchard.tv.apps.TileArtFactory
+ import app.orchard.tv.apps.rewritesLauncher
++import app.orchard.tv.guard.CoocaaHomeProps
+ import app.orchard.tv.guard.GuardSetup
+ import app.orchard.tv.guard.HomeGuardService
+ import app.orchard.tv.ui.home.FilmAfterInput
+@@ -199,6 +200,9 @@ class MainActivity : ComponentActivity() {
+ 
+     override fun onCreate(savedInstanceState: Bundle?) {
+         DiagLog.catchCrashes()
++        // Skyworth/Coocaa firmware rewrites the Home properties in the middle of boot, and can do it
++        // more than once; every time Home is actually shown, put the values back.
++        CoocaaHomeProps.claim(this, "onCreate")
+         if (!GuardSetup.isUserUnlocked(this)) {
+             super.onCreate(null)
+             if (handOverToFirmwareFallbackHome()) return
+diff --git a/app/src/main/java/app/orchard/tv/guard/BootReceiver.kt b/app/src/main/java/app/orchard/tv/guard/BootReceiver.kt
+index e90280a..5adf2aa 100644
+--- a/app/src/main/java/app/orchard/tv/guard/BootReceiver.kt
++++ b/app/src/main/java/app/orchard/tv/guard/BootReceiver.kt
+@@ -37,6 +37,9 @@ class BootReceiver : BroadcastReceiver() {
+     }
+ 
+     private fun onBoot(context: Context, action: String) {
++        // Skyworth/Coocaa firmware resets the Home properties during boot; put Halo back first so
++        // the Home key works even when everything below returns early.
++        CoocaaHomeProps.claim(context, "boot")
+         GuardSetup.ensureEnabled(context)
+         if (action == Intent.ACTION_LOCKED_BOOT_COMPLETED) return
+         GuardSetup.rescanIfMissing(context)
+diff --git a/app/src/main/java/app/orchard/tv/guard/CoocaaHomeProps.kt b/app/src/main/java/app/orchard/tv/guard/CoocaaHomeProps.kt
+new file mode 100644
+index 0000000..9ec743e
+--- /dev/null
++++ b/app/src/main/java/app/orchard/tv/guard/CoocaaHomeProps.kt
+@@ -0,0 +1,45 @@
++package app.orchard.tv.guard
++
++import android.content.Context
++import app.orchard.tv.system.DiagLog
++
++/**
++ * Skyworth / Coocaa 8.0 firmware (5S851_B20, sky848_9s60) does not resolve Home through
++ * CATEGORY_HOME. Its framework reads persist.service.homepage.pkg / .cls, resets both to its own
++ * launcher somewhere in the boot flow, and after that the Home key opens the stock launcher again.
++ * Measured on this set: a third-party activity named in those properties is started normally by
++ * the Home key, so pointing them at Halo is enough to keep Home here.
++ *
++ * Writing them from an app was measured to work on this set (no root). Call claim() from the boot
++ * receiver and from Home's onCreate: the firmware rewrites the values more than once per boot.
++ */
++internal object CoocaaHomeProps {
++    private const val PKG = "persist.service.homepage.pkg"
++    private const val CLS = "persist.service.homepage.cls"
++    private const val SELF = "app.orchard.tv"
++    private const val SELF_CLS = "app.orchard.tv.MainActivity"
++
++    @Volatile
++    private var reported = false
++
++    fun claim(context: Context, why: String) {
++        runCatching {
++            val c = Class.forName("android.os.SystemProperties")
++            val get = c.getMethod("get", String::class.java)
++            val set = c.getMethod("set", String::class.java, String::class.java)
++            val pkg = get.invoke(null, PKG) as? String
++            val cls = get.invoke(null, CLS) as? String
++            if (pkg == SELF && cls == SELF_CLS) return
++            set.invoke(null, PKG, SELF)
++            set.invoke(null, CLS, SELF_CLS)
++            val after = get.invoke(null, PKG) as? String
++            DiagLog.i("home($why): props were $pkg/$cls, set -> $after")
++        }.onFailure {
++            // Reads and writes of these properties can be refused; log once, never crash Home.
++            if (!reported) {
++                reported = true
++                DiagLog.i("home($why): props failed: $it")
++            }
++        }
++    }
++}
