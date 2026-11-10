@@ -1,0 +1,9 @@
+/updates/stable.json
+  Cache-Control: no-store, max-age=0
+  Content-Type: application/json; charset=utf-8
+/updates/*.apk
+  Content-Type: application/vnd.android.package-archive
+  Cache-Control: public, max-age=3600
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
