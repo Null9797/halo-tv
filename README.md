@@ -1,106 +1,88 @@
-# Halo TV 2.1.4
+<p align="center"><img src="screenshots/halo-logo.png" width="104" alt="HaloTV Logo"></p>
+<h1 align="center">HaloTV 3.0</h1>
+<p align="center">让电视桌面，回到你喜欢的样子。</p>
+<p align="center"><a href="https://halo-tv.pages.dev/">官方网站</a> · <a href="https://github.com/Null9797/halo-tv/releases/latest">下载最新版</a> · <a href="https://pan.quark.cn/s/a14e3ab2dd41">夸克网盘</a> · <a href="INSTALL.md">安装教程</a></p>
 
-> Halo TV 基于 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv) 开源项目二次开发，由 Null_ 整理和发布；不是 Aerial 原作者作品或官方发行版，与上游作者、Apple 及电视厂商没有隶属或背书关系。感谢 Aerial 原作者和所有贡献者。项目免费分享。
+HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 开源项目二次开发，由 **Null_** 整理和发布，**不是 Aerial 原作者作品或官方发行版**。项目免费使用，保留上游 MIT 许可与版权声明；与 Apple、电视厂商及上游作者无隶属或背书关系。
 
-## 桌面效果预览
+## 3.0 已正式推出
 
-![Halo TV 2.0.5 桌面，MuMu 模拟器截图](screenshots/home-mumu-2.0.5.png)
+全新的桌面、控制中心、分类设置、儿童答题与手机管理体验。正式版内部号 **176**，Lite 内部号 **34**。
 
-截图来自 MuMu 模拟器中的 Halo TV 2.0.5；2.1.4 部分壁纸和屏保改动尚未完成实体电视回归。截图中的应用图标和天气由设备个性化设置决定。其他设备外观与功能会受分辨率、Android 版本和厂商固件影响。
+![HaloTV 3.0 桌面](screenshots/home-3.0.jpg)
 
-## 下载与版本选择
+## 下载与选择
 
-在 [Releases](https://github.com/Null9797/halo-tv/releases/latest) 下载 2.1.4 安装包，安装后显示 2.1.4。
+| 版本 | 官网直接下载 | GitHub | 适用情况 |
+| --- | --- | --- | --- |
+| Standard | [HaloTV-3.0-standard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0-standard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0-halo/HaloTV-3.0-standard.apk) | Android 5.0+，建议优先尝试，标准 HOME 桌面入口 |
+| Guard | [HaloTV-3.0-guard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0-guard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0-halo/HaloTV-3.0-guard.apk) | Android 5.0+，部分限制第三方桌面的固件可尝试，按引导授权守护 |
+| Lite | [HaloTV-3.0-lite.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0-lite.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0-halo/HaloTV-3.0-lite.apk) | Android 4.0+ 轻量实现，面向 Android 4.0–4.4 老电视 |
 
-| 版本 | 下载 | 适用系统与情况 |
-|---|---|---|
-| Standard | [HaloTV-2.1.4-standard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-standard.apk) | Android 5.0 及以上，系统允许第三方桌面时优先使用。 |
-| Guard | [HaloTV-2.1.4-guard.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-guard.apk) | Android 5.0 及以上；部分固件拦截桌面安装时可尝试，按应用引导自愿设置守护权限。 |
-| Lite | [HaloTV-2.1.4-lite.apk](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-lite.apk) | Android 4.0–4.4 使用的轻量版；Android 4.x 真机尚未验证。 |
+Standard 与 Guard 同包名，每台电视选择其中一种；Lite 独立包名。网盘：[https://pan.quark.cn/s/a14e3ab2dd41](https://pan.quark.cn/s/a14e3ab2dd41)。校验见 [SHA256SUMS.txt](SHA256SUMS.txt)。
 
-Standard 与 Guard 使用同一包名，每台设备安装其中一个。Lite 使用独立包名，功能和设置页面与完整版有差异。请先保留电视原有桌面。版本和校验信息见 [SHA256SUMS.txt](SHA256SUMS.txt)。
+**从 2.1.4 升级：**正式版会从本仓库最新正式 Release 识别 3.0，保持原签名与包名，可以覆盖升级保留数据。2.1.4 Lite 没有在线检查入口，需要手动升级一次。3.0 起正式版与 Lite 均优先使用官网更新清单和 APK，GitHub 作为备用；自动下载默认关闭，安装由用户确认。
 
-为了兼容旧版 Halo TV 的电视端更新器，Release 同时提供 `aerial-universal-2.1.4-standard.apk` 和 `aerial-universal-2.1.4-guard.apk`，它们与对应的 HaloTV 命名安装包内容完全相同。
+## 功能亮点
 
-## 2.1.4 更新内容
+- **个性桌面：**单/双排、自定义应用排序与图标、磨砂/液态玻璃 Dock，大/小圆弧联动图标，滑动焦点。
+- **信息随心：**左上、右上、居中、状态栏；问候语、时间日期、农历、天气最高/最低温度、运行信息开关与文字颜色，桌面 12/24 小时。
+- **遥控更顺手：**新控制中心、分类设置、设置入口位置和常驻/淡出/隐藏；系统设置、信号源、网络、电源等入口。
+- **壁纸与屏保：**在线静态壁纸、本地照片；正式版另有在线/本地视频动态桌面，支持自动轮换。在线内容只设置为壁纸，缓存用于运行，不提供另存本地按钮。
+- **翻页时钟：**农历、12/24 小时、可选秒钟、防烧屏位移、闲置时间选择；本地素材可轮播或指定单个。
+- **儿童与长辈：**应用白名单、儿童观看限额与答题获得时间、最晚观看时间；长辈大图标与休息提醒，密码和手动退出状态保存。
+- **手机互联：**同网扫码设置、上传照片/视频、更换图标、推送 HaloTV 更新包；不会接收其他软件安装包。
+- **性能与维护：**正式版流畅/均衡/效果优先；手动与可选空闲清理后台，实际能力由 Android 系统决定。
 
-- 正式版合入 Aerial 1.85 的主页键、开机和遥控焦点兼容改进；Lite 合入相应老电视设置入口改进。
-- Lite 控制中心整理常用入口，音量与亮度、壁纸与屏保以及打赏和关于并排显示。
-- 保留 Halo TV 的个性化功能；动态壁纸和设备兼容仍需在不同机型实测。
+Lite 不含正式版动态视频桌面、在线视频库和性能模式；屏保类型、系统守护能力也依版本与固件而异。
 
-## 2.1.3 更新内容
+## 3.0 实机细节
 
-- 改进上传视频的封面生成与显示；进入控制中心时保留当前视频画面，减少切换到默认背景的情况。
-- 上传视频壁纸搭配翻页时钟时，尝试保留暂停画面以改善屏保切换；其他屏保类型仍按原方案释放视频解码器。
-- 修正壁纸画面在并发保存时可能相互覆盖的问题，并补齐 Lite 使用的部分多语言文案。
-- 已通过两个正式版各 150 项单元测试、Lite 单元测试和 Lite lint；在 Android TV 模拟器验证视频上传和翻页时钟切换。新改动尚未完成实体电视回归，旧版 Android 真机兼容性仍待验证。
-- 部分视频格式能否生成封面及 4K 视频能否播放，取决于上传设备、电视解码器与系统支持情况；不保证所有机型无闪屏。
+### 居中时钟与天气
 
-## 2.1.2 更新内容
+![居中时钟与天气](screenshots/clock-center-3.0.jpg)
 
-- 调整从应用列表返回桌面时的顶部渐变，减少黑色阴影闪现。
-- 设置图标在隐藏或淡出模式下可通过遥控器上键重新显示；隐藏模式短暂显示后再次隐藏。
-- 已完成构建和单元测试，尚未在电视实机验证；Lite 保持 2.1。
+### 靠右信息栏
 
-## 2.1.1 更新内容
+![靠右信息栏](screenshots/clock-right-3.0.jpg)
 
-- 两个正式版合入 Aerial 1.84；Lite 保持 2.1。
-- “跟随 App”背景调整为随应用主色变化的柔和光晕。
-- 删除雪山晨光、海岸落日、森林湖畔三张内置壁纸；原先选用这些壁纸时回退到“跟随 App”，用户图片不受影响。
-- 删除设置页中的效果预览，保留手机设置二维码；无损压缩部分引导资源以缩小安装包。
-- 本版已通过构建和单元测试，尚未完成实体电视回归。
+### 控制中心
 
-## 2.1 更新内容
+![控制中心](screenshots/control-3.0.jpg)
 
-- 合并 Aerial 1.82 和 Lite 1.18，包含部分设备开机、遥控与显示兼容性改进；保留 Halo TV 的桌面、设置和儿童模式。
-- HDMI 信号源背景独立分类；手机设置页改进局域网地址发现、端口冲突和自动重试。
-- 调整 Dock 间距与焦点外观；部分机型的屏闪、二维码和 HDMI 背景仍需设备反馈验证。
+### 分类设置
 
+![分类设置](screenshots/settings-3.0.jpg)
 
-- 基于 Aerial 1.82 与 Aerial Lite 1.18 接入儿童与长辈模式：设置家长密码、选择应用，儿童模式支持使用时长和休息规则；可在电视或手机扫码页面设置。
-- 桌面守护和各机型固件会影响从其他入口启动应用的限制；Lite 不具备与完整版相同的守护能力。实际限制效果须在设备上验证。
+### 儿童趣味答题
 
-- 设置图标新增隐藏，淡出后按上键或菜单键重新显示；左侧位置不再跟随居中时钟。
-- 正式版和 Lite 版统一时钟大小选项，并移除深色桌面文字的阴影。
-- 增加正式版滚动背景兜底；Lite 翻阅应用时保持背景稳定，以尝试减少部分电视的闪屏，具体效果待实机验证。
-- 正式版后台清理避开 VPN 类应用，并改进网络状态识别；部分设备实际断网的原因仍待排查。
-- 正式版视频改用流式上传，单段最多约 2 GB，并根据剩余存储空间限制总量；高分辨率视频播放仍取决于设备解码能力。
+![儿童趣味答题](screenshots/quiz-3.0.jpg)
 
+### 翻页时钟屏保
 
-- 合入 Aerial 1.82 与 Aerial Lite 1.18 的相关设备兼容修复，包括信号源、开机守护和视频壁纸处理。
-- 完整版右上角精简为设置按钮；控制中心提供壁纸与屏保入口、后台清理和调整后的并排布局。清理数量为请求数，可用内存变化为系统整体估算；Android 14 及以上不支持此清理方式。
-- 新增农历日期开关；完整版设置图标可调整位置并选择常驻或淡出，控制中心位置保持固定。
-- Lite 优化天气设置、桌面及控制中心排版，新增支持作者和项目声明入口。
-- 调整屏保与桌面元素的显示，优化设置分类的遥控焦点操作。
-- Halo TV 2.0 带来首次使用引导。
-- 首页新增液态玻璃 Dock 和液态玻璃滑动焦点，保留磨砂玻璃等选择。新安装默认单排、每排五个应用、第二排不露出、仅显示选中应用名称。
-- 时钟栏支持左上、右上、居中及状态栏位置，并可调整整组字号、天气和桌面文字颜色。可选择显示可用运存与存储。
-- 重排控制中心与全屏分类设置页，集中桌面文字颜色、性能模式、音量和亮度等功能。
-- 性能模式提供流畅优先、均衡和效果优先。静态壁纸、动态壁纸与屏保分类展示，提供翻页时钟屏保。
-- 新安装默认翻页时钟、5 分钟进入屏保；已有用户设置会保留。Guard 的桌面守护需按引导明确授权。
-- Lite 版针对 Android 4.x 保持精简，并提供照片、时钟和翻页时钟屏保；其界面与功能范围不同于完整版。
+![翻页时钟屏保](screenshots/flip-3.0.jpg)
 
-详细变更和已知限制见 [RELEASE_NOTES.md](RELEASE_NOTES.md)。
+### 手机管理中心
+
+![手机管理中心](screenshots/phone-3.0.jpg)
+
+截图来自 3.0 系列实机采集，部分保留测试阶段编号；最终包显示 3.0。界面与图标取决于用户设置，局域网二维码和地址已遮挡。
 
 ## 安装与使用
 
-完整的 U 盘、ADB、AI 协助安装步骤，以及常见品牌开启 ADB 的入口见 [安装指南](INSTALL.md)。
+详见 [安装指南](INSTALL.md)，包含 U 盘、ADB、AI 协助安装和常见品牌调试入口。不要删除系统桌面。使用同包名、同签名新包覆盖安装可保留设置；配置守护前按电视提示确认授权用途。
 
-1. 根据电视 Android 版本和厂商限制选择安装包。Standard 建议优先尝试。
-2. 下载对应 APK，通过 U 盘或同一局域网中的 ADB 安装，并按电视提示确认。
-3. Standard 可在系统默认桌面中选择 Halo TV；Guard 按应用说明自愿开启所需守护权限。如需切换桌面，请在系统设置中选择默认桌面，并按需在无障碍设置中关闭相关服务。
+## 兼容与验证
 
-电视端更新会检查本仓库的正式 Release，更新提示和下载取决于电视对 GitHub 的网络访问；下载后仍需系统安装确认。Lite 是否有自动更新能力以实际版本为准，建议到 Release 页面手动下载。若下载失败，可在电脑或手机打开 Release 页面下载后使用 U 盘安装。
+Standard / Guard 适用于 Android 5.0+，Lite 最低 Android 4.0。TCL Q10G Pro 是本项目实机采集设备；上游机型经验见 [Aerial 设备记录](https://github.com/pengchujin/aerial-tv#兼容性)。上游记录不等于 HaloTV 已逐台验证。Samsung Tizen、LG webOS 和非 Android VIDAA 无法安装 Android APK。
 
-## 设备兼容
+此次三个 Release 构建及签名通过，正式版各 233 项、Lite 21 项自动测试通过，静态检查无错误；不同厂商固件、视频编码、网络与跨日守护仍需实际设备验证。常见问题见 [FAQ](FAQ.md)。
 
-- 此前在 TCL Q10G Pro 上测试过 2.0；2.1.4 的新增改动尚未完成电视实机回归，Lite 也尚未在 Android 4.x 真机验证。
-- 上游 Aerial 的机型记录可供参考，并不代表 Halo TV 已在各型号逐一验证。厂商固件可能限制第三方桌面、守护和屏保。
-- Samsung Tizen、LG webOS 和非 Android 的 VIDAA 不能安装 Android APK。Android 4.0–4.4 可尝试 Lite，兼容性以实际设备为准。
-- 不建议关闭系统安全保护、删除系统桌面或尝试不熟悉的工程菜单。常见问题见 [FAQ.md](FAQ.md)。
+## 来源、致谢与源码
 
-## 源码与许可
+- 本轮代码合并基线 Aerial 1.89：[pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv)。保留 [MIT 许可](LICENSE) 和 [来源声明](NOTICE.md)。
+- 静态壁纸来自 Bing；归档由 **YanGN** 提供：[ygnstudio/bing_wallpaper_archive](https://github.com/ygnstudio/bing_wallpaper_archive)。图片版权归各权利人所有。
+- 在线视频/缩略图目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)；视频来自 Apple，内容权利归各权利人所有，代码许可不等于素材授权。
+- [3.0 对应完整源码](https://github.com/Null9797/halo-tv/releases/download/v3.0-halo/HaloTV-3.0-source.zip)，包含正式版、Lite、资源及构建配置。构建需要自己的 Android SDK 与签名配置，签名密钥不公开。
 
-- Halo TV 2.1.4 对应源码：[HaloTV-2.1.4-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-source.zip)。
-- 上游：[Aerial](https://github.com/pengchujin/aerial-tv)，保留 [MIT 许可](LICENSE)与原作者版权声明。
-- 第三方字体、图标、壁纸、视频和天气数据受各自许可约束；品牌名称归各自权利人所有。项目与相关品牌没有隶属或背书关系。
+感谢 Aerial 原作者、YanGN、开源贡献者与首批提供反馈的用户。更多变更见 [RELEASE_NOTES.md](RELEASE_NOTES.md)。

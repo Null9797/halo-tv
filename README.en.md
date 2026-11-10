@@ -1,25 +1,15 @@
-# Halo TV 2.1.4
+# HaloTV 3.0
 
-Halo TV is an independent derivative of [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv), maintained by Null_. It is not an official Aerial release and has no affiliation with or endorsement from Aerial's author, Apple, or television manufacturers. The upstream MIT license is included in [LICENSE](LICENSE).
+An unofficial derivative of [Aerial](https://github.com/pengchujin/aerial-tv), maintained by Null_. Free to download and use; retains upstream MIT license and copyright notices. No affiliation or endorsement by upstream, Apple or television vendors.
 
-![Halo TV 2.0.5 home screen captured in MuMu](screenshots/home-mumu-2.0.5.png)
+[Website](https://halo-tv.pages.dev/) · [Downloads](https://github.com/Null9797/halo-tv/releases/latest) · [Quark mirror](https://pan.quark.cn/s/a14e3ab2dd41) · [Installation guide](INSTALL.md)
 
-The screenshot shows 2.0.5 in the MuMu emulator; the changes in 2.1.4 have not yet been validated on physical TVs.
+![HaloTV 3.0 desktop](screenshots/home-3.0.jpg)
 
-## Downloads
+Standard and Guard require Android 5.0+ (versionCode 176); choose one. Lite supports Android 4.0+ (versionCode 34), without video wallpapers or the full performance modes. All display version 3.0. New control center, categorized settings, customizable Dock and information layouts, flip clock, child quiz and elder modes, phone management and validated HaloTV-only update uploads.
 
-Get the latest release from [Releases](https://github.com/Null9797/halo-tv/releases/latest).
+2.1.4 full builds detect the latest stable GitHub Release and can upgrade with the existing signing identity. Older Lite builds without an update checker need one manual upgrade. 3.0 checks the website first and falls back to GitHub; downloads do not silently install.
 
-| Package | Android | Use |
-|---|---|---|
-| [Standard](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-standard.apk) | 5.0+ | Standard HOME launcher; try this first. |
-| [Guard](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-guard.apk) | 5.0+ | For some firmwares that block standard launchers; follow the in-app consent and setup. |
-| [Lite](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-lite.apk) | 4.0–4.4 | Lightweight variant; not yet verified on physical Android 4.x hardware. |
+[Source archive](https://github.com/Null9797/halo-tv/releases/download/v3.0-halo/HaloTV-3.0-source.zip) · [Checksums](SHA256SUMS.txt) · [Release notes](RELEASE_NOTES.md). Automated tests passed (233 per full flavor, 21 Lite); this does not certify every television firmware or codec. See [Chinese README](README.md) for features and screenshots.
 
-Standard and Guard share the same package name. Keep the original launcher available. Legacy-named release assets are byte-identical copies for older Halo TV updaters.
-
-2.1.4 incorporates Aerial 1.85 compatibility changes and aligns the Lite control center layout; device-specific playback still needs physical testing. The Standard and Guard unit suites, Lite lint and unit tests passed; a video upload and flip-clock handoff were checked in an Android TV emulator. Lite remains unverified on physical Android 4.x devices.
-
-2.1 adds Aerial’s Kids and Elders mode with a parental PIN, app selection and time limits, and refines clock sizes and text shadows, settings icon visibility, video upload limits and network safeguards, and includes mitigations for reported scrolling flicker. These changes have not been verified on physical devices. The earlier 2.0 introduced liquid glass Dock and focus styles, clock positioning, text colors, a redesigned control center and settings, performance modes, wallpaper categories and a flip clock screensaver. Features and compatibility vary by edition and device. See [INSTALL.md](INSTALL.md) and [FAQ.md](FAQ.md).
-
-Source is available under [HaloTV-2.1.4-source.zip](https://github.com/Null9797/halo-tv/releases/download/v2.1.4-halo/HaloTV-2.1.4-source.zip). Verify downloads against [SHA256SUMS.txt](SHA256SUMS.txt).
+Static imagery: Bing; archive by [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive). Video catalogue references [Aerial Views](https://github.com/theothernt/AerialViews), videos from Apple. Media rights remain with their respective owners.
