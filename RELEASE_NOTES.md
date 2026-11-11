@@ -1,3 +1,31 @@
+# HaloTV 3.0.1
+
+基于 Aerial 1.94 整合更新，保留 HaloTV 3.0 的桌面、控制中心、儿童/长辈模式、手机互联等功能。
+
+## 本次更新
+- 新增远程公告与提醒：支持版本筛选、重要公告、稍后提醒与不再提醒。配置默认关闭，重要公告仅在合适的桌面时机显示，不主动打断其他应用、屏保或家庭模式。
+- 修复 Lite 长公告无法用遥控器完整阅读；限制公告标题高度，优化说明链接校验。
+- 修复 Lite 在旧安卓上下载更新成功后，系统安装器可能无法读取安装包的问题。
+- 修复 Lite 翻页时钟在较矮画布上的崩溃，减少翻页绘制时的临时对象。
+- 保留此前针对天气、声音、视频壁纸、缩略图、屏保和 Home/守护兼容路径的优化；不同固件仍需实机确认。
+
+## 下载与升级
+Standard / Guard：Android 5.0+，内部号 180，二选一。Lite：Android 4.0+，内部号 38。三个安装包均显示 3.0.1，沿用原包名和签名，可覆盖内部号更低的同签名版本，保留设置。
+官网优先下载，GitHub 备用。旧版正式版可通过本仓库最新正式 Release 检查更新；旧 Lite 缺少在线更新入口时需先手动安装。
+
+## 验证
+Guard / Standard 各 270 项、Lite 35 项，共 575 项应用测试执行通过；另有 52 项辅助工具离线测试通过。三个 Release 构建、APK 完整性、v1/v2 签名和对齐校验通过。静态检查无 Error/Fatal，仍有历史告警。本次最终修复包未重新安装电视，未获得新的实机帧率和内存数据。
+
+官网：https://halo-tv.pages.dev/
+网盘：https://pan.quark.cn/s/a14e3ab2dd41（网盘内容以实际页面为准）
+安装教程：https://github.com/Null9797/halo-tv/blob/main/INSTALL.md
+
+## 来源与致谢
+基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，非上游官方发行版，保留原作者版权及 MIT 许可。静态壁纸来自 Bing，归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供；在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple，素材权利归各权利人所有；代码许可不代替素材授权。与上述作者、Apple 及电视厂商无隶属或背书关系。
+
+
+---
+
 # HaloTV 3.0 正式版
 
 让电视桌面，回到你喜欢的样子。HaloTV 3.0 全新界面与交互，免费分享。
