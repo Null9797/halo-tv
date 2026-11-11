@@ -1,10 +1,10 @@
-# HaloTV 3.0.3 安装指南
+# HaloTV 3.0.4 安装指南
 
 官网：https://halo-tv.pages.dev/
 
 网盘：https://pan.quark.cn/s/a14e3ab2dd41
 
-推荐优先从官网下载 Standard / Guard / Lite，GitHub Releases 作为备用。3.0.3 正式版内部号 181，Lite 内部号 39。
+推荐优先从官网下载 Standard / Guard / Lite，GitHub Releases 作为备用。3.0.4 正式版内部号 181，Lite 内部号 39。
 
 
 本指南适用于支持 Android TV / Google TV 的电视或电视盒子。菜单因品牌、固件版本和地区而异；不支持 Android APK 的系统无法使用本项目。**如果电视没有明确提供 ADB 调试，不要尝试未知工程码、关闭系统安全服务或修改系统分区。**
@@ -91,16 +91,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/HaloTV-3.0.3-standard.apk"
+adb install -r "$HOME/Downloads/HaloTV-3.0.4-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\HaloTV-3.0.3-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\HaloTV-3.0.4-standard.apk"
 ```
 
-选择 Guard 时，把文件名换成 `HaloTV-3.0.3-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
+选择 Guard 时，把文件名换成 `HaloTV-3.0.4-guard.apk`。看到 `Success` 即表示 Android 安装器接受了安装。随后在电视的应用列表打开 Halo TV。
 
 可选：用 ADB 打开已安装的应用：
 
@@ -154,14 +154,14 @@ APK 文件路径：<APK 完整路径>
 | 安装成功但 Home 键仍回原桌面 | Standard 需要在系统里选为默认桌面；Guard 需完成应用内守护设置。厂商限制可能导致无法接管。 |
 
 
-## HaloTV 3.0.3 更新与手机推送
+## HaloTV 3.0.4 更新与手机推送
 
-2.1.4 正式版通过最新 GitHub Release 发现 3.0.3；旧版网络无法访问 GitHub 时，在手机从官网或网盘下载同版本类型包，使用 U 盘或 ADB 覆盖安装。2.1.4 Lite 无内置在线检查入口，先手动升级 3.0.3。
+2.1.4 正式版通过最新 GitHub Release 发现 3.0.4；旧版网络无法访问 GitHub 时，在手机从官网或网盘下载同版本类型包，使用 U 盘或 ADB 覆盖安装。2.1.4 Lite 无内置在线检查入口，先手动升级 3.0.4。
 
-3.0.3：控制中心 → 软件更新，检查更新、在线下载；默认优先官网，GitHub 备用。自动下载默认关闭，可手动打开，下载完成后仍需确认安装。手机推送：扫描设置中的二维码，同一局域网打开手机管理中心 → 推送安装包更新，选择同包名、同签名、更高内部号的 HaloTV APK。上传完成回到电视 → 软件更新 → 手动更新，确认安装。只支持 HaloTV 自身更新。
+3.0.4：控制中心 → 软件更新，检查更新、在线下载；默认优先官网，GitHub 备用。自动下载默认关闭，可手动打开，下载完成后仍需确认安装。手机推送：扫描设置中的二维码，同一局域网打开手机管理中心 → 推送安装包更新，选择同包名、同签名、更高内部号的 HaloTV APK。上传完成回到电视 → 软件更新 → 手动更新，确认安装。只支持 HaloTV 自身更新。
 
 AI 安装指令：
 
 ```text
-请帮我把 HaloTV 3.0.3 安装到我的安卓电视或安卓电视盒子。官网是 https://halo-tv.pages.dev/，GitHub 仓库是 https://github.com/Null9797/halo-tv。请优先从官网下载适合设备的最新包：Android 5.0 及以上优先 Standard，固件拒绝第三方桌面时尝试 Guard；Android 4.0–4.4 用 Lite。一步步指导我开启 ADB 调试、查看 IP 并确认连接，下载后用 ADB 覆盖安装，保留已有设置。安装成功后验证版本与运行情况，再根据我的授权配置默认桌面和必要的守护权限。遇到错误请解释并继续排查，不删除系统桌面或其他应用。
+请帮我把 HaloTV 3.0.4 安装到我的安卓电视或安卓电视盒子。官网是 https://halo-tv.pages.dev/，GitHub 仓库是 https://github.com/Null9797/halo-tv。请优先从官网下载适合设备的最新包：Android 5.0 及以上优先 Standard，固件拒绝第三方桌面时尝试 Guard；Android 4.0–4.4 用 Lite。一步步指导我开启 ADB 调试、查看 IP 并确认连接，下载后用 ADB 覆盖安装，保留已有设置。安装成功后验证版本与运行情况，再根据我的授权配置默认桌面和必要的守护权限。遇到错误请解释并继续排查，不删除系统桌面或其他应用。
 ```
