@@ -4,7 +4,7 @@
 
 网盘：https://pan.quark.cn/s/a14e3ab2dd41
 
-推荐优先从官网下载 Standard / Guard / Lite，GitHub Releases 作为备用。3.0.1 正式版内部号 180，Lite 内部号 38。
+推荐优先从官网下载 Standard / Guard / Lite，GitHub Releases 作为备用。3.0.1 正式版内部号 181，Lite 内部号 39。
 
 
 本指南适用于支持 Android TV / Google TV 的电视或电视盒子。菜单因品牌、固件版本和地区而异；不支持 Android APK 的系统无法使用本项目。**如果电视没有明确提供 ADB 调试，不要尝试未知工程码、关闭系统安全服务或修改系统分区。**
