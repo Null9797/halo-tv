@@ -1,6 +1,6 @@
 # HaloTV 远程公告使用说明
 
-此功能加入 HaloTV 3.0.1 的公告测试包：Guard / Standard 内部号 179，Lite 内部号 37。
+此功能加入 HaloTV 3.0.3 的公告测试包：Guard / Standard 内部号 179，Lite 内部号 37。
 这是文字公告配置，不是远程执行代码或静默安装。现有未包含此功能的旧版本，需要先更新一次安装包才能接收公告。
 
 ## 电视上的行为
@@ -42,7 +42,7 @@
       "title": "HaloTV 使用提示",
       "body": "这里填写第一段正文。\n\n这里填写第二段正文。",
       "variants": ["guard", "standard", "lite"],
-      "minVersion": "3.0.1",
+      "minVersion": "3.0.3",
       "maxVersion": null,
       "minCode": null,
       "maxCode": null,
@@ -68,7 +68,7 @@
 | `kind` | `info` 或 `important` |
 | `title` / `body` | 纯文字，标题最多 100 字符，正文最多 6000 字符；正文可用 `\n\n` 分段 |
 | `variants` | `guard` / `standard` / `lite`；不写或空数组表示全部 |
-| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.1` |
+| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.3` |
 | `minCode` / `maxCode` | 可选内部号范围，包含边界；正式版与 Lite 内部号独立，建议分开配置 |
 | `startsAt` / `expiresAt` | 可选 UTC 时间，格式严格为 `YYYY-MM-DDTHH:mm:ssZ`；北京时间减 8 小时，过期后不再显示 |
 | `detailsUrl` | 可选，限 `https://halo-tv.pages.dev/…` 或 `https://github.com/Null9797/halo-tv/…` |
