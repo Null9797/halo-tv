@@ -1,11 +1,12 @@
 # HaloTV 远程公告使用说明
 
-此功能加入 HaloTV 3.0.4 的公告测试包：Guard / Standard 内部号 179，Lite 内部号 37。
-这是文字公告配置，不是远程执行代码或静默安装。现有未包含此功能的旧版本，需要先更新一次安装包才能接收公告。
+HaloTV 3.0 系列包含公告能力。此功能是文字通知，不是远程执行代码或静默安装；没有内置公告功能的更早版本不能接收弹窗。
+
+当前已发布重要公告 `halotv-305-upgrade:1`，面向低于 3.0.5 的 Guard / Standard / Lite，2026-12-12 UTC 到期，提醒升级 3.0.5。官网和根目录配置应始终保持一致。
 
 ## 电视上的行为
 
-- 控制中心新增「公告与提醒」，存在未读公告时显示「有新公告」。
+- 控制中心仅在存在适用公告时显示「公告与提醒」，存在未读公告时显示「有新公告」。
 - `info` 普通公告只显示入口提示，不自动弹窗。
 - `important` 重要公告会等到 HaloTV 桌面获得焦点、稳定显示约 1.5 秒后弹出。设置页、其他应用、屏保、儿童/长辈模式中不自动弹出。
 - 「我知道了」和「不再提醒」都会记住当前公告的 ID 与修订号，后续不会再自动弹出这一版公告；仍可在控制中心查看。
@@ -20,11 +21,11 @@
 
 官网不可用或返回无效配置时，备用：`https://raw.githubusercontent.com/Null9797/halo-tv/main/announcements.json`
 
-源文件分别是仓库的 `site/announcements.json` 和根目录 `announcements.json`。
-发布公告时请同步两份，随后将 `site/` 部署到 Cloudflare Pages，并将根目录配置提交至 GitHub 的 `main` 分支。
+源文件分别是仓库的 `website/announcements.json` 和根目录 `announcements.json`。
+发布公告时请同步两份，随后将 `website/` 部署到 Cloudflare Pages，并将根目录配置提交至 GitHub 的 `main` 分支。
 只发布网站配置不需要重新打包 APK。只更新 GitHub 备用配置时，若官网仍提供有效的旧配置，客户端会继续以官网为准。
 
-本次交付的两份文件均为 `enabled: false`，没有发布测试公告，也没有修改线上仓库或官网。
+当前发布配置为 `enabled: true`。撤回时同步官网与根目录为 `enabled: false`，不要仅更新备用源。
 
 ## 配置示例
 
@@ -42,7 +43,7 @@
       "title": "HaloTV 使用提示",
       "body": "这里填写第一段正文。\n\n这里填写第二段正文。",
       "variants": ["guard", "standard", "lite"],
-      "minVersion": "3.0.4",
+      "minVersion": "3.0.5",
       "maxVersion": null,
       "minCode": null,
       "maxCode": null,
@@ -68,7 +69,7 @@
 | `kind` | `info` 或 `important` |
 | `title` / `body` | 纯文字，标题最多 100 字符，正文最多 6000 字符；正文可用 `\n\n` 分段 |
 | `variants` | `guard` / `standard` / `lite`；不写或空数组表示全部 |
-| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.4` |
+| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.5` |
 | `minCode` / `maxCode` | 可选内部号范围，包含边界；正式版与 Lite 内部号独立，建议分开配置 |
 | `startsAt` / `expiresAt` | 可选 UTC 时间，格式严格为 `YYYY-MM-DDTHH:mm:ssZ`；北京时间减 8 小时，过期后不再显示 |
 | `detailsUrl` | 可选，限 `https://halo-tv.pages.dev/…` 或 `https://github.com/Null9797/halo-tv/…` |

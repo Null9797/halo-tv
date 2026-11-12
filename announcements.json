@@ -1,5 +1,25 @@
 {
   "schema": 1,
-  "enabled": false,
-  "announcements": []
+  "enabled": true,
+  "announcements": [
+    {
+      "id": "halotv-305-upgrade",
+      "revision": 1,
+      "kind": "important",
+      "title": "HaloTV 3.0.5 已发布，建议更新",
+      "body": "新版 HaloTV 3.0.5 已推出。本次改进安装包签名校验兼容与错误提示，新增桌面守护状态检查，并清楚显示 Standard / Guard / Lite 版本类型。\n\n请打开「控制中心 → 软件更新」检查并更新，选择与电视当前安装类型一致的安装包。\n\n若在线下载失败，可从官网下载后通过手机管理页推送；如旧版推送仍校验失败，可尝试 U 盘或 ADB 覆盖安装。若真实签名不同，请先联系作者核对，勿直接卸载以免丢失设置。\n\nHaloTV 免费下载使用，感谢您的支持与反馈！",
+      "variants": [
+        "guard",
+        "standard",
+        "lite"
+      ],
+      "minVersion": null,
+      "maxVersion": "3.0.4",
+      "minCode": null,
+      "maxCode": null,
+      "startsAt": "2026-11-12T00:00:00Z",
+      "expiresAt": "2026-12-12T23:59:59Z",
+      "detailsUrl": "https://halo-tv.pages.dev/"
+    }
+  ]
 }
