@@ -1,22 +1,22 @@
 {
   "schema": 1,
-  "version": "3.0.4",
-  "notes": "# HaloTV 3.0.4 · 动态壁纸返回与手动清理修复\n\nGuard / Standard 内部版本号 **185**，Lite **41**，显示版本均为 **3.0.4**。沿用包名与签名，可覆盖旧版保留设置，也可覆盖内部号 184 的测试包。\n\n## Guard / Standard\n- 改进从其他应用返回动态桌面的画面衔接：返回窗口先保留静帧遮挡，等待真实视频首帧提交后再移除，减少视频层尚未准备好时露出的黑底。\n- 本地视频离开桌面时停止解码并释放缓冲，保留播放器及播放列表信息，减少返回时的重复构建；不在其他应用后面持续解码视频。\n- 减少本地视频额外的起播缓冲等待。手机端增加、删除本地视频后，返回时会核对播放列表，避免复用失效内容。\n- 处理窗口显示与首帧回调先后不同的情况，避免遮挡一直停在静帧；重复离开事件不再重复触发软件取帧。保留屏保最新画面、位置交接及原有 HOME 回弹兼容逻辑。\n- 修复手动清理后台被全局“音乐正在播放”或不完整的 VPN / 网络状态长期拦截的问题。参考 2.1.4，恢复根据已安装用户应用逐包请求清理。\n- 继续排除自身、系统应用、VPN 服务、输入法、无障碍、通知监听、默认桌面及系统可见的活跃进程。空闲自动清理仍采用保守保护策略，不使用 force-stop，不修改网络配置。\n- 清理提示展示请求数及系统可用内存变化，不把请求数当成实际关闭数；Android 14+ 对普通应用清理其他包的限制保持明确提示。\n\n## Lite\n同步显示版本、内部号及更新信息为 **3.0.4（41）**，保留现有轻量逻辑。本轮动态视频桌面与正式版清理实现的修复不适用于 Lite，不新增对应功能。\n\n## 验证及实际边界\nGuard、Standard 各 **284** 项，Lite **37** 项，共 **605** 项自动测试执行通过；三个 Release 构建、签名、ZIP 完整性与对齐检查通过。\n修复代码的 Guard 测试包已在 TCL Android 11 上验证外部应用返回、控制中心、屏保和手动清理。正式发布包仅提升版本信息，未再次覆盖用户电视。\n实机已正常发出 9 个用户应用清理请求；后台列表由系统隐藏，不能保证实际关闭 9 个进程。视频解码器初始化、网络及厂商切换动画仍需时间，不承诺所有设备、片源零停顿。\n\n## 安装与更新\n- Android 5.0+ 优先 Standard；限制第三方 HOME 桌面的固件可尝试 Guard。同包名二选一。\n- Android 4.0–4.4 使用 Lite；Lite 与正式版存在功能差异。\n- 2.1.4 正式版可通过本仓库最新正式 Release 发现新版；3.0 系列优先使用官网更新清单及下载包，GitHub 作为备用。\n- 自动下载默认关闭；开启后下载完成仍提示用户确认安装。无在线检查入口的旧 Lite 需先手动升级一次。\n- 网络下载失败可从官网下载或查看网盘，也可通过现有手机管理页推送同类型 HaloTV 新版安装包。\n\n官网：https://halo-tv.pages.dev/\n安装教程：https://github.com/Null9797/halo-tv/blob/main/INSTALL.md\n网盘：https://pan.quark.cn/s/a14e3ab2dd41\n\n## 源码与致谢\n`HaloTV-3.0.4-source.zip` 为本次三个安装包对应的完整源码；GitHub 自动生成的 Source code 是发布材料仓库快照。\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，保留原作者版权与 MIT 许可，非上游官方发行版。静态壁纸来自 Bing，归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供；在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple，素材版权归各权利人所有。代码许可不代替素材授权；与上述作者、Apple、电视厂商无隶属或背书关系。\n",
+  "version": "3.0.5",
+  "notes": "# HaloTV 3.0.5 · 更新校验与桌面守护诊断\n\nGuard / Standard 内部版本号 **187**，Lite **43**，应用显示版本均为 **3.0.5**。保留原有包名与发布签名，可覆盖同类型旧版保留设置，也可覆盖上一轮内部号 186 / 42 的本地测试包。\n\n## 版本与类型一眼可见\n- 控制中心底部、软件更新页面显示完整版本与安装类型，如 `Halo TV 3.0.5 · Guard`、`Standard` 或 `Lite`。\n- 手机管理页的“推送安装包更新”页面同步显示电视当前版本和类型，帮助选择对应安装包。\n\n## 正式版更新校验\n- 兼容 Android 新旧签名读取接口：仅在系统没有返回签名时尝试旧接口，读取到不同证书时不会转用其他路径放行。\n- 区分“系统读不到签名”“新包发布签名不符”“与已安装版本签名不同”，不再都误写成发布签名不一致。\n- 继续校验包名、发布签名、已安装签名、版本类型及更高内部版本号；不接收其他软件安装包。\n- Guard / Standard 类型不同优先提示选错类型，避免被同版本提示掩盖。\n- 在线下载与手机推送沿用同一套正式版验证流程；签名与版本类型错误不得绕过。\n- 诊断报告记录校验结果、版本类型及公开证书摘要，方便排查反馈，不记录私钥。\n\n## 正式版桌面守护\n- “设为主屏幕”页新增诊断，区分未开启、开关已开启但服务未连接、实际运行中，以及系统不允许读取状态。\n- 显示是否拥有自动恢复需要的安全设置写入权限，并提示通知使用权、厂商自启动的设置用途。\n- 已授权但服务没有连接时提供“重新连接桌面守护”，沿用原有安全重新绑定流程，保留其他应用的无障碍服务。\n- Android 13+ 提供应用信息入口，引导检查“允许受限设置”。设置页支持滚动，避免新增内容挤出边界。\n- 不增加后台常驻轮询，也不自动授予系统权限。不同固件仍需用户手动或通过 ADB 授权，不能保证所有电视都能无闪烁接管。\n\n## Lite\n- 同步版本/类型显示、手机推送页面说明以及签名无法读取/已安装签名不一致的错误分类。\n- 保留 Android 4.0+ 的原生轻量实现，不新增正式版 HomeGuardService；Lite 的主屏幕切换以电视系统默认桌面机制为准。\n\n## 发布公告\n官网与仓库同步发布一条重要升级公告，仅向低于 3.0.5 且支持公告功能的版本展示。公告在桌面适当时机显示，确认后不重复，不打断其他应用播放。\n没有内置公告功能的老版本无法接收弹窗，但仍可通过原有更新检查发现 3.0.5。\n\n## 验证与边界\n三个 Release 构建、自动测试、签名、ZIP 完整性与对齐检查通过。新增签名校验测试覆盖旧/新 Android 签名信息、错误签名、错误类型、同版本及合法更新。\n此次未在反馈用户的设备上复现或验证。用户实际下载的 APK 和当前安装信息尚未提供，因此不能认定其“签名不一致”一定是误判或网盘问题。\n本机 TCL Android 11 的只读检查显示守护服务正在运行，通知使用权和厂商自启动已允许；这不代表其他机型都已验证，也未进行本次重启测试。\n\n## 安装与更新\n- Android 5.0+ 优先 Standard；不允许声明第三方 HOME 桌面的固件可尝试 Guard。同包名选择一种。\n- Android 4.0–4.4 使用 Lite；功能与正式版存在差异。\n- 2.1.4 正式版可通过 GitHub 最新正式 Release 发现新版；3.0 系列优先使用官网更新清单与下载包，GitHub 备用。\n- 选择与当前电视一致的类型。同类型、同签名更高内部版本可覆盖安装，安装仍需用户确认。\n- 若旧版本的手机推送校验失败，可先尝试 U 盘/ADB 的系统覆盖安装。若真实签名不同，仍无法覆盖，请先联系作者核对来源，勿直接卸载丢失配置。\n- 不停用系统桌面，不更改电视网络配置，不绕过 Android 的签名保护。\n\n官网：https://halo-tv.pages.dev/\n安装教程：https://github.com/Null9797/halo-tv/blob/main/INSTALL.md\n网盘：https://pan.quark.cn/s/a14e3ab2dd41\n\n## 源码与致谢\n`HaloTV-3.0.5-source.zip` 为三个安装包对应完整源码；GitHub 自动生成的 Source code 为发布材料仓库快照。\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，保留原作者版权及 MIT 许可，非上游官方发行版。壁纸来自 Bing，归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供；在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。素材版权归各权利人所有，代码许可不代替素材授权，与上述作者、Apple、电视厂商无隶属或背书关系。\n",
   "packages": {
     "guard": {
-      "versionCode": 185,
-      "sha256": "e69cc70a4eb71a1c16817a3d9bc75b1828a7a3e8d3a44df7da2ab285a9fdae67",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.4-halo/HaloTV-3.0.4-guard.apk"
+      "versionCode": 187,
+      "sha256": "bf3191b90eb0c71f6bf89b26ba5927a333063af7c9d63ba4869b3e418e56d7ac",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-guard.apk"
     },
     "standard": {
-      "versionCode": 185,
-      "sha256": "4482866b093b551166ceca52ca977be4fee0a5b2c3f1a89594f084777eabb5ee",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.4-halo/HaloTV-3.0.4-standard.apk"
+      "versionCode": 187,
+      "sha256": "e522cd52933952d91fc92a52678b8fd9edc871b748f33d53e365be8a46aa0aca",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-standard.apk"
     },
     "lite": {
-      "versionCode": 41,
-      "sha256": "6c592df5ffeb7e8a07fa83227215c54bf5b7938e89c3b29974fb7c544842d069",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.4-halo/HaloTV-3.0.4-lite.apk"
+      "versionCode": 43,
+      "sha256": "a5bc28c376efa3e096d75316ad3833130247d0341472150dbdeb2a4cab9d784d",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-lite.apk"
     }
   }
 }
