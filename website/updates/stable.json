@@ -1,22 +1,23 @@
 {
   "schema": 1,
-  "version": "3.0.6",
-  "notes": "# HaloTV 3.0.6 · 守护重连与更新安装修复\n\nStandard / Guard 内部版本号 **189**，Lite **45**；显示版本均为 **3.0.6**。保留原包名和发布签名，可覆盖同类型旧版及本轮 188 / 44 测试包，保留设置。\n\n## Standard / Guard 桌面守护\n- 对比 Aerial 1.95 的守护实现：在已是系统默认桌面的设备上同步其 Home 事件过滤策略，减少部分固件重复拉起、原桌面闪现的机会。\n- 修复守护重连未及时记录恢复时间的问题，避免错误判断刚刚恢复的服务。\n- 重新绑定保留其他应用的无障碍服务，包括重连间隔内新增的服务；完成后重新读取状态确认，尊重用户关闭或暂停的选择。\n- 不增加常驻轮询，不自动授予权限。受限设置、通知使用权和厂商自启动仍需按设备引导授权；厂商限制无法仅靠应用保证解除。\n\n## 下载后安装\n- 为部分固件“安装确认界面刚出现就退出、无结果”的情况加入延迟确认与备用安装入口。\n- 系统明确取消时保持取消；正常停留的安装确认界面不会被打断，安装依然需要用户确认。\n- 继续检查包名、类型、发布签名、已安装签名和更高内部版本号，不放行其他应用或不同签名包。\n\n## 更新后回到 HaloTV\n- 记录经校验且由用户明确发起的更新；确认实际升级后回到 HaloTV 一次。\n- 避免更新完成后被“恢复上次应用/信号源”逻辑再次带离桌面；不修改用户以后正常开机时的启动选择。\n- 取消、过期请求或屏幕关闭时不会强行唤醒电视。\n- Lite 同步安装后返回的处理，保留 Android 4.0+ 的轻量实现，不加入正式版的 HomeGuardService。\n\n## 公告与更新检查\n本次不发送公告弹窗，官网与仓库公告源均关闭。正常的新版本检查、更新说明与下载功能继续保留。\n\n## 检查结果与实际限制\n- Standard、Guard 各 338 项，Lite 40 项，合计 **716 项自动测试执行通过**。\n- 三个 Release 安装包通过签名校验、ZIP 完整性和 16 KB 对齐检查。\n- 沿用 Aerial 1.94 合并基线，本次仅针对相关问题参考 Aerial 1.95，不声称完整合入 1.95 的所有功能。\n- 本次未在所有反馈机型上验证，不能保证所有厂商守护与安装限制均解决。旧版安装入口本身失效时，需先通过可用的手机手动更新、U 盘或 ADB 覆盖安装一次。\n\n## 下载安装\n- Android 5.0+ 建议优先 Standard；限制第三方 HOME 入口的固件可尝试 Guard，同包名二选一。\n- Android 4.0–4.4 使用 Lite；Lite 功能和系统守护能力与正式版不同。\n- 2.1.4 正式版可通过本仓库最新正式 Release 检查新版；旧 Lite 需手动升级一次。\n- 3.0 系列优先官网下载，GitHub 备用；下载完成仍须确认安装。请选与电视当前类型一致的 APK。\n\n官网：https://halo-tv.pages.dev/\n安装教程：https://github.com/Null9797/halo-tv/blob/main/INSTALL.md\n网盘：https://pan.quark.cn/s/a14e3ab2dd41\n\n## 源码与致谢\n`HaloTV-3.0.6-source.zip` 为对应完整源码；GitHub 自动生成的 Source code 是发布材料仓库快照。构建需自行配置 SDK 与签名，私钥不公开。\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，保留原作者版权与 MIT 许可，非上游官方版本。静态壁纸来自 Bing，归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供；在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。素材版权归各权利人所有，代码许可不代替素材授权；与上述作者、Apple 及电视厂商无隶属或背书关系。\n",
+  "version": "3.1",
+  "distribution": "bridge",
+  "notes": "# HaloTV 3.1 · 过渡版与独立版\n\n本次包含两种发行方式，每种均提供 Standard / Guard / Lite，显示版本均为 **3.1**。\n\n## 如何选择\n- **已经安装旧版 HaloTV：** 先安装与当前类型一致的 **3.1 过渡版**，原包名和原发布签名不变，可覆盖并保留旧设置。再进入「控制中心 → 软件更新 → 安装 Halo TV 独立版」，也可在手机管理中心推送对应独立版 APK。\n- **新用户：** 建议直接安装 **3.1 独立版**。独立包名与专属发布签名，可与 Aerial 同时安装；独立版使用全新星球 Logo。\n- Standard / Guard 在同一种发行方式内二选一；Android 5.0+ 优先 Standard，受限固件可尝试 Guard。Android 4.0–4.4 使用 Lite；Lite 不含正式版动态视频桌面和正式版守护实现。\n\n## 迁移步骤\n1. 保留旧 HaloTV，覆盖安装同类型过渡版。\n2. 通过过渡版在线安装入口、手机推送、U 盘或 ADB 安装对应独立版。新包名代表新应用，不会覆盖或删除旧应用。\n3. 首次打开独立版，选择从过渡版导入设置与素材，或全新开始。可导入桌面设置、应用排序、自定义图标、本地照片/视频、天气和儿童长辈规则及已保存密码；不会复制系统权限、手机管理访问凭据及更新缓存，家庭模式不会自动开启。\n4. 导入成功后停止旧 HaloTV 的守护恢复。在独立版重新配置默认桌面、屏保和需要的守护权限，确认 Home、开机与日常操作正常。\n5. 确认独立版运行正常后，才卸载旧 HaloTV。不要先卸载旧版，否则无法导入其私有设置与素材。需要回退时可在过渡版软件更新页恢复其守护。\n\n如果直接在全新开始后继续保留旧版，请避免同时开启两个桌面的守护；与 Aerial 共存也建议仅保留一个桌面守护处于活动状态。\n\n## 身份与更新\n| 发行方式 | Standard / Guard 包名与内部号 | Lite 包名与内部号 |\n|---|---|---|\n| 过渡版 | `app.orchard.tv` · **193** | `app.halotv.lite` · **49** |\n| 独立版 | `app.halotv.launcher` · **194** | `app.halotv.launcher.lite` · **50** |\n\n过渡版使用旧 HaloTV 发布证书；独立版采用新的专属证书。与 Aerial 过去无法共存的关键是包名相同，并不代表持有或使用 Aerial 原作者的私钥。\n\n过渡版手机推送仅新增放行**对应独立版的精确包名、专属签名、相同类型和较新内部号**，其他应用仍拒绝。独立版只接收自己的同类型、同签名更新。安装仍需用户确认。3.1 过渡版与独立版有独立更新清单，均优先官网、GitHub 备用；旧 2.1.4 正式版会先发现过渡版，不能直接覆盖成新包名应用。\n\n## 同时包含的 3.1 界面更新\n- 新增「经典玻璃滑动」焦点，保留现有焦点样式。\n- 选中应用名称在 Dock 上方显示，与第一个应用图标左侧对齐并适当放大。\n- 翻页时钟秒钟可选数字显示或跳动冒号。\n- 控制中心与设置的关于页展示开源、官网和网盘地址；关于页布局更紧凑。\n- 控制中心底部、软件更新页和手机更新页标明版本类型与过渡版/独立版身份。\n\n## 过渡提醒\n本次仅向 **3.1 过渡版** 发布独立版迁移弹窗，旧 3.0.6 及独立版不属于提醒目标。公告通过正常联网检查获取，未联网时不能即时收到。感谢 Aerial 原作者的开源贡献。\n\n## 验证与边界\n六个 Release 包进行构建、签名、包名、版本、ZIP 完整性和对齐检查，并执行正式版与 Lite 的自动测试。迁移需双方应用保留且类型匹配，空间不足或系统限制时会提示失败，旧数据不会自动删除；厂商安装与守护限制仍需实际设备验证。本轮不宣称已在所有电视验证迁移、开机或帧率。\n\n## 源码与致谢\n`HaloTV-3.1-source.zip` 是六个包对应的完整源码；GitHub 自动 Source code 是发布材料仓库快照。私钥不会公开，二次构建请自行配置签名和对应证书校验。\n\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，保留原作者版权与 MIT 许可，非上游官方发行版。壁纸来自 Bing，归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供；在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。素材版权归各权利人，代码许可不代替素材授权；与上述作者、Apple、电视厂商无隶属或背书关系。\n\n官网：https://halo-tv.pages.dev/\n开源仓库：https://github.com/Null9797/halo-tv\n网盘：https://pan.quark.cn/s/a14e3ab2dd41（实际内容以网盘页面为准）\n",
   "packages": {
     "guard": {
-      "versionCode": 189,
-      "sha256": "5136ae0e944afdf29d22110930919a33d9702ef2ab9717a4c04edfcaba6405f8",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-guard.apk"
+      "versionCode": 193,
+      "sha256": "9704416bbfa5d6b3e6448f72156601994c04fc5692c83fbfb4223e72d67fd59c",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.1-halo/HaloTV-3.1-guard.apk"
     },
     "standard": {
-      "versionCode": 189,
-      "sha256": "fc532e142e29da5010c3460d54ab0a694e11d6f18a4025657f3ee5dc217d2602",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-standard.apk"
+      "versionCode": 193,
+      "sha256": "9ea79b7e9a116d6c1befe5a80bf890ae74734779b700eef6b88f9f9dad8f6ec8",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.1-halo/HaloTV-3.1-standard.apk"
     },
     "lite": {
-      "versionCode": 45,
-      "sha256": "69aedf603f95f95ff35cff21d876c2db185311e5c36cc580fe1c391c8fa62f67",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-lite.apk"
+      "versionCode": 49,
+      "sha256": "a7d83773ecb82413a21e680797c2d8cf8dcc090add771e8f10be3462c995414a",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.1-halo/HaloTV-3.1-lite.apk"
     }
   }
 }
