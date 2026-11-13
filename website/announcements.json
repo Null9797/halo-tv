@@ -1,5 +1,37 @@
 {
   "schema": 1,
-  "enabled": false,
-  "announcements": []
+  "enabled": true,
+  "announcements": [
+    {
+      "id": "halo31-independent-migration-full",
+      "revision": 1,
+      "title": "HaloTV 独立版已推出，请完成迁移",
+      "body": "致敬 Aerial 原作者的开源贡献，HaloTV 现已推出独立版。独立版使用新包名与专属签名，安装后可与 Aerial 共存。\n\n请尽快通过「控制中心 → 软件更新 → 安装 Halo TV 独立版」或手机推送完成迁移，以继续接收后续更新。请先在独立版导入设置、确认运行正常，再卸载旧 HaloTV。独立版需要重新设置默认桌面及桌面守护相关权限。\n\n感谢您的理解与支持！",
+      "kind": "important",
+      "variants": [
+        "guard",
+        "standard"
+      ],
+      "minVersion": "3.1",
+      "maxVersion": "3.1",
+      "minCode": 193,
+      "maxCode": 193,
+      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+    },
+    {
+      "id": "halo31-independent-migration-lite",
+      "revision": 1,
+      "title": "HaloTV 独立版已推出，请完成迁移",
+      "body": "致敬 Aerial 原作者的开源贡献，HaloTV 现已推出独立版。独立版使用新包名与专属签名，安装后可与 Aerial 共存。\n\n请尽快通过「控制中心 → 软件更新 → 安装 Halo TV 独立版」或手机推送完成迁移，以继续接收后续更新。请先在独立版导入设置、确认运行正常，再卸载旧 HaloTV。独立版需要重新设置默认桌面及桌面守护相关权限。\n\n感谢您的理解与支持！",
+      "kind": "important",
+      "variants": [
+        "lite"
+      ],
+      "minVersion": "3.1",
+      "maxVersion": "3.1",
+      "minCode": 49,
+      "maxCode": 49,
+      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+    }
+  ]
 }
