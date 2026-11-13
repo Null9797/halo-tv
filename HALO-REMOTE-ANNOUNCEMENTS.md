@@ -2,7 +2,7 @@
 
 HaloTV 3.0 系列包含公告能力。此功能是文字通知，不是远程执行代码或静默安装；没有内置公告功能的更早版本不能接收弹窗。
 
-当前已发布重要公告 `halotv-305-upgrade:1`，面向低于 3.0.5 的 Guard / Standard / Lite，2026-12-12 UTC 到期，提醒升级 3.0.5。官网和根目录配置应始终保持一致。
+3.0.6 发布时，按维护者要求不发送公告弹窗；官网与仓库根目录公告源均设置为 `enabled: false`，`announcements: []`。后续是否启用须另行明确安排。正常版本检查不受影响。
 
 ## 电视上的行为
 
@@ -25,7 +25,7 @@ HaloTV 3.0 系列包含公告能力。此功能是文字通知，不是远程执
 发布公告时请同步两份，随后将 `website/` 部署到 Cloudflare Pages，并将根目录配置提交至 GitHub 的 `main` 分支。
 只发布网站配置不需要重新打包 APK。只更新 GitHub 备用配置时，若官网仍提供有效的旧配置，客户端会继续以官网为准。
 
-当前发布配置为 `enabled: true`。撤回时同步官网与根目录为 `enabled: false`，不要仅更新备用源。
+当前发布配置为 `enabled: false`，官网与根目录保持一致。
 
 ## 配置示例
 
@@ -43,7 +43,7 @@ HaloTV 3.0 系列包含公告能力。此功能是文字通知，不是远程执
       "title": "HaloTV 使用提示",
       "body": "这里填写第一段正文。\n\n这里填写第二段正文。",
       "variants": ["guard", "standard", "lite"],
-      "minVersion": "3.0.5",
+      "minVersion": "3.0.6",
       "maxVersion": null,
       "minCode": null,
       "maxCode": null,
@@ -69,7 +69,7 @@ HaloTV 3.0 系列包含公告能力。此功能是文字通知，不是远程执
 | `kind` | `info` 或 `important` |
 | `title` / `body` | 纯文字，标题最多 100 字符，正文最多 6000 字符；正文可用 `\n\n` 分段 |
 | `variants` | `guard` / `standard` / `lite`；不写或空数组表示全部 |
-| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.5` |
+| `minVersion` / `maxVersion` | 可选显示版本范围，包含边界；如 `3.0.6` |
 | `minCode` / `maxCode` | 可选内部号范围，包含边界；正式版与 Lite 内部号独立，建议分开配置 |
 | `startsAt` / `expiresAt` | 可选 UTC 时间，格式严格为 `YYYY-MM-DDTHH:mm:ssZ`；北京时间减 8 小时，过期后不再显示 |
 | `detailsUrl` | 可选，限 `https://halo-tv.pages.dev/…` 或 `https://github.com/Null9797/halo-tv/…` |

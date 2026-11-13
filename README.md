@@ -1,42 +1,42 @@
 <p align="center"><img src="screenshots/halo-logo.png" width="104" alt="HaloTV Logo"></p>
-<h1 align="center">HaloTV 3.0.5</h1>
+<h1 align="center">HaloTV 3.0.6</h1>
 <p align="center">让电视桌面，回到你喜欢的样子。</p>
 <p align="center"><a href="https://halo-tv.pages.dev/">官方网站</a> · <a href="https://github.com/Null9797/halo-tv/releases/latest">下载最新版</a> · <a href="https://pan.quark.cn/s/a14e3ab2dd41">夸克网盘</a> · <a href="INSTALL.md">安装教程</a></p>
 
 HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 开源项目二次开发，由 **Null_** 整理和发布，**不是 Aerial 原作者作品或官方发行版**。项目免费使用，保留上游 MIT 许可与版权声明；与 Apple、电视厂商及上游作者无隶属或背书关系。
 
-## 3.0.5 已正式推出
+## 3.0.6 已正式推出
 
-全新的桌面、控制中心、分类设置、儿童答题与手机管理体验。正式版内部号 **187**，Lite 内部号 **43**。
+全新的桌面、控制中心、分类设置、儿童答题与手机管理体验。正式版内部号 **189**，Lite 内部号 **45**。
 
 ![HaloTV 3.0 桌面](screenshots/home-3.0.jpg)
 
-## 3.0.5 更新摘要
+## 3.0.6 更新摘要
 
-沿用 Aerial 1.94 合并基线与 HaloTV 3.0 功能。本次改进签名读取兼容及错误分类，新增正式版桌面守护状态诊断和重新连接入口，并在控制中心、软件更新页、手机推送页清楚标注版本类型。正式版内部号 **187**，Lite **43**。687 项自动测试执行通过；反馈用户机型尚未复现验证，签名真实不同和系统权限限制仍需核对处理。
+沿用 Aerial 1.94 合并基线，针对相关问题对比 Aerial 1.95：改进默认桌面的 Home 事件过滤与守护重连，修复部分固件下载完成后安装确认快速退出时的备用安装流程，并防止更新后误打开上次应用或信号源。Lite 同步更新后返回桌面的处理。正式版内部号 **189**，Lite **45**；716 项自动测试执行通过。本次不发送公告弹窗，正常版本检查继续保留；厂商权限与固件限制仍需按设备确认。
 
 ## 下载与选择
 
 | 版本 | 官网直接下载 | GitHub | 适用情况 |
 | --- | --- | --- | --- |
-| Standard | [HaloTV-3.0.5-standard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.5-standard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-standard.apk) | Android 5.0+，建议优先尝试，标准 HOME 桌面入口 |
-| Guard | [HaloTV-3.0.5-guard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.5-guard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-guard.apk) | Android 5.0+，部分限制第三方桌面的固件可尝试，按引导授权守护 |
-| Lite | [HaloTV-3.0.5-lite.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.5-lite.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-lite.apk) | Android 4.0+ 轻量实现，面向 Android 4.0–4.4 老电视 |
+| Standard | [HaloTV-3.0.6-standard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.6-standard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-standard.apk) | Android 5.0+，建议优先尝试，标准 HOME 桌面入口 |
+| Guard | [HaloTV-3.0.6-guard.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.6-guard.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-guard.apk) | Android 5.0+，部分限制第三方桌面的固件可尝试，按引导授权守护 |
+| Lite | [HaloTV-3.0.6-lite.apk](https://halo-tv.pages.dev/updates/HaloTV-3.0.6-lite.apk) | [备用下载](https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-lite.apk) | Android 4.0+ 轻量实现，面向 Android 4.0–4.4 老电视 |
 
 Standard 与 Guard 同包名，每台电视选择其中一种；Lite 独立包名。网盘：[https://pan.quark.cn/s/a14e3ab2dd41](https://pan.quark.cn/s/a14e3ab2dd41)。校验见 [SHA256SUMS.txt](SHA256SUMS.txt)。
 
-**从 2.1.4 升级：**正式版会从本仓库最新正式 Release 识别 3.0.5，保持原签名与包名，可以覆盖升级保留数据。2.1.4 Lite 没有在线检查入口，需要手动升级一次。3.0 起正式版与 Lite 均优先使用官网更新清单和 APK，GitHub 作为备用；自动下载默认关闭，安装由用户确认。
+**从 2.1.4 升级：** 正式版会从本仓库最新正式 Release 识别 3.0.6，保持原签名与包名，可以覆盖升级保留数据。2.1.4 Lite 没有在线检查入口，需要手动升级一次。3.0 起正式版与 Lite 均优先使用官网更新清单和 APK，GitHub 作为备用；自动下载默认关闭，安装由用户确认。
 
 ## 功能亮点
 
-- **个性桌面：**单/双排、自定义应用排序与图标、磨砂/液态玻璃 Dock，大/小圆弧联动图标，滑动焦点。
-- **信息随心：**左上、右上、居中、状态栏；问候语、时间日期、农历、天气最高/最低温度、运行信息开关与文字颜色，桌面 12/24 小时。
-- **遥控更顺手：**新控制中心、分类设置、设置入口位置和常驻/淡出/隐藏；系统设置、信号源、网络、电源等入口。
-- **壁纸与屏保：**在线静态壁纸、本地照片；正式版另有在线/本地视频动态桌面，支持自动轮换。在线内容只设置为壁纸，缓存用于运行，不提供另存本地按钮。
-- **翻页时钟：**农历、12/24 小时、可选秒钟、防烧屏位移、闲置时间选择；本地素材可轮播或指定单个。
-- **儿童与长辈：**应用白名单、儿童观看限额与答题获得时间、最晚观看时间；长辈大图标与休息提醒，密码和手动退出状态保存。
-- **手机互联：**同网扫码设置、上传照片/视频、更换图标、推送 HaloTV 更新包；不会接收其他软件安装包。
-- **性能与维护：**正式版流畅/均衡/效果优先；手动与可选空闲清理后台，实际能力由 Android 系统决定。
+- **个性桌面：** 单/双排、自定义应用排序与图标、磨砂/液态玻璃 Dock，大/小圆弧联动图标，滑动焦点。
+- **信息随心：** 左上、右上、居中、状态栏；问候语、时间日期、农历、天气最高/最低温度、运行信息开关与文字颜色，桌面 12/24 小时。
+- **遥控更顺手：** 新控制中心、分类设置、设置入口位置和常驻/淡出/隐藏；系统设置、信号源、网络、电源等入口。
+- **壁纸与屏保：** 在线静态壁纸、本地照片；正式版另有在线/本地视频动态桌面，支持自动轮换。在线内容只设置为壁纸，缓存用于运行，不提供另存本地按钮。
+- **翻页时钟：** 农历、12/24 小时、可选秒钟、防烧屏位移、闲置时间选择；本地素材可轮播或指定单个。
+- **儿童与长辈：** 应用白名单、儿童观看限额与答题获得时间、最晚观看时间；长辈大图标与休息提醒，密码和手动退出状态保存。
+- **手机互联：** 同网扫码设置、上传照片/视频、更换图标、推送 HaloTV 更新包；不会接收其他软件安装包。
+- **性能与维护：** 正式版流畅/均衡/效果优先；手动与可选空闲清理后台，实际能力由 Android 系统决定。
 
 Lite 不含正式版动态视频桌面、在线视频库和性能模式；屏保类型、系统守护能力也依版本与固件而异。
 
@@ -70,7 +70,7 @@ Lite 不含正式版动态视频桌面、在线视频库和性能模式；屏保
 
 ![手机管理中心](screenshots/phone-3.0.jpg)
 
-截图来自 3.0 系列实机采集，部分保留测试阶段编号；最终包显示 3.0.5。界面与图标取决于用户设置，局域网二维码和地址已遮挡。
+截图来自 3.0 系列实机采集，部分保留测试阶段编号；最终包显示 3.0.6。界面与图标取决于用户设置，局域网二维码和地址已遮挡。
 
 ## 安装与使用
 
@@ -80,13 +80,13 @@ Lite 不含正式版动态视频桌面、在线视频库和性能模式；屏保
 
 Standard / Guard 适用于 Android 5.0+，Lite 最低 Android 4.0。TCL Q10G Pro 是本项目实机采集设备；上游机型经验见 [Aerial 设备记录](https://github.com/pengchujin/aerial-tv#兼容性)。上游记录不等于 HaloTV 已逐台验证。Samsung Tizen、LG webOS 和非 Android VIDAA 无法安装 Android APK。
 
-此次三个 Release 构建、签名与对齐检查通过，正式版各 325 项、Lite 37 项自动测试通过；不同厂商固件、视频编码、网络与跨日守护仍需实际设备验证。常见问题见 [FAQ](FAQ.md)。
+此次三个 Release 构建、签名与对齐检查通过，正式版各 338 项、Lite 40 项自动测试通过；不同厂商固件、视频编码、网络与跨日守护仍需实际设备验证。常见问题见 [FAQ](FAQ.md)。
 
 ## 来源、致谢与源码
 
 - 本轮代码合并基线 Aerial 1.94：[pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv)。保留 [MIT 许可](LICENSE) 和 [来源声明](NOTICE.md)。
 - 静态壁纸来自 Bing；归档由 **YanGN** 提供：[ygnstudio/bing_wallpaper_archive](https://github.com/ygnstudio/bing_wallpaper_archive)。图片版权归各权利人所有。
 - 在线视频/缩略图目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)；视频来自 Apple，内容权利归各权利人所有，代码许可不等于素材授权。
-- [3.0.5 对应完整源码](https://github.com/Null9797/halo-tv/releases/download/v3.0.5-halo/HaloTV-3.0.5-source.zip)，包含正式版、Lite、资源及构建配置。构建需要自己的 Android SDK 与签名配置，签名密钥不公开。
+- [3.0.6 对应完整源码](https://github.com/Null9797/halo-tv/releases/download/v3.0.6-halo/HaloTV-3.0.6-source.zip)，包含正式版、Lite、资源及构建配置。构建需要自己的 Android SDK 与签名配置，签名密钥不公开。
 
 感谢 Aerial 原作者、YanGN、开源贡献者与首批提供反馈的用户。更多变更见 [RELEASE_NOTES.md](RELEASE_NOTES.md)。
