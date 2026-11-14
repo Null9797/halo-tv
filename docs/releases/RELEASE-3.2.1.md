@@ -23,7 +23,7 @@
 
 修复逻辑验证：Standard / Guard 各 463 项、Lite 130 项单元测试通过，静态检查无 Error/Fatal（仍有 Warning/Hint）。三个 3.2.1 Release 安装包完成编译、包名、版本、ZIP 完整性、对齐及 v1/v2 签名检查。按要求未运行模拟器或在电视安装；反馈设备的重启恢复和 Android 4.4 厂商设置实际效果仍待用户验证。
 
-延续 3.2 的儿童答题、界面和兼容改动；未更换启动图。[3.2 更新记录](https://github.com/Null9797/halo-tv/blob/main/RELEASE-3.2.md)
+延续 3.2 的儿童答题、界面和兼容改动；未更换启动图。[3.2 更新记录](https://github.com/Null9797/halo-tv/blob/v3.2-halo/RELEASE-3.2.md)
 
 ## 开源与致谢
 

@@ -1,4 +1,0 @@
-b38dacad68da2b20cac1c09cef9885e087e3e0188e374e54012195fd4ceb489d  HaloTV-3.2-standard.apk
-3bc7d73780cc10abe9e2fe53bbbabadae7b3cdef43536af8c535ec4508f8047f  HaloTV-3.2-guard.apk
-c1fe15df36e8f75cef08507e0c164b3e0e7a1b63101fc7c25f6c8ce4a1b2a78f  HaloTV-3.2-lite.apk
-2a2cbbe01c8c9f2f09de98575c510ac67d2b8dcc0c66db1ef65744f3fc7f5af8  HaloTV-3.2-source.zip

@@ -9,7 +9,7 @@
 
 本次补上开机后守护再次失效的有限恢复检查，新增可保存的守护自动恢复选项；Lite 改善 Android 4.x 系统设置、Wi-Fi 和应用卸载入口。延续 3.2 功能，修复逻辑通过自动测试，反馈设备实际效果仍待验证。
 
-三个安装包均为独立包名与专属签名，显示版本 **3.2.1**；Standard / Guard 内部号 **217**，Lite **72**。可覆盖升级同类型独立版。 [详细更新与验证范围](RELEASE-3.2.1.md)
+三个安装包均为独立包名与专属签名，显示版本 **3.2.1**；Standard / Guard 内部号 **217**，Lite **72**。可覆盖升级同类型独立版。 [详细更新与验证范围](docs/releases/RELEASE-3.2.1.md)
 
 独立包不会继承旧包的系统权限。若显示守护已登记但 Home 仍返回系统桌面，请先看 [守护诊断说明](docs/HALO_GUARD_TOOL.md)，不要使用上游 Aerial 安装脚本给独立版授权。本轮代码测试不等于全部故障电视已实测解决。
 
@@ -52,5 +52,7 @@
 - Bing 壁纸归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供。
 - 在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple，素材版权归各权利人；代码许可不代替素材授权，与上述主体无隶属或背书关系。
 - [3.2.1 三个安装包对应完整源码](https://github.com/Null9797/halo-tv/releases/download/v3.2.1-halo/HaloTV-3.2.1-source.zip)。私钥不公开。
+
+完整源码与安装包统一放在 [Releases](https://github.com/Null9797/halo-tv/releases)，历史版本仍可下载；[文档目录](docs/README.md) 汇总更新说明、守护工具和维护说明。
 
 [官方网站](https://halo-tv.pages.dev/) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（实际内容以网盘为准）

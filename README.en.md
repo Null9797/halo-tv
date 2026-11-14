@@ -4,7 +4,7 @@ HaloTV is a free, open-source derivative of [Aerial](https://github.com/pengchuj
 
 ## This release
 
-This update adds bounded boot-time guard recovery with a persistent opt-out in Standard / Guard, fixes a pre-unlock settings access path, and improves Android 4.x system-settings, Wi-Fi and app-uninstall entry points in Lite. It retains the features from 3.2. Recovery still requires system permissions and is subject to manufacturer restrictions. [Release notes](RELEASE-3.2.1.md).
+This update adds bounded boot-time guard recovery with a persistent opt-out in Standard / Guard, fixes a pre-unlock settings access path, and improves Android 4.x system-settings, Wi-Fi and app-uninstall entry points in Lite. It retains the features from 3.2. Recovery still requires system permissions and is subject to manufacturer restrictions. [Release notes](docs/releases/RELEASE-3.2.1.md).
 
 Standard / Guard use `app.halotv.launcher` (code **217**, Android 5.0+). Lite uses `app.halotv.launcher.lite` (code **72**, Android 4.0+). All show **3.2.1** and retain the independent signing identity introduced in 3.1. Lite is a synchronized version release and does not include the full HomeGuardService or full video desktop implementation.
 
@@ -19,3 +19,5 @@ A migration reminder is provided for older clients with remote-announcement supp
 [Website](https://halo-tv.pages.dev/) · [Downloads](https://github.com/Null9797/halo-tv/releases/tag/v3.2.1-halo) · [Install](INSTALL.md) · [Migration](MIGRATION-3.1.md) · [Guard tool](docs/HALO_GUARD_TOOL.md) · [Source](https://github.com/Null9797/halo-tv/releases/download/v3.2.1-halo/HaloTV-3.2.1-source.zip)
 
 [YanGN Bing archive](https://github.com/ygnstudio/bing_wallpaper_archive) supplies the Bing catalogue; the online video catalogue references [Aerial Views](https://github.com/theothernt/AerialViews), with Apple-hosted media. Rights remain with their respective owners; code licensing does not grant media rights.
+
+Source archives and APKs are maintained in [Releases](https://github.com/Null9797/halo-tv/releases), including historical versions. See the [documentation index](docs/README.md) for release notes and maintenance guides.
