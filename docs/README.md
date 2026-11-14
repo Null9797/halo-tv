@@ -1,0 +1,32 @@
+# HaloTV 文档
+
+## 安装与使用
+
+- [安装教程](../INSTALL.md)
+- [常见问题](../FAQ.md)
+- [旧包名迁移到独立版](../MIGRATION-3.1.md)
+- [守护诊断工具](HALO_GUARD_TOOL.md)
+
+## 版本与下载
+
+- [最新安装包与完整源码](https://github.com/Null9797/halo-tv/releases/latest)
+- [历史版本、源码和校验文件](https://github.com/Null9797/halo-tv/releases)
+- [累计更新记录](../RELEASE_NOTES.md)
+- [3.2.1 更新说明](releases/RELEASE-3.2.1.md)
+- [3.2 更新说明](releases/RELEASE-3.2.md)
+- [3.1.2 更新说明](releases/RELEASE-3.1.2.md)
+- [3.1.1 更新说明](releases/RELEASE-3.1.1.md)
+- [最新文件校验值](../SHA256SUMS.txt)
+
+## 维护资料
+
+- [守护可靠性复审](HALO_GUARD_RELIABILITY_REVIEW.md)
+- [3.1 迁移公告的历史说明](HALO-REMOTE-ANNOUNCEMENTS.md)（历史记录；当前配置以公告 JSON 为准）
+
+## 发布文件整理约定
+
+安装包、对应完整源码 ZIP 和版本校验文件统一上传到各版本 Release，不再重复堆放于仓库根目录。GitHub 自动生成的 Source code 是发布材料仓库快照，应用完整源码请下载 Release 中名为 `HaloTV-版本号-source.zip` 的附件。
+
+根目录保留项目介绍、许可证、安装与迁移指南、常见问题、累计更新记录和最新校验值。分版本说明放在 `docs/releases/`，维护资料放在 `docs/`。
+
+`website/updates/` 及根目录和官网的公告 JSON 服务于电视端；整理文档时须保留兼容地址及内容。历史版本也可通过 Releases 和 Git 提交记录查阅。
