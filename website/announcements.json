@@ -3,6 +3,20 @@
   "enabled": true,
   "announcements": [
     {
+      "id": "halotv-312-independent-upgrade",
+      "revision": 1,
+      "title": "HaloTV 已升级独立版，请及时迁移",
+      "body": "HaloTV 已推出独立版，使用新包名与专属签名，可与 Aerial 共存。感谢 Aerial 原作者的开源贡献。\n\n请通过「软件更新」按提示在线升级安装，或从官网下载并重新安装与您设备相符的独立版。较早的旧包名版本可能需要先安装 3.1 过渡版，再按提示迁移到独立版；若无法在线升级，可改用官网提供的安装包。\n\n请先完成独立版安装，并确认能正常使用，再卸载旧版本 HaloTV；请勿将 Aerial 原版误当作旧 HaloTV 卸载。独立版的系统权限不会继承旧版，Standard / Guard 用户需要重新设置默认桌面并开启桌面守护；Lite 用户按电视系统支持的方式设置默认桌面。\n\n感谢您的使用与支持，HaloTV 将持续优化和更新。",
+      "kind": "important",
+      "variants": [
+        "standard",
+        "guard",
+        "lite"
+      ],
+      "maxVersion": "3.1.1",
+      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+    },
+    {
       "id": "halo31-independent-migration-full",
       "revision": 1,
       "title": "HaloTV 独立版已推出，请完成迁移",
@@ -16,7 +30,8 @@
       "maxVersion": "3.1",
       "minCode": 193,
       "maxCode": 193,
-      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+      "detailsUrl": "https://halo-tv.pages.dev/#migration",
+      "enabled": false
     },
     {
       "id": "halo31-independent-migration-lite",
@@ -31,7 +46,8 @@
       "maxVersion": "3.1",
       "minCode": 49,
       "maxCode": 49,
-      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+      "detailsUrl": "https://halo-tv.pages.dev/#migration",
+      "enabled": false
     }
   ]
 }
