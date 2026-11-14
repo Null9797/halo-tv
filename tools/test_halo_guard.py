@@ -51,6 +51,10 @@ if a==['dumpsys','accessibility']:
  if state.get('unknown_bound'): finish('vendor accessibility status unavailable')
  bound='Service[label=Halo TV, id='+guard+']' if state.get('bound') else ''
  finish('User state[\n Bound services:{'+bound+'}\n Enabled services:{'+state['enabled']+'}\n Binding services:{}\n]')
+if a[:3]==['settings','get','system']:
+ finish(state.get('boot_entry','null'))
+if a[:3]==['am','broadcast','-n']:
+ state['recovery_requested']=True; finish('Broadcast completed: result=0')
 if a[:3]==['settings','get','secure']:
  finish({'enabled_accessibility_services':state['enabled'],'accessibility_enabled':state.get('global','0'),'enabled_notification_listeners':state['listeners']}.get(a[3],'null'))
 if a[:3]==['settings','put','secure']:
@@ -63,6 +67,7 @@ if a[:2]==['pm','grant']:
  if state.get('refuse_permission'): finish('SecurityException: permission not changeable',1)
  state['secure']=True; finish()
 if a[:2]==['appops','get']:
+ if state.get('only_auto_start') and a[-1]=='APP_AUTO_START': finish('Unknown operation APP_AUTO_START',1)
  if a[2]!=pkg: finish('wrong package',99)
  op=a[3]
  if state.get('op_stdout_failure'): finish(state['op_stdout_failure'])
@@ -109,7 +114,7 @@ class HaloGuardCliTest(unittest.TestCase):
             return result, calls, json.loads((root / "state").read_text())
 
     def mutations(self, calls):
-        return [c for c in calls if c[:3] in (["shell", "pm", "grant"], ["shell", "appops", "set"], ["shell", "settings", "put"], ["shell", "am", "start"]) or c[:4] == ["shell", "cmd", "notification", "allow_listener"]]
+        return [c for c in calls if c[:3] in (["shell", "pm", "grant"], ["shell", "appops", "set"], ["shell", "settings", "put"], ["shell", "am", "start"], ["shell", "am", "broadcast"]) or c[:4] == ["shell", "cmd", "notification", "allow_listener"]]
 
     def test_default_is_read_only_and_detects_registered_but_not_bound(self):
         old = 'app.orchard.tv/.guard.HomeGuardService'
@@ -233,6 +238,24 @@ class HaloGuardCliTest(unittest.TestCase):
                 result,calls,_=self.run_cli(repair=True,op_stdout_failure=failure)
                 self.assertEqual(result.returncode,0,result.stdout+result.stderr)
                 self.assertFalse(any(c[:3]==['shell','appops','set'] for c in calls))
+
+    def test_vendor_auto_start_alias_is_granted_when_app_auto_start_is_absent(self):
+        result, calls, _ = self.run_cli(repair=True, only_auto_start=True, ops={"AUTO_START": "default"})
+        self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+        self.assertIn(['shell','appops','set',PACKAGE,'AUTO_START','allow'], calls)
+
+    def test_read_only_reports_old_boot_entry_without_rewriting_it(self):
+        result, calls, state = self.run_cli(boot_entry='app.orchard.tv/.MainActivity')
+        self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+        self.assertIn('开机入口仍指向旧包', result.stdout)
+        self.assertEqual(self.mutations(calls), [])
+        self.assertEqual(state['boot_entry'], 'app.orchard.tv/.MainActivity')
+
+    def test_explicit_repair_also_records_new_package_recovery_intent(self):
+        result, calls, state = self.run_cli(repair=True)
+        self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
+        self.assertTrue(state.get('recovery_requested'))
+        self.assertIn(['shell','am','broadcast','-n',PACKAGE+'/app.orchard.tv.guard.ConfigReceiver','--ez','halo_guard_recovery','true'], calls)
 
 
 class BoundDumpTest(unittest.TestCase):

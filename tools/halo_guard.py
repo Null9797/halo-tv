@@ -177,6 +177,7 @@ def snapshot(adb):
         "secure": bool(re.search(r"android\.permission\.WRITE_SECURE_SETTINGS:\s*granted=true", package)),
     }
     state["registered"] = contains(state["enabled"], GUARD)
+    state["boot_entry"] = read(adb, "settings", "get", "system", "boot_app_componentname")
     return state
 
 
@@ -188,6 +189,9 @@ def show_snapshot(state, title):
     bound = {True: "已实际绑定", False: "尚未绑定", None: "固件未提供可识别的绑定信息，无法确认"}[state["bound"]]
     print("  HaloTV 守护运行：" + bound)
     print("  通知使用权登记：" + ("已登记" if contains(state["listeners"], LISTENER) else "未登记"))
+    boot = state.get("boot_entry", "")
+    if canonical(boot) == LEGACY + "/app.orchard.tv.MainActivity":
+        print("  开机入口仍指向旧包：" + boot + "。请打开独立版控制中心 → 设为主屏幕 → 独立版桌面接管检查，确认修复开机入口。")
     entries = [item for item in component_list(state["enabled"]) if canonical(item)]
     print("  已登记无障碍组件：" + ("；".join(entries) if entries else "未返回有效组件"))
     if any(item.startswith(LEGACY + "/") and item.endswith("HomeGuardService") for item in entries):
@@ -237,7 +241,7 @@ def repair(adb, sdk, before):
     if sdk >= 33:
         operations.append(("受限设置许可", ["ACCESS_RESTRICTED_SETTINGS", "android:access_restricted_settings"]))
     operations += [
-        ("厂商自启动", ["APP_AUTO_START"]),
+        ("厂商自启动", ["APP_AUTO_START", "AUTO_START"]),
         ("厂商关联启动", ["APP_ASSOC_START", "ASSOC_START"]),
     ]
     for description, names in operations:
@@ -259,6 +263,7 @@ def repair(adb, sdk, before):
     if merge_setting(adb, SERVICE_KEY, GUARD):
         if read(adb, "settings", "get", "secure", "accessibility_enabled") != "1":
             mutation(adb, "无障碍总开关", "settings", "put", "secure", "accessibility_enabled", "1")
+    mutation(adb, "保存守护自动恢复选择", "am", "broadcast", "-n", PACKAGE + "/app.orchard.tv.guard.ConfigReceiver", "--ez", "halo_guard_recovery", "true")
     # Initialize the app's existing recovery/account logic. Never synthesize HOME or change the
     # default launcher; the owner has explicitly asked to repair this app's guard.
     mutation(adb, "打开 HaloTV 完成守护初始化", "am", "start", "-W", "-n", HOME)
