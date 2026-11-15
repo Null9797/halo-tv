@@ -1,10 +1,10 @@
 # HaloTV 3.1 · 过渡版与独立版
 
-过渡版保持 **3.1**，最新独立版为 **3.2.2**；两种发行方式均提供 Standard / Guard / Lite。
+过渡版保持 **3.1**，最新独立版为 **3.2.3**；两种发行方式均提供 Standard / Guard / Lite。
 
 ## 如何选择
 - **已经安装旧版 HaloTV：** 先安装与当前类型一致的 **3.1 过渡版**，原包名和原发布签名不变，可覆盖并保留旧设置。再进入「控制中心 → 软件更新 → 安装 Halo TV 独立版」，也可在手机管理中心推送对应独立版 APK。
-- **新用户：** 建议直接安装 **3.2.2 独立版**。独立包名与专属发布签名，可与 Aerial 同时安装；独立版使用全新星球 Logo。
+- **新用户：** 建议直接安装 **3.2.3 独立版**。独立包名与专属发布签名，可与 Aerial 同时安装；独立版使用全新星球 Logo。
 - Standard / Guard 在同一种发行方式内二选一；Android 5.0+ 优先 Standard，受限固件可尝试 Guard。Android 4.0–4.4 使用 Lite；Lite 不含正式版动态视频桌面和正式版守护实现。
 
 ## 迁移步骤
@@ -20,7 +20,7 @@
 | 发行方式 | Standard / Guard 包名与内部号 | Lite 包名与内部号 |
 |---|---|---|
 | 过渡版 | `app.orchard.tv` · **193** | `app.halotv.lite` · **49** |
-| 独立版 | `app.halotv.launcher` · **218** | `app.halotv.launcher.lite` · **73** |
+| 独立版 | `app.halotv.launcher` · **220** | `app.halotv.launcher.lite` · **76** |
 
 过渡版使用旧 HaloTV 发布证书；独立版采用新的专属证书。与 Aerial 过去无法共存的关键是包名相同，并不代表持有或使用 Aerial 原作者的私钥。
 
