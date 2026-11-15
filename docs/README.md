@@ -4,10 +4,13 @@
 
 - [安装教程](../INSTALL.md)
 - [常见问题](../FAQ.md)
-- [旧包名迁移到独立版](../MIGRATION-3.1.md)
+- [旧包名迁移历史资料](../MIGRATION-3.1.md)（仅适用于 3.2.3 及更早版本；3.2.4 已移除导入）
 - [守护诊断工具](HALO_GUARD_TOOL.md)
 
 ## 版本与下载
+
+- [3.2.4 公开测试说明](releases/RELEASE-3.2.4.md)
+- [3.2.4 测试包校验值](releases/SHA256SUMS-3.2.4.txt)
 
 - [最新安装包与完整源码](https://github.com/Null9797/halo-tv/releases/latest)
 - [历史版本、源码和校验文件](https://github.com/Null9797/halo-tv/releases)
