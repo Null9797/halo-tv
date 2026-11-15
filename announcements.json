@@ -3,6 +3,20 @@
   "enabled": true,
   "announcements": [
     {
+      "id": "halotv-20261115-update-and-setup",
+      "revision": 1,
+      "enabled": true,
+      "title": "HaloTV 更新与使用提醒",
+      "body": "如您在使用过程中遇到问题，请先升级至最新版。近期功能与兼容性调整较多，若升级后仍反复出现异常，建议保存重要素材、记录个人设置，卸载旧版后重新安装最新版，再配置桌面守护、开机启动及相关权限。\n\n不会安装或配置？可复制以下内容给电脑端 AI 助手：\n\n请通过 ADB 帮我安装最新版 HaloTV，并配置桌面守护。\n\n电视品牌型号：【填写】\n电视 IP 地址：【填写】\n\n官网：https://halo-tv.pages.dev/\n安装教程：https://github.com/Null9797/halo-tv/blob/main/INSTALL.md\n\n请先检查电视的 Android 版本和当前 HaloTV 类型，选择适合的 Standard、Guard 或 Lite 安装包，并指导我开启 ADB、完成连接授权。\n\n如果需要卸载重装，请先告知数据清除范围，确认旧应用确为 HaloTV 后再操作，不要误删 Aerial 或系统桌面。\n\n安装后，请按当前版本和电视支持情况，配置默认桌面、桌面守护、守护自动恢复、开机启动及必要权限。Standard / Guard 请使用 HaloTV 仓库的独立版守护工具，不要套用 Aerial 的安装脚本或旧包名；Lite 仅配置其支持的默认桌面与启动功能。\n\n最后检查守护是否实际运行，并协助我验证 Home 键返回桌面的效果。遇到系统限制请说明原因，不要禁用系统桌面，也不要修改无关设置。\n\n需使用能在电脑上执行 ADB 的 AI 助手；普通聊天网页只能提供操作指导。部分权限仍需在电视上确认，卸载会清除应用数据。\n\n感谢您的理解与支持，HaloTV 将持续优化！\n\n点击「查看详情」可打开指令页面，在手机或电脑上复制。",
+      "kind": "important",
+      "variants": [
+        "standard",
+        "guard",
+        "lite"
+      ],
+      "detailsUrl": "https://halo-tv.pages.dev/help/update-and-setup.html"
+    },
+    {
       "id": "halotv-312-independent-upgrade",
       "revision": 1,
       "title": "HaloTV 已升级独立版，请及时迁移",
@@ -14,7 +28,8 @@
         "lite"
       ],
       "maxVersion": "3.1.1",
-      "detailsUrl": "https://halo-tv.pages.dev/#migration"
+      "detailsUrl": "https://halo-tv.pages.dev/#migration",
+      "enabled": false
     },
     {
       "id": "halo31-independent-migration-full",
