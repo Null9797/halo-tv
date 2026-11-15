@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.2.3",
+  "version": "3.2.4",
   "distribution": "independent",
-  "notes": "# HaloTV 3.2.3 · 儿童答题与 Lite 信号源兼容修复\n\n提供 Standard、Guard、Lite 三个独立版，沿用独立包名与发布签名。Standard / Guard 内部号 **220**，Lite **76**；可覆盖升级同类型独立版，也高于本轮本地测试包内部号。\n\n## 儿童答题与家长密码\n\n- 增强“确认答案”和“家长”按钮的遥控器焦点：浅金色底、深色文字与明显描边，更容易看清当前操作位置。\n- 打开家长密码框时，暂停下层答题页的按键、触摸和焦点恢复，避免焦点留在答题页；取消后恢复原题及已选答案。\n- 修复确认键按下、页面变化、抬起时可能误触其他控件的路径；窗口失焦或页面切换后取消未完成的按压。\n- 合并尺寸变化带来的重复重建，保留答案选择与提交状态，减少焦点争抢和无响应感。\n- 应用外的答题覆盖页提供可用遥控器操作的数字密码键盘，支持删除、错误提示和返回；保留方向键密码支持。\n- Lite 同步焦点、密码输入与答案保持改进，选择答案时原地更新控件，避免反复重建整个答题页。\n\n## Lite 信号源兼容\n\n- 改善部分夏普 / MStar 固件的信号源入口识别，保留 Foxconn 入口；对缺少默认类别的厂商页面，改用已确认可访问的组件启动。\n- 仅在已识别的系统电视组件内查找可访问的信号源选择页，排除未导出、禁用、权限受限及工厂/调试页面。\n- 提供“打开电视信号源选择”和系统设置备用入口；不再因未发现通用接口就直接判定电视没有信号源。\n- 成功打开厂商信号源选择页后关闭 HaloTV 控制中心。系统设置入口继续遵循儿童模式的家长验证。\n\n## 检查与适用范围\n\nStandard / Guard 各 **501** 项、Lite **172** 项主机单元测试通过，共 **1,174** 项。三个 Release 构建、Android Lint（无 Error/Fatal，已有 Warning/Hint 保留）、包名与版本、ZIP 完整性、对齐及 v1/v2 签名检查通过。\n\n本次未运行模拟器、未操作电视。反馈夏普电视的具体型号与系统版本未提供；兼容路径通过代码与主机测试验证，实际切换效果仍需该机型确认。答题修复针对已定位的焦点/输入问题，不代表排除所有设备上的卡顿或系统级 ANR。\n\n保留 3.2.2 独立版迁移与守护交接改进。本版不更换启动图，不新增远程公告弹窗。Lite 最低 Android 4.0，Standard / Guard 最低 Android 5.0。\n\n## 下载与更新\n\n电视端独立版更新清单已同步，官网下载优先、GitHub 备用。请选择与电视当前一致的 Standard / Guard / Lite。旧包名更新清单仍提供 3.1 过渡版，避免向旧包推送无法原地覆盖的新包；迁移请参考 [迁移指南](https://github.com/Null9797/halo-tv/blob/main/MIGRATION-3.1.md)。\n\n完整对应源码见 `HaloTV-3.2.3-source.zip`，含两个应用模块、测试、文档及工具，不含发布私钥或本机配置。GitHub 自动生成的 Source code 为发布材料仓库快照。\n\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，非上游官方版本；感谢原作者与贡献者，保留原版权和 MIT 许可。Bing 归档由 YanGN 提供，视频目录参考 Aerial Views，媒体版权归各权利人。\n\n[官网](https://halo-tv.pages.dev/) · [仓库](https://github.com/Null9797/halo-tv) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（以网盘实际内容为准）\n",
+  "notes": "# HaloTV 3.2.4 正式版 · 整合 Aerial 1.98，专注独立版\n\n本次为正式发布版，提供 Standard、Guard、Lite。沿用独立版包名和发布签名，Standard / Guard 内部号 **222**，Lite **78**，可覆盖同类型的现有独立版。功能代码沿用本轮已检查的测试版，内部号提升以支持测试版覆盖升级；启动图和 Logo 不变。\n\n## 独立版精简\n\n- 移除旧版/过渡版的配置导入、迁移引导、跨包安装和启动跳转。\n- 移除守护交接、让出控制权及相关迁移判断；残留迁移标记不再阻止独立版启动、守护或按键处理。\n- 清除手机页面的过渡版说明及废弃迁移组件，Lite 同步清理生成文件。\n- 更新统一校验当前包名、独立版发布签名、Standard / Guard / Lite 类型和更高内部版本号。\n- 保留当前独立版自身的设置、上传素材、在线更新与普通公告能力；旧版私有数据不再提供跨包导入。\n\n## Aerial 1.98 整合\n\n感谢 Aerial 原作者与贡献者。本轮对照官方 1.98 源码整合前台切换稳定判断、极米锁定开机阶段弹窗、小米待机恢复、当贝关机与更新后返回桌面，以及部分当贝/极米/小米信号源兼容。补充华为设置与网络入口、TCL Google TV 背光检测、天气失败诊断和控制中心信号源刷新。\n\n官方 1.98 发布内 Standard / Guard 为 **1.98 / 144**；Lite 实际仍为 **1.30 / 32**，上游该次未更新 Lite。HaloTV Lite 保留自身 Android 4.x 兼容实现及现有功能，不强行加入完整版的高版本系统接口。\n\n## 额外协调与优化\n\n- 关机期间暂停自动恢复，避免恢复逻辑抵消上游的关机安全处理；重新亮屏或新进程启动后恢复正常判断。\n- 延迟服务重扫不覆盖期间发生的明确禁用状态，保留用户选择和其他无障碍服务。\n- 单独照片、翻页时钟及在线照片屏保释放暂停的视频壁纸层，减少屏保被视频层覆盖及解码器占用冲突的风险；同一视频的连续衔接保留。\n\n## 检查结果与测试范围\n\n三个 Release 构建通过。Standard / Guard 各 **466** 项、Lite **148** 项主机测试通过，共 **1,080** 项，无失败或跳过。Android Lint 无 Error/Fatal，仍有兼容 API、资源等警告。JavaScript 语法、APK 包名/版本/签名、ZIP 完整性、对齐、完整版 dex 元数据及迁移组件清除检查通过。\n\n本次没有运行模拟器或操作电视。实际流畅度、待机/开机守护和厂商信号源仍需真机反馈；不承诺所有电视均已适配。请重点测试重启与唤醒后的守护、应用返回桌面、动态壁纸/屏保切换、儿童答题与家长密码框。\n\n## 下载与升级\n\n3.2.4 已作为最新正式版发布，独立版电视在线更新通道同步升级：官网下载优先、GitHub 备用。也可下载与当前类型一致的 APK，通过手机推送、U 盘或 ADB 覆盖安装。正式内部号 222 / Lite 78，高于 3.2.3 的 220 / 76 和本轮测试版的 221 / 77；测试版用户也可以检查更新并覆盖升级，保留当前独立版数据。\n\nStandard / Guard 最低 Android 5.0，Lite 最低 Android 4.0。Standard 与 Guard 同包名，二选一。3.2.4 不再提供旧包名配置导入；Android 不会跨包名转移私有数据或系统授权。\n\n对应完整应用源码为附件 `HaloTV-3.2.4-source.zip`，不含发布私钥、本机配置或构建缓存。GitHub 自动生成的 Source code 是发布材料仓库快照。文件校验值见 `SHA256SUMS-3.2.4.txt`。\n\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，非上游官方发行版；感谢原作者和贡献者，保留原版权与 MIT 许可。Bing 壁纸归档由 YanGN 提供，视频目录参考 Aerial Views，媒体版权归各权利人。\n\n[官方网站](https://halo-tv.pages.dev/#download) · [项目仓库](https://github.com/Null9797/halo-tv) · [上游 1.98](https://github.com/pengchujin/aerial-tv/releases/tag/v1.98) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（内容以网盘实际页面为准）\n",
   "packages": {
     "standard": {
-      "versionCode": 220,
-      "sha256": "44b1508ea308defbd4f6ebad852ad5ac3969ed192e02c2846911361567dee068",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.3-halo/HaloTV-3.2.3-standard.apk"
+      "versionCode": 222,
+      "sha256": "5c5b290fac26784c2242199a653896bd8628a34c653ff9fb6054e051344690a4",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.4-halo/HaloTV-3.2.4-standard.apk"
     },
     "guard": {
-      "versionCode": 220,
-      "sha256": "3e20cf13e31a61e8ae1af847ae6a7312e194015cd6c730de01ff73ac33bb9e6f",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.3-halo/HaloTV-3.2.3-guard.apk"
+      "versionCode": 222,
+      "sha256": "7dbd2c6ce541933dd7251d9c4d8d43ce1b1d4a0bc462d4e5e9031ea4f4ae01ec",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.4-halo/HaloTV-3.2.4-guard.apk"
     },
     "lite": {
-      "versionCode": 76,
-      "sha256": "30f6ca0ca4e0b39eba9e79a9abb086b470342bb714bd4389b651a2a6de1d3a6b",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.3-halo/HaloTV-3.2.3-lite.apk"
+      "versionCode": 78,
+      "sha256": "40281f1ddd77add25655502e117e6a544b83c6801eb148cab07c7c42591ecd26",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.4-halo/HaloTV-3.2.4-lite.apk"
     }
   }
 }
