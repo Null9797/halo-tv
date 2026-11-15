@@ -32,3 +32,5 @@
 `website/updates/` 及根目录和官网的公告 JSON 服务于电视端；整理文档时须保留兼容地址及内容。历史版本也可通过 Releases 和 Git 提交记录查阅。
 
 - [3.2.2 独立版迁移与守护交接修复](releases/RELEASE-3.2.2.md)
+
+- [3.2.3 儿童答题与 Lite 信号源兼容修复](releases/RELEASE-3.2.3.md)
