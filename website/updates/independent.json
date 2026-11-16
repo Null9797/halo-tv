@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.2.6",
+  "version": "3.2.7",
   "distribution": "independent",
-  "notes": "# HaloTV 3.2.6 · 恢复紧凑 Dock\n\n修复 3.2.5 中选择“App 名称 → 只显示选中”后，Dock 图标底部多出大块留白的问题。Standard、Guard、Lite 同步修正。\n\n## 本次调整\n\n- “只显示选中”恢复旧版紧凑 Dock，不再为图标底部额外预留整行名称空间；双排 Dock 同步恢复紧凑间距。\n- “全部显示”继续保留图标下方名称区域；“大标题”继续在 Dock 上方显示名称，三种模式独立选择。\n- 保留 3.2.5 的更新下载及安装兼容、系统设置入口、遥控器公告翻页与全屏阅读等修复。\n\n## 升级说明\n\nStandard / Guard 内部号 **226**，Lite **82**，高于 3.2.5 正式包及 Dock 修复测试包（225 / 81）。使用原独立包名与发布签名，选择与当前类型一致的安装包覆盖升级，无需卸载，保留应用数据、Logo 和启动图。\n\n电视进入“控制中心 → 软件更新 → 检查更新”获取新版，官网下载优先、GitHub 备用，安装仍需电视确认。若旧版更新器下载或安装失败，可从官网下载同类型 APK，通过手机推送、U 盘或 ADB 安装。\n\n## 检查范围\n\n三个 Release 构建、**1,105 项主机测试**（Standard 476、Guard 476、Lite 153）通过；Lint 无 Error/Fatal，仍有警告。安装包签名、包名、版本、ZIP 完整性、对齐及完整版 dex 元数据通过检查。\n\n按要求未运行模拟器或操作电视，画面及厂商兼容效果仍需真机反馈。本次未新增远程公告，现有公告内容与发送范围保持不变。\n\n## 下载与开源\n\nStandard / Guard 最低 Android 5.0，同包名、二选一；Lite 最低 Android 4.0。完整应用源码见附件 `HaloTV-3.2.6-source.zip`，校验值见 `SHA256SUMS-3.2.6.txt`。GitHub 自动生成的 Source code 为发布材料仓库快照。\n\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，非上游官方发行版；沿用此前整合的 Aerial 1.98 基础，感谢原作者与贡献者，保留原版权及 MIT 许可。Bing 壁纸归档由 YanGN 提供，视频目录参考 Aerial Views，媒体版权归各权利人。\n\n[官方网站](https://halo-tv.pages.dev/#download) · [项目仓库](https://github.com/Null9797/halo-tv) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（内容以实际页面为准）\n",
+  "notes": "# HaloTV 3.2.7 · 设置卡死与公告完成状态修复\n\n## 设置与原桌面\n\n- 修复退出儿童／长辈模式后，保留的家长密码让应用列表“设置”反复进入验证回调、造成卡死或重启的问题。仅在家人模式实际启用且处于锁定状态时验证设置入口密码；保存的密码无需删除。Lite 同步调整。\n- 系统入口探测、守护调用和启动动画设置纳入异常保护。原桌面使用专门的系统入口；守护 HOME 调用失败时可退回直接启动，设置入口不带图标放大动画参数。\n\n## 公告与提醒\n\n- 选择“知道了／不再提醒”后，该条公告标记完成，不再显示在控制中心入口中。\n- 仍有其他未读公告，或选择稍后提醒时，入口继续保留。完成状态跨重启和更新源刷新保存；新版公告修订仍可再次提示。\n- 保留 3.2.6 的紧凑 Dock，以及此前下载、安装兼容和公告阅读改进。本次不新增远程公告。\n\n## 升级与验证\n\nStandard / Guard 内部号 **229**，Lite **85**，高于此前全部 3.2.6 正式包和本轮 228 / 84 测试包。沿用独立包名与发布签名，选择同类型 APK 覆盖升级，保留应用数据、Logo 和启动图。\n\n三个 Release 构建及 **1,111 项主机测试**（Standard 479、Guard 479、Lite 153）通过；Lint 无 Error/Fatal，仍有警告。签名、包名、版本、ZIP 完整性、对齐及完整版 dex 元数据通过检查。\n\n设置卡死已通过 TCL MT5879 的 228 测试包实机日志定位，并验证应用列表打开系统设置和返回时进程保持正常。3.2.7 为同一修复重新升版构建，未另行安装到该电视；Standard、Lite 未在该电视实测，不能等同全部机型验证通过。本轮未运行模拟器。\n\n电视进入“控制中心 → 软件更新 → 检查更新”获取新版，官网下载优先、GitHub 备用；安装仍需电视确认。旧版更新失败时，可从官网下载同类型 APK，通过手机推送、U 盘或 ADB 安装。\n\nStandard / Guard 最低 Android 5.0，同包名、二选一；Lite 最低 Android 4.0。完整应用源码见附件 `HaloTV-3.2.7-source.zip`，校验值见 `SHA256SUMS-3.2.7.txt`。GitHub 自动生成的 Source code 为发布材料仓库快照。\n\nHaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，非上游官方发行版；沿用此前整合的 Aerial 1.98 基础，感谢原作者与贡献者，保留原版权及 MIT 许可。Bing 壁纸归档由 YanGN 提供，视频目录参考 Aerial Views，媒体版权归各权利人。\n\n[官方网站](https://halo-tv.pages.dev/#download) · [项目仓库](https://github.com/Null9797/halo-tv) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（内容以实际页面为准）\n",
   "packages": {
     "standard": {
-      "versionCode": 226,
-      "sha256": "981233d7cdc131b13f3f7ec06b3f002a0d270436a0a48d6744991caf59b60696",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.6-halo/HaloTV-3.2.6-standard.apk"
+      "versionCode": 229,
+      "sha256": "582fbcea6df7f1f5a605eb7d7b8dcb1229ae48fa5026f42621ef5a731842f10b",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.7-halo/HaloTV-3.2.7-standard.apk"
     },
     "guard": {
-      "versionCode": 226,
-      "sha256": "283a4c227ba5f1569fe2fe2a8148879c4855c8ec7e527e88a773a63dbc3397cb",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.6-halo/HaloTV-3.2.6-guard.apk"
+      "versionCode": 229,
+      "sha256": "0121fb9bbc761b421bb329df9f5ba106953eb04cae0c7ca152a4af44627ac4f1",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.7-halo/HaloTV-3.2.7-guard.apk"
     },
     "lite": {
-      "versionCode": 82,
-      "sha256": "cb38beec818e51cd65a5d364e9ae91bec8f2bb5814b40b18b6fe7e590899a99b",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.6-halo/HaloTV-3.2.6-lite.apk"
+      "versionCode": 85,
+      "sha256": "01d6d5aa82d261538f9bbe72dd43a4bc3fe090b87aee8d7908bc98b18812a559",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.2.7-halo/HaloTV-3.2.7-lite.apk"
     }
   }
 }

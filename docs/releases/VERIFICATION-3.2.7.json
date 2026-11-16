@@ -1,0 +1,107 @@
+{
+  "version": "3.2.7",
+  "prerelease": false,
+  "sourceRevision": "38d626b2c1841530d0d2be447a6dcafd259bdf20",
+  "apks": [
+    {
+      "edition": "standard",
+      "file": "HaloTV-3.2.7-standard.apk",
+      "package": "app.halotv.launcher",
+      "version": "3.2.7",
+      "versionCode": 229,
+      "minSdk": 21,
+      "sizeBytes": 7537065,
+      "sha256": "582fbcea6df7f1f5a605eb7d7b8dcb1229ae48fa5026f42621ef5a731842f10b",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "signatureV1": true,
+      "signatureV2": true,
+      "migrationEntriesAbsent": true,
+      "zipIntegrity": true,
+      "alignment16Kb": true,
+      "dexMetadata": [
+        "assets/aerial-dm/28.dm",
+        "assets/aerial-dm/31.dm"
+      ]
+    },
+    {
+      "edition": "guard",
+      "file": "HaloTV-3.2.7-guard.apk",
+      "package": "app.halotv.launcher",
+      "version": "3.2.7",
+      "versionCode": 229,
+      "minSdk": 21,
+      "sizeBytes": 7537044,
+      "sha256": "0121fb9bbc761b421bb329df9f5ba106953eb04cae0c7ca152a4af44627ac4f1",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "signatureV1": true,
+      "signatureV2": true,
+      "migrationEntriesAbsent": true,
+      "zipIntegrity": true,
+      "alignment16Kb": true,
+      "dexMetadata": [
+        "assets/aerial-dm/28.dm",
+        "assets/aerial-dm/31.dm"
+      ]
+    },
+    {
+      "edition": "lite",
+      "file": "HaloTV-3.2.7-lite.apk",
+      "package": "app.halotv.launcher.lite",
+      "version": "3.2.7",
+      "versionCode": 85,
+      "minSdk": 14,
+      "sizeBytes": 2300693,
+      "sha256": "01d6d5aa82d261538f9bbe72dd43a4bc3fe090b87aee8d7908bc98b18812a559",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "signatureV1": true,
+      "signatureV2": true,
+      "migrationEntriesAbsent": true,
+      "zipIntegrity": true,
+      "alignment16Kb": true,
+      "dexMetadata": []
+    }
+  ],
+  "checks": [
+    {
+      "variant": "standardRelease",
+      "tests": {
+        "tests": 479,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 332,
+        "Hint": 19
+      }
+    },
+    {
+      "variant": "guardRelease",
+      "tests": {
+        "tests": 479,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 333,
+        "Hint": 19
+      }
+    },
+    {
+      "variant": "release",
+      "tests": {
+        "tests": 153,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 418
+      }
+    }
+  ],
+  "televisionTested": false,
+  "priorTestBuildVerifiedOnTcl": 228,
+  "emulatorTested": false
+}
