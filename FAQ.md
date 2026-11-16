@@ -6,8 +6,8 @@ HaloTV 基于 Aerial 二次开发，由 Null_ 整理发布，非 Aerial 原作�
 ## 安装哪个版本？
 Android 5.0+ 优先 Standard；明确拒绝注册第三方 HOME 时尝试 Guard。Android 4.0–4.4 使用 Lite。Standard/Guard 同包名、二选一；Lite 是另一独立包，不含正式版动态桌面与 HomeGuardService。
 
-## 3.2.5 正式版如何升级？
-同类型独立版可覆盖升级：Standard / Guard 内部号 224，Lite 80，高于 3.2.4 正式版和本轮 223 / 79 测试包。电视软件更新可检查下载，也可从官网、GitHub 手动下载，无需先卸载。旧包名不能原地覆盖。
+## 3.2.6 正式版如何升级？
+同类型独立版可覆盖升级：Standard / Guard 内部号 226，Lite 82，高于 3.2.5 正式版和 Dock 修复测试包（225 / 81）。电视软件更新可检查下载，也可从官网、GitHub 手动下载，无需先卸载。旧包名不能原地覆盖。
 
 ## 为何旧版可用，独立版守护却失败？
 Android 不会跨包名转移无障碍、通知使用权、自启动等系统授权，旧命令可能仍给旧包授权；新旧两套守护也可能争抢。曾专门为机型手动下发的适配覆盖不一定随迁移带入。3.2.4 已移除跨包迁移交接逻辑，但仍需按当前电视重新检查权限、实际绑定和厂商限制。参见 [诊断工具](docs/HALO_GUARD_TOOL.md)。
@@ -44,3 +44,6 @@ Standard/Guard最低Android5.0，Lite最低Android4.0。Samsung Tizen、LG webOS
 
 ## 壁纸与来源
 在线内容按需加载和缓存，用于设置壁纸，不提供另存本地入口。用户上传素材独立管理；截图中的自定义图标不代表包内置全部图标。Bing壁纸归档由[YanGN](https://github.com/ygnstudio/bing_wallpaper_archive)提供，在线视频目录参考[Aerial Views](https://github.com/theothernt/AerialViews)，媒体版权归各权利人。参见[NOTICE](NOTICE.md)和[LICENSE](LICENSE)。
+
+## “只显示选中”为什么让 Dock 底部多出留白？
+3.2.5 误为该模式预留了整行名称空间，3.2.6 已恢复旧版紧凑 Dock；“全部显示”保留名称区域，“大标题”显示在 Dock 上方。
