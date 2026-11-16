@@ -9,6 +9,9 @@
 
 ## 版本与下载
 
+- [3.2.5 正式发布说明](releases/RELEASE-3.2.5.md)
+- [3.2.5 文件校验值](releases/SHA256SUMS-3.2.5.txt)
+
 - [3.2.4 正式发布说明](releases/RELEASE-3.2.4.md)
 - [3.2.4 正式包校验值](releases/SHA256SUMS-3.2.4.txt)
 
