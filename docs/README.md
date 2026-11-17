@@ -9,6 +9,10 @@
 
 ## 版本与下载
 
+- [3.3.4 更新说明](releases/RELEASE-3.3.4.md)
+- [3.3.4 文件校验值](releases/SHA256SUMS-3.3.4.txt)
+- [3.3.4 构建验证](releases/VERIFICATION-3.3.4.json)
+
 - [3.3.3 更新说明](releases/RELEASE-3.3.3.md)
 - [3.3.3 文件校验值](releases/SHA256SUMS-3.3.3.txt)
 

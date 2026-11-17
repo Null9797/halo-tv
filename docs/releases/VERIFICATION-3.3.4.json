@@ -1,0 +1,107 @@
+{
+  "version": "3.3.4",
+  "delivery": "official 3.3.4 release build",
+  "issues": [
+    29,
+    12,
+    42,
+    24,
+    32
+  ],
+  "deviceOrEmulatorOperated": false,
+  "sourceBase": "2bc7e43163e901f547c916aec15e9cb570ce0f20",
+  "packages": [
+    {
+      "edition": "standard",
+      "versionCode": 246,
+      "identity": "package: name='app.halotv.launcher' versionCode='246' versionName='3.3.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "8fbaaf5d706ce8fad6bd0d68e7ff058561f9a8f752cd83a97404fc7a50aec67a",
+      "bytes": 7851652,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 32,
+      "iconsUnchanged": true,
+      "path": "app/build/outputs/apk/standard/release/app-standard-release.apk",
+      "releaseAsset": "HaloTV-3.3.4-standard.apk"
+    },
+    {
+      "edition": "guard",
+      "versionCode": 246,
+      "identity": "package: name='app.halotv.launcher' versionCode='246' versionName='3.3.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "8bfc0688e01c0aff4c9602903ecd4db43f2f6921f18f10a0c22c394428145f26",
+      "bytes": 7851764,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 32,
+      "iconsUnchanged": true,
+      "path": "app/build/outputs/apk/guard/release/app-guard-release.apk",
+      "releaseAsset": "HaloTV-3.3.4-guard.apk"
+    },
+    {
+      "edition": "lite",
+      "versionCode": 102,
+      "identity": "package: name='app.halotv.launcher.lite' versionCode='102' versionName='3.3.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "04078622e0968e6584e387b79cdcb5d0d9d8fb49358c021bb41b58a8f05902f5",
+      "bytes": 2466881,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 32,
+      "iconsUnchanged": true,
+      "path": "lite/build/outputs/apk/release/lite-release.apk",
+      "releaseAsset": "HaloTV-3.3.4-lite.apk"
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/build/test-results/testStandardReleaseUnitTest",
+      "tests": 595,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "app/build/test-results/testGuardReleaseUnitTest",
+      "tests": 595,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "lite/build/test-results/testReleaseUnitTest",
+      "tests": 193,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": [
+    {
+      "path": "app/build/reports/lint-results-standardRelease.xml",
+      "errors": 0,
+      "warnings": 351
+    },
+    {
+      "path": "app/build/reports/lint-results-guardRelease.xml",
+      "errors": 0,
+      "warnings": 352
+    },
+    {
+      "path": "lite/build/reports/lint-results-release.xml",
+      "errors": 0,
+      "warnings": 440
+    }
+  ],
+  "buildLog": "构建与检查.log",
+  "sourceRevision": "efeb0f1aea002e9306570355e0c8d8b870b8a10d",
+  "totalHostTests": 1383,
+  "scope": "3.3.4 official release; host checks only; OEM video/HOME/HDMI validation remains pending",
+  "privateFeedbackExcluded": true,
+  "verificationType": "build and host regression; publication checked separately",
+  "targetDeviceBehaviorVerified": false
+}
