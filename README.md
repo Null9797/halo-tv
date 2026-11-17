@@ -1,27 +1,27 @@
 <p align="center"><img src="screenshots/halo-independent-3.1.png" width="128" alt="HaloTV Logo"></p>
-<h1 align="center">HaloTV · 3.3 正式版</h1>
+<h1 align="center">HaloTV · 3.3.1 正式版</h1>
 <p align="center">让电视桌面，回到你喜欢的样子。</p>
-<p align="center"><a href="https://halo-tv.pages.dev/">官方网站</a> · <a href="https://github.com/Null9797/halo-tv/releases/tag/v3.3-halo">3.3 正式版</a> · <a href="https://github.com/Null9797/halo-tv/releases/latest">最新正式版</a> · <a href="INSTALL.md">安装教程</a></p>
+<p align="center"><a href="https://halo-tv.pages.dev/">官方网站</a> · <a href="https://github.com/Null9797/halo-tv/releases/tag/v3.3.1-halo">3.3.1 正式版</a> · <a href="https://github.com/Null9797/halo-tv/releases/latest">最新正式版</a> · <a href="INSTALL.md">安装教程</a></p>
 
 **HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，非 Aerial 原作者或官方发行版。感谢原作者和所有开源贡献者。保留原版权与 MIT 许可，免费分享。**
 
-## 3.3 正式发布
+## 3.3.1 正式发布
 
-优化动态桌面、屏保与应用返回的画面交接，减少闪烁和播放等待；降低重复图像处理与面板合成开销。桌面守护增加一键修复、权限引导和实际连接检查，并整合 Aerial 1.99 的相关兼容改进（上游 Lite 1.31）。
+控制中心「公告与提醒」升级为「公告与反馈」。遇到问题可直接选择分类并提交，自主选择是否附带诊断信息；扫码补充描述和图片，并查看作者回复。Standard、Guard、Lite 三版同步支持，反馈后台现已启用。
 
-控制中心第二排为「HaloTV 设置｜桌面守护设置」，最后一排为「软件更新｜公告与提醒」。公告入口常驻，未读显示小红点，完成阅读后消除红点。
+仅在用户确认后上传，不自动截屏、不常驻上传或轮询；诊断中的常见地址和密钥字段先做过滤，反馈记录不作为公开 Issue 发布。请勿上传私人信息，妥善保管回执链接。反馈可查询 30 天，过期记录在后续提交时清理。
 
-Standard / Guard 内部号 **236**，Lite **92**，可覆盖同类型独立版及 3.2.8 测试包（最高 235 / 91），保留数据、Logo 和启动图。三版构建和 **1,199 项主机测试**通过，Lint 无 Error/Fatal（仍有警告），签名及完整性检查通过。本轮未运行电视或模拟器，固件兼容仍需实际反馈。[完整更新与验证范围](docs/releases/RELEASE-3.3.md)
+Standard / Guard 内部号 **238**，Lite **94**，可覆盖同类型独立版及公告与反馈测试包（237 / 93），保留数据、Logo 和启动图。三版构建、**1,220 项主机测试**和 **8 项服务端测试**通过，Lint 无 Error/Fatal（仍有警告），签名与完整性校验通过。反馈正式服务收发流程已验证；本轮未操作电视或模拟器。[完整更新与验证范围](docs/releases/RELEASE-3.3.1.md)
 
 ## 下载
 
-**3.3 已进入正式在线更新通道：官网下载优先，GitHub 备用。也可手动下载覆盖安装。**
+**3.3.1 已进入正式在线更新通道：官网下载优先，GitHub 备用。也可手动下载覆盖安装。**
 
 | 类型 | 官网下载 | GitHub 备用 | 适用范围 |
 |---|---|---|---|
-| Standard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3-standard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3-halo/HaloTV-3.3-standard.apk) | Android 5.0+，优先尝试 |
-| Guard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3-guard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3-halo/HaloTV-3.3-guard.apk) | Android 5.0+，限制第三方 HOME 的固件可尝试 |
-| Lite | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3-lite.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3-halo/HaloTV-3.3-lite.apk) | Android 4.0+，老设备；不含完整版动态桌面 |
+| Standard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3.1-standard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3.1-halo/HaloTV-3.3.1-standard.apk) | Android 5.0+，优先尝试 |
+| Guard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3.1-guard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3.1-halo/HaloTV-3.3.1-guard.apk) | Android 5.0+，限制第三方 HOME 的固件可尝试 |
+| Lite | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.3.1-lite.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.3.1-halo/HaloTV-3.3.1-lite.apk) | Android 4.0+，老设备；不含完整版动态桌面 |
 
 Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型。Lite 使用另一包名。安装新版独立版时保留现有应用数据，无需先卸载。
 
@@ -49,7 +49,7 @@ Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型�
 - Bing 壁纸归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供。
 - 在线视频目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple；媒体版权归各权利人，代码许可不代替素材授权。
 - 与 Aerial 原作者、Apple、电视厂商无隶属或背书关系。
-- [3.3 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.3-halo/HaloTV-3.3-source.zip) · [3.3 文件校验值](docs/releases/SHA256SUMS-3.3.txt)。不公开签名私钥。
+- [3.3.1 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.3.1-halo/HaloTV-3.3.1-source.zip) · [3.3.1 文件校验值](docs/releases/SHA256SUMS-3.3.1.txt)。不公开签名私钥。
 
 完整源码与安装包放在 [Releases](https://github.com/Null9797/halo-tv/releases)，历史版本仍可查阅；[文档目录](docs/README.md) 汇总说明。
 

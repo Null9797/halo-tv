@@ -1,0 +1,76 @@
+{
+  "version": "3.3.1",
+  "scope": "HaloTV 3.3.1 official release build; no TV/emulator operation",
+  "packages": [
+    {
+      "flavor": "standard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='238' versionName='3.3.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "bb8fca35291041b057478e08787eb8a420ccdf1cc4480ba3f33f995c69dbe6c2",
+      "bytes": 7611694,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "guard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='238' versionName='3.3.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "701c43af4dff8920b3d0bdb30f2d46c4869cd0eea61082e442dec9f21e0f8e4e",
+      "bytes": 7611334,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "lite",
+      "metadata": "package: name='app.halotv.launcher.lite' versionCode='94' versionName='3.3.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "05ae9513acba982ef357c16958214411e6df40633ed4596824c5862a80afe2c5",
+      "bytes": 2335443,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/build/test-results/testStandardReleaseUnitTest",
+      "tests": 523,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "app/build/test-results/testGuardReleaseUnitTest",
+      "tests": 523,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "lite/build/test-results/testReleaseUnitTest",
+      "tests": 174,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": [
+    {
+      "path": "app/build/reports/lint-results-standardRelease.xml",
+      "errors": 0,
+      "warnings": 351
+    },
+    {
+      "path": "app/build/reports/lint-results-guardRelease.xml",
+      "errors": 0,
+      "warnings": 352
+    },
+    {
+      "path": "lite/build/reports/lint-results-release.xml",
+      "errors": 0,
+      "warnings": 442
+    }
+  ],
+  "backendTests": {
+    "tests": 8,
+    "failures": 0
+  },
+  "sourceRevision": "d9124908433cdbaf616df37991e15151eaa3b2e0",
+  "feedbackProductionFlowVerified": true
+}
