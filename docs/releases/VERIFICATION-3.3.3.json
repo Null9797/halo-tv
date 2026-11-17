@@ -1,0 +1,92 @@
+{
+  "version": "3.3.3",
+  "scope": "HaloTV 3.3.3 upgrade-entry and held-volume release; host regression tests only, no TV/emulator operation",
+  "packages": [
+    {
+      "flavor": "standard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='243' versionName='3.3.3' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "c48236d807dedd420debe93d66565088fff1106e6a730f6bc6cde3514f55c995",
+      "bytes": 7846078,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "guard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='243' versionName='3.3.3' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "46d671d1e197ea55b38fbb2d31db8ccc00be38fdc3c402b262361bf124369d4d",
+      "bytes": 7845251,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "lite",
+      "metadata": "package: name='app.halotv.launcher.lite' versionCode='99' versionName='3.3.3' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "fcf2bc36e2bda469ee2d493c2f10a6cab7acf6f04795edab4bd928929c3a264f",
+      "bytes": 2466442,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/build/test-results/testStandardReleaseUnitTest",
+      "tests": 544,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "app/build/test-results/testGuardReleaseUnitTest",
+      "tests": 544,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "lite/build/test-results/testReleaseUnitTest",
+      "tests": 182,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": [
+    {
+      "path": "app/build/reports/lint-results-standardRelease.xml",
+      "errors": 0,
+      "warnings": 350
+    },
+    {
+      "path": "app/build/reports/lint-results-guardRelease.xml",
+      "errors": 0,
+      "warnings": 351
+    },
+    {
+      "path": "lite/build/reports/lint-results-release.xml",
+      "errors": 0,
+      "warnings": 440
+    }
+  ],
+  "beforeFixRegression": [
+    {
+      "class": "app.orchard.tv.ui.home.HaloWelcomeTest",
+      "test": "upgradeKeepsPreviousWelcomeCompletion",
+      "failed": true
+    },
+    {
+      "class": "app.orchard.tv.guard.VolumeRepeatRegressionTest",
+      "test": "consumedGuardPressStillAdjustsOnActualHeldRepeats",
+      "failed": true
+    },
+    {
+      "class": "app.orchard.tv.guard.VolumeRepeatRegressionTest",
+      "test": "windowConsumedPressAlsoKeepsHeldVolumeWorking",
+      "failed": true
+    }
+  ],
+  "sourceRevision": "2bc7e43163e901f547c916aec15e9cb570ce0f20",
+  "sourceArchive": {
+    "name": "HaloTV-3.3.3-source.zip",
+    "sha256": "6c060f59f7e9be0cf5aa3075118bae56a46d434fa2a1548a3ffa73adadc0be29"
+  }
+}

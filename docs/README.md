@@ -9,6 +9,9 @@
 
 ## 版本与下载
 
+- [3.3.3 更新说明](releases/RELEASE-3.3.3.md)
+- [3.3.3 文件校验值](releases/SHA256SUMS-3.3.3.txt)
+
 - [3.3.2 全新静态欢迎页正式发布](releases/RELEASE-3.3.2.md)
 - [3.3.2 文件校验值](releases/SHA256SUMS-3.3.2.txt)
 
