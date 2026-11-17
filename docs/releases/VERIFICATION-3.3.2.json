@@ -1,0 +1,72 @@
+{
+  "version": "3.3.2",
+  "scope": "HaloTV 3.3.2 official static welcome release; native host rendering only, no TV/emulator operation",
+  "packages": [
+    {
+      "flavor": "standard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='241' versionName='3.3.2' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "2cc8199bdaf23e17235e2009cb6f761cfd1b0c4636cbf2a21ae76d17a7fb533a",
+      "bytes": 7846478,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "guard",
+      "metadata": "package: name='app.halotv.launcher' versionCode='241' versionName='3.3.2' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "c25641370fcb8fc6148c8a6f7f9d15e9051dea7c3282ddb138bb27e47689059f",
+      "bytes": 7845638,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    },
+    {
+      "flavor": "lite",
+      "metadata": "package: name='app.halotv.launcher.lite' versionCode='97' versionName='3.3.2' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "b731f7c77997fcb142fb625b044df9018eeab9482e2afaafe0ee50d8414dcff9",
+      "bytes": 2466436,
+      "signatureVerified": true,
+      "alignmentVerified": true
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/build/test-results/testStandardReleaseUnitTest",
+      "tests": 526,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "app/build/test-results/testGuardReleaseUnitTest",
+      "tests": 526,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "lite/build/test-results/testReleaseUnitTest",
+      "tests": 179,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": [
+    {
+      "path": "app/build/reports/lint-results-standardRelease.xml",
+      "errors": 0,
+      "warnings": 349
+    },
+    {
+      "path": "app/build/reports/lint-results-guardRelease.xml",
+      "errors": 0,
+      "warnings": 350
+    },
+    {
+      "path": "lite/build/reports/lint-results-release.xml",
+      "errors": 0,
+      "warnings": 440
+    }
+  ],
+  "sourceRevision": "42e3914e4cb339114458d2ce4e56622bbb87c466",
+  "designQA": "passed; static first-frame native comparison and stability test; no TV/emulator"
+}
