@@ -1,39 +1,56 @@
 (() => {
 'use strict';
-const mode=document.body.dataset.mode, root=document.querySelector('#app'), API='https://halo-tv.pages.dev/api/feedback';
+const root=document.querySelector('#app'), API='/api/feedback/admin';
 const labels={
- title:['公告与反馈','Notices & feedback'],report:['提交问题','Report a problem'],history:['我的反馈','My reports'],back:['返回','Back'],loading:['正在处理…','Working…'],
- choose:['遇到了什么问题？','What went wrong?'],privacy:['仅在确认后向 HaloTV 作者发送设备、版本及所选诊断信息。不会自动上传私人媒体、账号或密码。反馈可查询 30 天，过期数据将在后续提交时清理，查询链接含私人口令，请勿公开。','Only send device, version and selected diagnostics after confirmation. No automatic upload of private media, accounts or passwords. Accessible for 30 days; expired records are cleared on subsequent submissions. Keep your private receipt link secret.'],
- include:['附带诊断信息（建议开启）','Include diagnostics (recommended)'],preview:['查看诊断信息','Preview diagnostics'],consent:['我已阅读以上说明，同意提交这些信息','I have read the notice and agree to send this information'],send:['同意并提交','Agree & send'],failed:['未能确认提交成功。报告仍保留在电视上，可重试；如果处于儿童/长辈模式，请先在电视退出该模式。','Submission not confirmed. Draft remains on TV; retry. Exit Kids/Elders mode on TV first if active.'],pending:['检测到待提交报告，重试不会产生重复反馈。','Pending report found. Retry will not create duplicates.'],saved:['反馈已收到','Report received'],open:['补充描述 / 图片与查看进度','Add details / images & view progress'],empty:['暂无反馈记录','No reports yet'],details:['描述问题发生前的操作和现象','Describe what you did and what happened'],images:['可选：最多 2 张图片，选取后会压缩并移除原始照片元数据','Optional: up to 2 images, compressed and re-encoded without original photo metadata'],save:['保存补充信息','Save details'],refresh:['刷新处理结果','Refresh status'],new:['待处理','New'],working:['处理中','In progress'],resolved:['已处理','Resolved'],unavailable:['服务暂不可用、查询口令无效或反馈已超过 30 天。请保留链接并稍后重试。','Service unavailable, invalid receipt, or report older than 30 days. Keep the link and retry later.'],reply:['作者回复','Maintainer reply'],clear:['清除待提交报告','Clear pending report'],cleared:['本机待提交报告已清除','Local pending report cleared'],admin:['反馈管理','Feedback management'],key:['管理员访问密钥','Administrator access key'],login:['登录','Sign in'],logout:['退出','Sign out'],count:['条反馈','reports'],all:['全部','All'],version:['版本号','Version'],model:['电视型号','TV model'],filter:['筛选','Filter'],received:['反馈编号','Report ID'],success:['已保存','Saved'],reselect:['最多选择 2 张可读取的图片','Select up to 2 readable images'],retain:['已有图片会在重新选择后替换','Selecting images replaces existing attachments'],
- guard:['桌面守护','Home guard'],performance:['卡顿 / 黑屏 / 闪退','Stutter / black screen / crash'],wallpaper:['壁纸与屏保','Wallpaper & screensaver'],update:['下载与安装更新','Update download & install'],weather:['天气异常','Weather'],phone:['手机互联','Phone connection'],other:['其他问题','Other']};
-const languages=['zh','en','ru','uk','kk']; const lang=(navigator.language||'en').slice(0,2);const tables={};for(const l of languages)tables[l]=Object.fromEntries(Object.entries(labels).map(([k,v])=>[k,v[l==='zh'?0:1]]));
-const t=k=>(tables[lang]||tables.en)[k]||k;document.querySelector('#tagline').textContent=t('title');
+ admin:['历史反馈（只读）','Feedback archive (read-only)'],key:['管理员密钥','Administrator key'],
+ login:['登录','Sign in'],refresh:['刷新','Refresh'],logout:['退出','Sign out'],back:['返回','Back'],
+ loading:['正在处理…','Working…'],all:['全部','All'],new:['待处理','New'],working:['处理中','In progress'],
+ resolved:['已处理','Resolved'],unavailable:['暂时无法读取历史反馈','Could not load past feedback'],
+ version:['版本','Version'],model:['型号','Model'],count:['记录数','Reports'],filter:['筛选','Filter'],
+ guard:['桌面守护','Home guard'],performance:['卡顿 / 黑屏 / 闪退','Stutter / black screen / crash'],
+ wallpaper:['壁纸与屏保','Wallpaper & screensaver'],update:['下载与安装更新','Update download & install'],
+ weather:['天气异常','Weather'],phone:['手机互联','Phone connection'],other:['其他问题','Other']
+};
+const language=(navigator.language||'en').startsWith('zh')?0:1;
+const t=key=>labels[key]?.[language]||key;
+document.querySelector('#tagline').textContent=t('admin');
 const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
 const btn=(text,action,cls='')=>{const b=el('button',text,cls);b.type='button';b.onclick=action;return b;};
 const page=(title)=>{root.replaceChildren(el('h1',title));const c=el('section',null,'card');root.append(c);return c;};
-let busy=false,adminKey='',receipt=null;
-async function request(url,body,token){const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),35000);try{const r=await fetch(url,{method:body===undefined?'GET':'POST',headers:{...(body===undefined?{}:{'Content-Type':'application/json'}),...(token?{Authorization:'Bearer '+token}:{})},body:body===undefined?undefined:JSON.stringify(body),signal:ctrl.signal,cache:'no-store',referrerPolicy:'no-referrer'});if(!r.ok)throw Error(String(r.status));return await r.json();}finally{clearTimeout(timer);}}
-const local=(action,b={})=>request(new URL('api/feedback/'+action,location.href).href,b);
+let busy=false,adminKey='';
+async function request(path='') {
+ const ctrl=new AbortController();
+ const timer=setTimeout(()=>ctrl.abort(),35000);
+ try {
+  const response=await fetch(API+path,{headers:{Authorization:'Bearer '+adminKey},signal:ctrl.signal,cache:'no-store'});
+  if (!response.ok) throw Error(String(response.status));
+  return await response.json();
+ } finally {clearTimeout(timer);}
+}
 async function run(b,fn,msg,fallback='unavailable'){if(busy)return;busy=true;const old=b.textContent;b.disabled=true;b.textContent=t('loading');try{await fn();}catch{if(msg)msg.textContent=t(fallback);}finally{busy=false;b.disabled=false;b.textContent=old;}}
-function consent(c){const l=el('label');const v=el('input');v.type='checkbox';l.append(v,document.createTextNode(t('consent')));c.append(l);return v;}
-function home(){const c=page(t('title'));c.append(el('p',t('privacy'),'muted'));const grid=el('div',null,'grid');grid.append(btn(t('report'),choose),btn(t('history'),history,'secondary'));c.append(grid);}
-function choose(){const c=page(t('choose')),grid=el('div',null,'grid');for(const k of ['guard','performance','wallpaper','update','weather','phone','other'])grid.append(btn(t(k),()=>preview(k),'secondary'));c.append(grid,btn(t('back'),home,'secondary wide'));}
-async function preview(category){const pending=await local('pending').catch(()=>({}));if(pending.id){pendingPage(pending);return;}const c=page(t(category)),msg=el('p',null,'error');c.append(el('p',t('privacy'),'muted'));const include=el('input');include.type='checkbox';include.checked=true;const l=el('label');l.append(include,document.createTextNode(t('include')));c.append(l);const diag=el('pre');diag.hidden=true;const view=btn(t('preview'),()=>run(view,async()=>{const d=await local('preview');diag.textContent=d.diagnostics;diag.hidden=false;},msg),'secondary wide');c.append(view,diag);const agreed=consent(c);const send=btn(t('send'),()=>run(send,async()=>{
- if(!agreed.checked){agreed.focus();return;}
- const draft=await local('draft',{category,includeDiagnostics:include.checked,consent:true});
- const result=await request(API,draft);
- if(!result.saved||result.id!==draft.id)throw Error('receipt');
- await local('complete',{id:draft.id,token:draft.token,consent:true}).catch(()=>{});
- showReceipt(draft);
-},msg,'failed'),'wide');c.append(send,msg,btn(t('back'),home,'secondary wide'));}
-function pendingPage(draft){if(!draft.id){history();return;}const c=page(t('pending'));c.append(el('h2',t(draft.category)),el('p',t('privacy'),'muted'));const diag=el('pre',draft.diagnostics||'—');const details=el('details');details.append(el('summary',t('preview')),diag);c.append(details);const agreed=consent(c),msg=el('p',null,'error');const send=btn(t('send'),()=>run(send,async()=>{if(!agreed.checked){agreed.focus();return;}const result=await request(API,draft);if(!result.saved||result.id!==draft.id)throw Error('receipt');await local('complete',{id:draft.id,token:draft.token,consent:true}).catch(()=>{});showReceipt(draft);},msg,'failed'),'wide');const clear=btn(t('clear'),()=>run(clear,async()=>{if(!confirm(t('clear')+'?'))return;await local('discard');home();},msg),'secondary wide');c.append(send,clear,msg,btn(t('back'),home,'secondary wide'));}
-function showReceipt(r){const c=page(t('saved'));c.append(el('p',r.id,'receipt'));const a=el('a',t('open'),'button wide');a.href='https://halo-tv.pages.dev/feedback/#'+r.id+'.'+r.token;a.rel='noreferrer';c.append(a,el('p',t('privacy'),'muted'),btn(t('back'),home,'secondary wide'));}
-async function history(){const c=page(t('history')),msg=el('p',null,'error');c.append(msg);try{const h=await local('history');if(h.pending){c.append(el('p',t('pending')));const retry=btn(t('send'),()=>run(retry,async()=>pendingPage(await local('pending')),msg));c.append(retry);const clear=btn(t('clear'),()=>run(clear,async()=>{if(!confirm(t('clear')+'?'))return;await local('discard');history();},msg),'secondary wide');c.append(clear);}if(!h.items.length)c.append(el('p',t('empty')));for(const r of h.items)c.append(btn(t(r.category)+' · '+r.id.slice(0,8),()=>showReceipt(r),'item'));}catch{msg.textContent=t('failed');}c.append(btn(t('back'),home,'secondary wide'));}
-async function compress(file){const url=URL.createObjectURL(file);try{const img=new Image();await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=url;});let scale=Math.min(1,1440/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);for(const q of [.8,.65,.5,.35]){const s=canvas.toDataURL('image/jpeg',q);if(s.length<220000)return s;}throw Error('large');}finally{URL.revokeObjectURL(url);}}
-function photoRow(c,initial=[]){let imgs=initial;const wrap=el('div',null,'thumbs');function render(){wrap.replaceChildren();for(const s of imgs){const img=el('img');img.src=s;wrap.append(img);}}const input=el('input');input.type='file';input.accept='image/jpeg,image/png,image/webp';input.multiple=true;const msg=el('p',null,'error');let processing=false;input.onchange=async()=>{processing=true;msg.textContent='';try{if(input.files.length>2)throw Error('many');imgs=await Promise.all([...input.files].map(compress));render();}catch{msg.textContent=t('reselect');input.value='';}finally{processing=false;}};c.append(el('p',t('images'),'muted'),el('p',t('retain'),'muted'),input,msg,wrap);render();return ()=>{if(processing)throw Error('processing');return imgs;};}
-async function receiptPage(){const c=page(t('history')),msg=el('p',null,'error');c.append(msg);try{const data=await request(API+'/'+receipt.id,undefined,receipt.token);c.append(el('span',t(data.status),'status'),el('p',receipt.id,'receipt'));if(data.reply)c.append(el('h2',t('reply')),el('p',data.reply));const text=el('textarea');text.maxLength=3000;text.placeholder=t('details');text.value=data.description||'';c.append(text);const photos=photoRow(c,data.images||[]);c.append(el('p',t('privacy'),'muted'));const agreed=consent(c);const save=btn(t('save'),()=>run(save,async()=>{if(!agreed.checked){agreed.focus();return;}await request(API+'/'+receipt.id,{consent:true,description:text.value,images:photos()},receipt.token);msg.className='ok';msg.textContent=t('success');},msg),'wide');c.append(save);}catch{msg.textContent=t('unavailable');}c.append(btn(t('refresh'),receiptPage,'secondary wide'));}
-function login(){adminKey='';const c=page(t('admin'));const input=el('input');input.type='password';input.autocomplete='off';input.placeholder=t('key');c.append(input);const msg=el('p',null,'error');const b=btn(t('login'),()=>run(b,async()=>{adminKey=input.value.trim();await request(API+'/admin',undefined,adminKey);input.value='';await adminList();},msg));c.append(b,msg);}
-async function adminList(){const c=page(t('admin'));const status=el('select');for(const k of ['','new','working','resolved']){const o=el('option',t(k||'all'));o.value=k;status.append(o);}const edition=el('select');for(const k of ['','standard','guard','lite']){const o=el('option',k||t('all'));o.value=k;edition.append(o);}const version=el('input');version.placeholder=t('version');const model=el('input');model.placeholder=t('model');const results=el('div'),msg=el('p',null,'error');async function load(){const q=new URLSearchParams({status:status.value,edition:edition.value,version:version.value,model:model.value});const data=await request(API+'/admin?'+q,undefined,adminKey);results.replaceChildren(el('p',data.items.length+' '+t('count')));for(const r of data.items)results.append(btn(t(r.category)+' · '+r.model+' · '+r.version+' '+r.edition+' · '+t(r.status),()=>adminDetail(r.id),'item'));}const b=btn(t('filter'),()=>run(b,load,msg));c.append(status,edition,version,model,b,btn(t('logout'),login,'secondary'),msg,results);try{await load();}catch{msg.textContent=t('unavailable');}}
-async function adminDetail(id){const c=page(t('admin')),msg=el('p',null,'error');c.append(msg);try{const d=await request(API+'/admin/'+id,undefined,adminKey);c.append(el('h2',t(d.category)),el('p',d.model+' · '+d.android+' · '+d.version+' / '+d.edition),el('p',d.id,'receipt'),el('p',d.description),el('pre',d.diagnostics));const photos=el('div',null,'thumbs');for(const s of JSON.parse(d.images||'[]')){const img=el('img');img.src=s;photos.append(img);}c.append(photos);const status=el('select');for(const k of ['new','working','resolved']){const o=el('option',t(k));o.value=k;status.append(o);}status.value=d.status;const reply=el('textarea');reply.maxLength=3000;reply.value=d.reply;reply.placeholder=t('reply');const b=btn(t('save'),()=>run(b,async()=>{await request(API+'/admin/'+id,{status:status.value,reply:reply.value},adminKey);msg.className='ok';msg.textContent=t('success');},msg));c.append(status,reply,b);}catch{msg.textContent=t('unavailable');}c.append(btn(t('back'),adminList,'secondary wide'));}
-if(mode==='local')home();else if(mode==='admin')login();else{const match=location.hash.slice(1).match(/^([a-f0-9-]{36})\.([a-f0-9]{64})$/);if(match){receipt={id:match[1],token:match[2]};receiptPage();}else page(t('unavailable'));}
+function login(){adminKey='';const c=page(t('admin'));const input=el('input');input.type='password';input.autocomplete='off';input.placeholder=t('key');c.append(input);const msg=el('p',null,'error');const b=btn(t('login'),()=>run(b,async()=>{adminKey=input.value.trim();await request();input.value='';await adminList();},msg));c.append(b,msg);}
+async function adminList(){const c=page(t('admin'));const status=el('select');for(const k of ['','new','working','resolved']){const o=el('option',t(k||'all'));o.value=k;status.append(o);}const edition=el('select');for(const k of ['','standard','guard','lite']){const o=el('option',k||t('all'));o.value=k;edition.append(o);}const version=el('input');version.placeholder=t('version');const model=el('input');model.placeholder=t('model');const results=el('div'),msg=el('p',null,'error');async function load(){const q=new URLSearchParams({status:status.value,edition:edition.value,version:version.value,model:model.value});const data=await request('?'+q);results.replaceChildren(el('p',data.items.length+' '+t('count')));for(const r of data.items)results.append(btn(t(r.category)+' · '+r.model+' · '+r.version+' '+r.edition+' · '+t(r.status),()=>adminDetail(r.id),'item'));}const b=btn(t('filter'),()=>run(b,load,msg));c.append(status,edition,version,model,b,btn(t('logout'),login,'secondary'),msg,results);try{await load();}catch{msg.textContent=t('unavailable');}}
+async function adminDetail(id) {
+ const c=page(t('admin')), msg=el('p',null,'error');
+ c.append(msg);
+ try {
+  const d=await request('/'+id);
+  c.append(el('h2',t(d.category)),el('p',d.model+' · '+d.android+' · '+d.version+' / '+d.edition),
+    el('p',d.id,'receipt'),el('span',t(d.status),'status'));
+  if (d.description) c.append(el('p',d.description));
+  if (d.reply) c.append(el('p',d.reply,'muted'));
+  c.append(el('pre',d.diagnostics || '—'));
+  if (d.images.length) {
+   const thumbnails=el('div',null,'thumbs');
+   for (const source of JSON.parse(d.images)) {
+    const img=el('img');
+    img.src=source;
+    thumbnails.append(img);
+   }
+   c.append(thumbnails);
+  }
+ } catch {msg.textContent=t('unavailable');}
+ c.append(btn(t('back'),adminList,'secondary'));
+}
+login();
 })();
