@@ -28,15 +28,11 @@ body:
       placeholder: "例如 3.3.5，在控制中心底部查看"
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: edition
     attributes:
       label: 安装类型 / Edition
-      options:
-        - Standard
-        - Guard
-        - Lite
-        - 不确定 / Unsure
+      placeholder: Standard / Guard / Lite
     validations:
       required: true
   - type: textarea
