@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.3.4",
+  "version": "3.3.5",
   "distribution": "independent",
-  "notes": "# HaloTV 3.3.4\n\n- 优化部分 MiTV-ASTR0 返回桌面后的本地视频合成：为 1080p SDR AVC 增加兼容路径，4K、HDR、旋转视频及其他机型保留原输出。\n- 修正连续黑帧抓取的退避逻辑，避免反复读取无效画面；单次失败不再永久禁用抓帧。\n- 优化桌面、应用和屏保之间的画面交接：保留有效底图，过渡遮挡增加超时兜底，防止旧回调清除新视频层。\n- 改进已开启的 ADB 保持：确认配置落盘，启动后有限次复查，尊重用户关闭、权限撤销和关机状态。\n- 补充 HOME 实际解析组件及权限诊断，便于区分守护绑定与厂商限制。\n- 优化 TCL 信号源路由：使用真实硬件 ID / 完整 inputId，减少旧端口残留，避免文件管理器误接管，不按 HDMI 名称猜端口。\n- 修复在线壁纸空缓存、截断缓存导致重试仍为空，以及缓存写失败掩盖有效目录的问题。\n- 修正在线壁纸无效条目、分页总数和重复日期导致的空页或网格异常；同步正式版、Lite 与手机管理页。\n\n同时保留 3.3.3 的音量长按、升级后欢迎页判断，以及已有界面和性能优化。\n\nStandard / Guard 内部号 **246**，Lite **102**。沿用独立包名、签名、Logo 和静态欢迎页，可覆盖更低内部号的同类型独立版，保留数据。Lite 同步在线壁纸修复，不新增完整版视频壁纸或无障碍守护功能。\n\n兼容处理已通过主机回归，未在本轮操作电视或模拟器。特定机型的合成、HDMI 与 HOME 行为仍需实机确认；不保证突破厂商固件限制。ADB 复查仅对已选择且具备原有授权的设备生效。完整构建、测试、lint 与安装包检查见验证附件。\n\n基于 Aerial 二次开发，感谢原作者与所有开源贡献者。壁纸归档由 YanGN 提供，素材版权归各权利人所有。\n",
+  "notes": "# HaloTV 3.3.5\n\n- 新增 Dock 与图标大小：小、默认、大联动调整，电视和手机均可设置。\n- 修正切换 Dock 大小时，左上、右上时间信息及状态栏的对齐位置。\n- 修复连续更换在线静态壁纸后桌面仍显示旧图、需要重启才更新的问题。\n- 同步刷新桌面、磨砂背景、缩略图及手机预览缓存，避免同名图片和相同时间戳沿用旧内容。\n- 修正快速换图、取消、类型切换和自动轮换的请求竞态；失败或取消时保留有效旧图。\n- 修正手机换壁纸与原有轮换分类的兼容，成功设置后同步轮换状态。\n\nStandard / Guard 内部号 **250**，Lite **106**。沿用独立包名与签名，可覆盖更低内部号的同类型独立版并保留数据。三个版本均包含 Dock 与在线静态壁纸改动，Lite 保持原有功能范围。\n\n已完成主机回归、构建、Lint 和安装包校验，具体结果见验证附件。本轮未操作电视或模拟器；实机画面、遥控器体验及厂商解码/合成表现仍需确认。Issue #46 保留开放，等待实机反馈。\n\n基于 Aerial 二次开发，感谢原作者与所有开源贡献者。壁纸归档由 YanGN 提供，素材版权归各权利人所有。\n",
   "packages": {
     "standard": {
-      "versionCode": 246,
-      "sha256": "8fbaaf5d706ce8fad6bd0d68e7ff058561f9a8f752cd83a97404fc7a50aec67a",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.4-halo/HaloTV-3.3.4-standard.apk"
+      "versionCode": 250,
+      "sha256": "596e513fe58814f8c152d86e86f198b285ff68def1762569238a85a9dfb19ad2",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.5-halo/HaloTV-3.3.5-standard.apk"
     },
     "guard": {
-      "versionCode": 246,
-      "sha256": "8bfc0688e01c0aff4c9602903ecd4db43f2f6921f18f10a0c22c394428145f26",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.4-halo/HaloTV-3.3.4-guard.apk"
+      "versionCode": 250,
+      "sha256": "0f1ba0589d5e73d8429d9bc5b40dc69801e82ea66a0fa74a9e77e69049a25016",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.5-halo/HaloTV-3.3.5-guard.apk"
     },
     "lite": {
-      "versionCode": 102,
-      "sha256": "04078622e0968e6584e387b79cdcb5d0d9d8fb49358c021bb41b58a8f05902f5",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.4-halo/HaloTV-3.3.4-lite.apk"
+      "versionCode": 106,
+      "sha256": "1736bff7a6cf5a0a6b36acf6ecf7db2060f6da8635eb960d05caf38abe2c7f9e",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.3.5-halo/HaloTV-3.3.5-lite.apk"
     }
   }
 }

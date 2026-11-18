@@ -1,0 +1,132 @@
+{
+  "version": "3.3.5",
+  "delivery": "official 3.3.5 release build",
+  "scales": [
+    0.9,
+    1.0,
+    1.1
+  ],
+  "deviceOrEmulatorOperated": false,
+  "published": false,
+  "sourceBase": "efeb0f1aea002e9306570355e0c8d8b870b8a10d",
+  "sourceRevision": "3c30ee4ee3ca8c4b6673d9b9ba005abab20caaf0",
+  "packages": [
+    {
+      "edition": "standard",
+      "versionCode": 250,
+      "identity": "package: name='app.halotv.launcher' versionCode='250' versionName='3.3.5' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "596e513fe58814f8c152d86e86f198b285ff68def1762569238a85a9dfb19ad2",
+      "bytes": 7856727,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 31,
+      "phonePageDockSizeIncluded": true,
+      "allOtherNonProfileAssetsUnchangedExceptPhonePages": true,
+      "iconsUnchanged": true,
+      "path": "app/build/outputs/apk/standard/release/app-standard-release.apk",
+      "releaseAsset": "HaloTV-3.3.5-standard.apk"
+    },
+    {
+      "edition": "guard",
+      "versionCode": 250,
+      "identity": "package: name='app.halotv.launcher' versionCode='250' versionName='3.3.5' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "0f1ba0589d5e73d8429d9bc5b40dc69801e82ea66a0fa74a9e77e69049a25016",
+      "bytes": 7856658,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 31,
+      "phonePageDockSizeIncluded": true,
+      "allOtherNonProfileAssetsUnchangedExceptPhonePages": true,
+      "iconsUnchanged": true,
+      "path": "app/build/outputs/apk/guard/release/app-guard-release.apk",
+      "releaseAsset": "HaloTV-3.3.5-guard.apk"
+    },
+    {
+      "edition": "lite",
+      "versionCode": 106,
+      "identity": "package: name='app.halotv.launcher.lite' versionCode='106' versionName='3.3.5' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sha256": "1736bff7a6cf5a0a6b36acf6ecf7db2060f6da8635eb960d05caf38abe2c7f9e",
+      "bytes": 2470221,
+      "signatureV1V2": true,
+      "alignment": true,
+      "zipIntegrity": true,
+      "permissionsUnchanged": true,
+      "welcomeAndOtherAssetsUnchanged": 31,
+      "phonePageDockSizeIncluded": true,
+      "allOtherNonProfileAssetsUnchangedExceptPhonePages": true,
+      "iconsUnchanged": true,
+      "path": "lite/build/outputs/apk/release/lite-release.apk",
+      "releaseAsset": "HaloTV-3.3.5-lite.apk"
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/build/test-results/testStandardReleaseUnitTest",
+      "tests": 607,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "app/build/test-results/testGuardReleaseUnitTest",
+      "tests": 607,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "lite/build/test-results/testReleaseUnitTest",
+      "tests": 198,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "lint": [
+    {
+      "path": "app/build/reports/lint-results-standardRelease.xml",
+      "errors": 0,
+      "warnings": 351
+    },
+    {
+      "path": "app/build/reports/lint-results-guardRelease.xml",
+      "errors": 0,
+      "warnings": 352
+    },
+    {
+      "path": "lite/build/reports/lint-results-release.xml",
+      "errors": 0,
+      "warnings": 440
+    }
+  ],
+  "buildLog": "构建与检查.log",
+  "sourceBranch": "release/halo-3.3.5",
+  "totalHostTests": 1412,
+  "realDeviceBehaviorVerified": false,
+  "regressionScope": [
+    "linked Dock sizes and header alignment",
+    "same-ID online backdrop/frost/thumbnail refresh",
+    "identical timestamps",
+    "out-of-order and cancelled requests",
+    "failed staging preserves valid image",
+    "cross-type selection and ABA rejection",
+    "manual priority and rotation category compatibility"
+  ],
+  "upgradeCompatibility": "Same independent package IDs, signer, minSdk and permissions; higher codes than public 246/102 and local 249/105. No device installation performed.",
+  "issue": 46,
+  "scope": "3.3.5 official release: linked Dock sizing/alignment and online static wallpaper refresh; host checks only; real-device behavior unverified",
+  "privateFeedbackExcluded": true,
+  "phoneJavaScriptSyntaxVerified": true,
+  "priorBugFixNegativeControl": {
+    "probe": "Original same-ID short circuit re-enabled while keeping other fixes",
+    "expectedFailure": true,
+    "test": "actualCacheReplacementRefreshesPixelsAndRejectsStaleOrCancelledWork",
+    "failure": "java.lang.AssertionError: expected not same",
+    "executedForSourceRevision": "e134c202848bc0427aae3fa4b3b9cd2fe5186f93",
+    "partOfCurrentReleaseTestCount": false
+  }
+}
