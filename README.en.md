@@ -20,3 +20,7 @@ Host regression checks passed. No TV or emulator was operated in this release; h
 Cross-package configuration import has been removed since 3.2.4. Android does not transfer private data or permissions across package names. Aerial and independent HaloTV can coexist, but do not enable both guards together.
 
 The Bing archive is provided by [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive); the video catalogue references [Aerial Views](https://github.com/theothernt/AerialViews) with Apple-hosted media. Media rights remain with their owners. See LICENSE and NOTICE.md.
+
+## Report a problem
+
+Search [GitHub Issues](https://github.com/Null9797/halo-tv/issues) before [filing a report](https://github.com/Null9797/halo-tv/issues/new?template=bug_report.yml). Include the TV model, Android version, HaloTV version, edition, and steps to reproduce.
