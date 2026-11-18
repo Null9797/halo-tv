@@ -1,0 +1,57 @@
+name: 问题反馈 / Bug report
+description: 报告 HaloTV 的安装、桌面守护、壁纸或其他使用问题
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先搜索 [现有 Issues](https://github.com/Null9797/halo-tv/issues)，同样的问题可以在已有帖子下补充。
+        此处公开可见。分享截图或日志前，请遮掉 IP、二维码、账号、密码和其他个人信息。
+  - type: input
+    id: model
+    attributes:
+      label: 电视型号 / TV model
+      placeholder: "例如 TCL C845 或小米电视 4C"
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android 版本 / Android version
+      placeholder: "例如 Android 11，不清楚可填未知"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: HaloTV 版本 / Version
+      placeholder: "例如 3.3.5，在控制中心底部查看"
+    validations:
+      required: true
+  - type: dropdown
+    id: edition
+    attributes:
+      label: 安装类型 / Edition
+      options:
+        - Standard
+        - Guard
+        - Lite
+        - 不确定 / Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤及实际表现 / Steps and actual result
+      description: 请写清楚从哪个页面开始、按了什么键，以及每次都会发生还是偶尔发生。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期表现 / Expected result
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图、录屏或日志 / Screenshots or logs
+      description: 可选。上传前请检查截图和日志是否含个人信息。

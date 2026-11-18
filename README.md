@@ -59,3 +59,7 @@ Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型�
 完整源码与安装包放在 [Releases](https://github.com/Null9797/halo-tv/releases)，历史版本仍可查阅；[文档目录](docs/README.md) 汇总说明。
 
 [官方网站](https://halo-tv.pages.dev/) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（实际内容以网盘为准）
+
+## 问题反馈
+
+请先查阅 [现有 GitHub Issues](https://github.com/Null9797/halo-tv/issues)，再[提交问题](https://github.com/Null9797/halo-tv/issues/new?template=bug_report.yml)。请附上电视型号、Android 版本、HaloTV 版本、安装类型和复现步骤。
