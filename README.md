@@ -16,7 +16,7 @@
 
 Standard / Guard 内部号 **250**，Lite **106**。三个版本均包含 Dock 与在线静态壁纸改动，Lite 保持原有功能范围。沿用独立包名、签名和现有设置，可覆盖同类型独立版。
 
-已完成主机回归；本轮未运行电视或模拟器，实机效果仍需确认。Issue #46 保留开放等待反馈。[完整更新说明](docs/releases/RELEASE-3.3.5.md) · [构建与代码检查](docs/releases/VERIFICATION-3.3.5.json)
+已完成主机回归；本轮未运行电视或模拟器，实机效果仍需确认。Issue #46 的实机表现仍待反馈确认。[完整更新说明](docs/releases/RELEASE-3.3.5.md) · [构建与代码检查](docs/releases/VERIFICATION-3.3.5.json)
 
 ## 下载
 

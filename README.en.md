@@ -13,7 +13,7 @@ HaloTV is a free, open-source derivative of [Aerial](https://github.com/pengchuj
 
 Standard / Guard: code 250, Android 5.0+. Lite: code 106, Android 4.0+. All three include the Dock and online-static-wallpaper changes within their existing feature scope. Independent IDs, signer, artwork and existing settings are preserved.
 
-Host regression checks passed. No TV or emulator was operated in this release; hardware behavior remains unverified. Issue #46 remains open pending device feedback.
+Host regression checks passed. No TV or emulator was operated in this release; hardware behavior remains unverified. Issue #46 still requires device feedback.
 
 [Downloads](https://github.com/Null9797/halo-tv/releases/tag/v3.3.5-halo) · [Website](https://halo-tv.pages.dev/#download) · [Changes](docs/releases/RELEASE-3.3.5.md) · [Verification](docs/releases/VERIFICATION-3.3.5.json) · [Application source](https://github.com/Null9797/halo-tv/releases/download/v3.3.5-halo/HaloTV-3.3.5-source.zip)
 
