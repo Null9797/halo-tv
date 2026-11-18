@@ -1,0 +1,70 @@
+{
+  "version": "3.3.6",
+  "scope": "Aerial 2.1 guard behavior merged into HaloTV",
+  "editions": [
+    {
+      "edition": "standard",
+      "package": "app.halotv.launcher",
+      "versionCode": 259,
+      "minSdk": 21,
+      "file": "HaloTV-3.3.6-standard.apk",
+      "sha256": "3654e7068c4c98881782c90cae709b113f0abffa08f40ebd2672f928185fc34e",
+      "tests": {
+        "tests": 633,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "guardFocusedTests": 33,
+      "lintWarnings": 348,
+      "signaturesVerified": true,
+      "assetsAndIconsMatchPriorTest": true,
+      "manifestMatchesExceptVersionFields": true
+    },
+    {
+      "edition": "guard",
+      "package": "app.halotv.launcher",
+      "versionCode": 259,
+      "minSdk": 21,
+      "file": "HaloTV-3.3.6-guard.apk",
+      "sha256": "952b0e1fdf58c7c0fc111e63f94ec1bc9df38737343e5281f64e8ec7d5bc0acf",
+      "tests": {
+        "tests": 633,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "guardFocusedTests": 33,
+      "lintWarnings": 349,
+      "signaturesVerified": true,
+      "assetsAndIconsMatchPriorTest": true,
+      "manifestMatchesExceptVersionFields": true
+    },
+    {
+      "edition": "lite",
+      "package": "app.halotv.launcher.lite",
+      "versionCode": 115,
+      "minSdk": 14,
+      "file": "HaloTV-3.3.6-lite.apk",
+      "sha256": "1f96a97ac0e80c94c46ba20ff59b8852310057ad92082df444e648e69868909e",
+      "tests": {
+        "tests": 192,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "guardFocusedTests": 0,
+      "lintWarnings": 436,
+      "signaturesVerified": true,
+      "assetsAndIconsMatchPriorTest": true,
+      "manifestMatchesExceptVersionFields": true
+    }
+  ],
+  "jsClipboardAndPrefillChecks": true,
+  "upstreamCommit": "50056e3f8de6a13f111db06df5a0f59eebba0f76",
+  "testDeviceUsed": false,
+  "sourceRevision": "6c8a59f323c6434e3ad9d4c656fe707d75fc3329",
+  "sourceArchiveSha256": "d8e8a44248c520cdc11fc7c0f6525bfe5dd10a34fa55cb492ecea74fc743af9f",
+  "desktopGuardHostTests": 27,
+  "apkSha256Verified": true
+}
