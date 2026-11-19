@@ -1,0 +1,110 @@
+{
+  "version": "3.3.7",
+  "source_commit": "1c606fdf3e606a9cc6a8a82fbf1754cf18d28402",
+  "editions": {
+    "standard": {
+      "package": "app.halotv.launcher",
+      "versionCode": 263,
+      "versionName": "3.3.7",
+      "minSdk": 21,
+      "targetSdk": 34,
+      "edition": "standard",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "apk": "HaloTV-3.3.7-standard.apk",
+      "sha256": "2bf361968fe7438e43df53819493ab06ae846d50d8fcd78dc8ce45306f242980",
+      "bytes": 7854738,
+      "tests": {
+        "tests": 642,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "KidsTimeTest": 8,
+        "KidsDeliveryTest": 4,
+        "DockTintTest": 2,
+        "AerialRetryTest": 1,
+        "WallpaperReturnGateTest": 5,
+        "AerialPlaybackTest": 3,
+        "DockGeometryTest": 4,
+        "QuizPinFocusTest": 1,
+        "WallpaperTransitionsTest": 8,
+        "QuizPanelInteractionTest": 8
+      },
+      "lint": {
+        "Warning": 350,
+        "Hint": 22
+      }
+    },
+    "guard": {
+      "package": "app.halotv.launcher",
+      "versionCode": 263,
+      "versionName": "3.3.7",
+      "minSdk": 21,
+      "targetSdk": 34,
+      "edition": "guard",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "apk": "HaloTV-3.3.7-guard.apk",
+      "sha256": "55f2070f02d73088298da028b38add59dfddf7b625f543a4993409c7778d036c",
+      "bytes": 7854581,
+      "tests": {
+        "tests": 642,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "KidsTimeTest": 8,
+        "KidsDeliveryTest": 4,
+        "DockTintTest": 2,
+        "AerialRetryTest": 1,
+        "WallpaperReturnGateTest": 5,
+        "AerialPlaybackTest": 3,
+        "DockGeometryTest": 4,
+        "QuizPinFocusTest": 1,
+        "WallpaperTransitionsTest": 8,
+        "QuizPanelInteractionTest": 8
+      },
+      "lint": {
+        "Warning": 351,
+        "Hint": 22
+      }
+    },
+    "lite": {
+      "package": "app.halotv.launcher.lite",
+      "versionCode": 117,
+      "versionName": "3.3.7",
+      "minSdk": 14,
+      "targetSdk": 34,
+      "edition": "lite",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "apk": "HaloTV-3.3.7-lite.apk",
+      "sha256": "6e11e60598cdb287b21955c9845ecef0f28e9576ac9e0260d4f230965b580783",
+      "bytes": 2461668,
+      "tests": {
+        "tests": 192,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "KidsTimeTest": 3
+      },
+      "lint": {
+        "Warning": 436
+      }
+    }
+  }
+}
