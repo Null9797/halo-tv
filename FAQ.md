@@ -46,7 +46,7 @@ Android 不会跨包名转移无障碍、通知使用权、自启动等系统授
 Standard/Guard最低Android5.0，Lite最低Android4.0。Samsung Tizen、LG webOS和非Android的VIDAA不能安装APK。上游机型记录只能参考，不能等同HaloTV全部实测兼容。问题反馈请附机型、Android版本、安装类型、版本号与截图/日志。
 
 ## 壁纸与来源
-在线内容按需加载和缓存，用于设置壁纸，不提供另存本地入口。用户上传素材独立管理；截图中的自定义图标不代表包内置全部图标。Bing壁纸归档由[YanGN](https://github.com/ygnstudio/bing_wallpaper_archive)提供，在线视频目录参考[Aerial Views](https://github.com/theothernt/AerialViews)，媒体版权归各权利人。参见[NOTICE](NOTICE.md)和[LICENSE](LICENSE)。
+在线内容按需加载和缓存，用于设置壁纸，不提供另存本地入口。用户上传素材独立管理；截图中的自定义图标不代表包内置全部图标。Bing壁纸归档由[YanGN](https://github.com/ygnstudio/bing_wallpaper_archive)提供，在线视频目录参考[Aerial Views](https://github.com/theothernt/AerialViews)，媒体版权归各权利人。参见[NOTICE](docs/NOTICE.md)和[LICENSE](LICENSE)。
 
 ## “只显示选中”为什么让 Dock 底部多出留白？
 3.2.5 误为该模式预留了整行名称空间，3.2.6 已恢复旧版紧凑 Dock；“全部显示”保留名称区域，“大标题”显示在 Dock 上方。
