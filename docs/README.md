@@ -2,7 +2,7 @@
 
 # HaloTV 文档
 
-[项目首页](../README.md) · [官方网站](https://halo-tv.pages.dev/) · [实机画廊](../screenshots/README.md)
+[项目首页](../README.md) · [官方网站](https://halo-tv.pages.dev/) · [实机画廊](GALLERY.md) · [English](README.en.md)
 
 | 我想做什么 | 从这里开始 |
 | :--- | :--- |
@@ -41,6 +41,7 @@
 
 ## 维护资料
 
+- [来源与开源致谢](NOTICE.md)
 - [守护可靠性复审](HALO_GUARD_RELIABILITY_REVIEW.md)
 - [旧包名迁移历史资料](../MIGRATION-3.1.md)（适用于 3.2.3 及更早版本）
 - [3.1 迁移公告的历史说明](HALO-REMOTE-ANNOUNCEMENTS.md)
