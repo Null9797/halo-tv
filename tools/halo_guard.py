@@ -101,8 +101,10 @@ class Adb:
         selected = self.serial and args[:1] not in (["connect"], ["devices"])
         command = [self.executable] + (["-s", self.serial] if selected else []) + args
         try:
-            result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
-            output = (result.stdout + result.stderr).replace("\r", "").strip()
+            result = subprocess.run(
+                command, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout,
+            )
+            output = "\n".join(part for part in (result.stdout, result.stderr) if part).strip()
             return result.returncode == 0 and not ERROR.search(output), output
         except subprocess.TimeoutExpired:
             return False, "ADB 命令超时，请检查电视是否开机、调试是否仍开启。"
@@ -140,11 +142,32 @@ def read(adb, *args):
 
 
 def current_user(adb):
+    user_ids = set()
     for command in (("am", "get-current-user"), ("cmd", "activity", "get-current-user")):
         ok, output = adb.shell(*command)
-        if ok and re.fullmatch(r"\d+", output):
-            return int(output)
-    return None
+        if ok and re.fullmatch(r"0|[1-9][0-9]{0,9}", output):
+            user_ids.add(int(output))
+            continue
+        unavailable = re.fullmatch(
+            r"""(?:Error:\s*)?Unknown command[: ]+(['"]?)get-current-user\1""",
+            output, re.I,
+        )
+        missing_cmd = command[0] == "cmd" and re.fullmatch(
+            r"(?:(?:/system/bin/)?sh: )?cmd: (?:not found|inaccessible or not found)",
+            output, re.I,
+        )
+        if not unavailable and not missing_cmd:
+            return None
+    if user_ids:
+        return next(iter(user_ids)) if len(user_ids) == 1 else None
+
+    # Older Android may lack both commands. Only a complete, singleton owner list proves user 0.
+    ok, output = adb.shell("pm", "list", "users")
+    lines = output.split("\n")
+    if not ok or len(lines) != 2 or lines[0] != "Users:":
+        return None
+    owner = re.fullmatch(r"[ \t]*UserInfo\{0:([^{}\x00-\x1f\x7f-\x9f\ufffd]+):[0-9a-fA-F]+\}(?: running)?", lines[1])
+    return 0 if owner and owner[1].strip() else None
 
 
 def resolved_home(adb, combined=False):

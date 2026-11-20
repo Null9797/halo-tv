@@ -6,6 +6,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SCRIPT = Path(__file__).with_name("halo-guard.sh").resolve()
 PACKAGE = "app.halotv.launcher"
@@ -37,11 +38,18 @@ a=args[1:]; pkg='app.halotv.launcher'; guard=pkg+'/app.orchard.tv.guard.HomeGuar
 if a[:1]==['getprop']:
  finish({'ro.product.model':'Guard Test TV','ro.product.manufacturer':'Test Vendor','ro.build.version.sdk':str(state.get('sdk',33))}.get(a[1],''))
 if a==['am','get-current-user']:
+ if 'am_user_output' in state: finish(state['am_user_output'],state.get('am_user_exit',0))
  if state.get('current_user_command_fails'): finish('Unknown command: get-current-user',1)
  finish(str(state.get('user',0)))
 if a==['cmd','activity','get-current-user']:
+ if state.get('missing_cmd'): finish('/system/bin/sh: cmd: not found',127)
  if 'fallback_user' in state: finish(str(state['fallback_user']))
  finish('Unknown command: get-current-user',1)
+if a==['pm','list','users']:
+ if state.get('invalid_user_bytes'):
+  sys.stdout.buffer.write(b'Users:\n\tUserInfo{0:\xff:13} running\n')
+  sys.exit(0)
+ finish(state.get('users_output','Error: unavailable'),state.get('users_exit',0))
 if a[:2]==['pm','path']:
  exists=state.get('installed',True) if a[2]==pkg else state.get('legacy',True)
  finish('package:/data/app/test/base.apk' if exists else '',0 if exists else 1)
@@ -257,6 +265,51 @@ class HaloGuardCliTest(unittest.TestCase):
         self.assertTrue(state.get('recovery_requested'))
         self.assertIn(['shell','am','broadcast','-n',PACKAGE+'/app.orchard.tv.guard.ConfigReceiver','--ez','halo_guard_recovery','true'], calls)
 
+    def test_single_owner_fallback_preserves_other_services_and_requires_repair(self):
+        for repair in (False, True):
+            with self.subTest(repair=repair):
+                result, calls, state = self.run_cli(
+                    repair=repair, sdk=23, current_user_command_fails=True, missing_cmd=repair,
+                    users_output="Users:\r\n\tUserInfo{0:机主:13} running",
+                )
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn(["shell", "pm", "list", "users"], calls)
+                self.assertEqual(state["enabled"], OTHER + (":" + GUARD if repair else ""))
+                self.assertEqual(bool(self.mutations(calls)), repair)
+
+    def test_ambiguous_owner_lists_abort_before_any_mutation(self):
+        owner = "Users:\n\tUserInfo{0:Owner:13} running"
+        for changes in (
+            {"users_output": owner + "\n\tUserInfo{10:Guest:10}"},
+            {"users_output": owner + "\n\tUserInfo{0:Duplicate:13}"},
+            {"users_output": owner + "\ntruncated"},
+            {"users_output": "Users:\n\tUserInfo{10:Guest:13} running"},
+            {"users_output": "Users:\n\tUserInfo{0:Owner:13"},
+            {"users_output": owner, "users_exit": 1},
+            {"invalid_user_bytes": True},
+        ):
+            with self.subTest(changes=changes):
+                result, calls, _ = self.run_cli(repair=True, current_user_command_fails=True, **changes)
+                self.assertNotEqual(result.returncode, 0, result.stdout)
+                self.assertIn(["shell", "pm", "list", "users"], calls)
+                self.assertEqual(self.mutations(calls), [])
+
+    def test_known_non_owner_conflict_or_ambiguous_response_never_falls_back(self):
+        for changes in (
+            {"user": 10},
+            {"user": 0, "fallback_user": 10},
+            {"am_user_output": "Permission denied", "am_user_exit": 1},
+            {"am_user_output": "unexpected response"},
+            {"am_user_output": "Unknown command: get-current-user\nPermission denied", "am_user_exit": 1},
+            {"am_user_output": "00"},
+        ):
+            with self.subTest(changes=changes):
+                result, calls, _ = self.run_cli(
+                    repair=True, users_output="Users:\n\tUserInfo{0:Owner:13}", **changes,
+                )
+                self.assertNotEqual(result.returncode, 0, result.stdout)
+                self.assertNotIn(["shell", "pm", "list", "users"], calls)
+                self.assertEqual(self.mutations(calls), [])
 
 class BoundDumpTest(unittest.TestCase):
     @classmethod
@@ -264,6 +317,14 @@ class BoundDumpTest(unittest.TestCase):
         spec = importlib.util.spec_from_file_location('halo_guard', SCRIPT.with_name('halo_guard.py'))
         cls.module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(cls.module)
+
+    def test_adb_decoding_and_empty_streams(self):
+        with patch.object(self.module.shutil, "which", return_value="adb"), patch.object(
+            self.module.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, stdout=None, stderr="机主"),
+        ) as run:
+            self.assertEqual(self.module.Adb().run(["devices"]), (True, "机主"))
+            self.assertEqual(run.call_args.kwargs["encoding"], "utf-8")
+            self.assertEqual(run.call_args.kwargs["errors"], "replace")
 
     def test_enabled_list_does_not_masquerade_as_bound(self):
         dump = 'Bound services:{}\nEnabled services:{'+GUARD+'}\n'
