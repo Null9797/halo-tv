@@ -1,9 +1,29 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="HaloTV 更新与使用提醒，以及可复制给电脑端 AI 助手的安装与桌面守护指令。"><title>HaloTV 更新与使用提醒</title><link rel="icon" href="/images/halo-independent-3.1.png"><style>
-*{box-sizing:border-box}body{margin:0;background:#081322;color:#edf4ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;line-height:1.85}main{max-width:820px;margin:auto;padding:32px 22px 56px}.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;font-size:22px;font-weight:700}.brand img{width:48px;height:48px;border-radius:12px}h1{font-size:clamp(28px,5vw,38px);line-height:1.3;margin:34px 0 18px}h2{font-size:22px}p{color:#c5d4e8}a{color:#abd0ff}section{background:#14253b;border:1px solid #ffffff21;border-radius:22px;padding:24px;margin-top:26px}textarea{display:block;width:100%;min-height:570px;border:1px solid #8397b4;border-radius:12px;background:#0a1728;color:#f4f7ff;padding:16px;font:inherit;resize:vertical}button{min-height:48px;background:#dceaff;color:#122342;border:0;border-radius:12px;padding:10px 24px;font:inherit;font-weight:700;cursor:pointer;margin-top:16px}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #8ebcff;outline-offset:4px}.status{min-height:28px;margin:8px 0 0}.note{font-size:15px}footer{margin-top:30px;color:#9bacc5;font-size:14px}@media(max-width:500px){section{padding:18px}textarea{min-height:660px}button{width:100%}}</style></head><body><main>
-<a class="brand" href="/"><img src="/images/halo-independent-3.1.png" alt="HaloTV Logo">HaloTV</a>
-<h1>HaloTV 更新与使用提醒</h1><p>如您在使用过程中遇到问题，请先升级至最新版。近期功能与兼容性调整较多，若升级后仍反复出现异常，建议保存重要素材、记录个人设置，卸载旧版后重新安装最新版，再配置桌面守护、开机启动及相关权限。</p>
-<section><h2>复制给电脑端 AI 助手</h2><p>先填写电视品牌型号和 IP 地址，再复制指令。电脑与电视需要连接同一局域网。</p><label for="ai-prompt">安装与桌面守护指令</label><textarea id="ai-prompt" spellcheck="false">请通过 ADB 帮我安装最新版 HaloTV，并配置桌面守护。
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="HaloTV 更新提醒及安装和桌面守护指令。">
+  <title>更新与桌面守护 · HaloTV</title>
+  <link rel="icon" type="image/png" href="/images/brand/halotv.png">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a class="skip" href="#content">跳至正文</a>
+  <header class="site-header"><div class="wrap header-inner header-inner-compact">
+    <a class="brand" href="/" aria-label="HaloTV 首页"><img src="/images/brand/halotv.png" width="42" height="42" alt=""><span>HaloTV</span></a>
+    <a class="button button-small button-outline header-download" href="/#download">下载</a>
+  </div></header>
+  <main class="document body-copy" id="content">
+    <a class="breadcrumb" href="/#install">← 安装与帮助</a>
+    <h1>更新与桌面守护</h1>
+    <p class="intro">遇到问题时，先升级至最新版。升级后仍反复异常时，可先保存重要素材并记录设置，再重装并按电视系统重新配置桌面守护。</p>
+    <section class="panel" aria-labelledby="copy-title">
+      <h2 id="copy-title">在电脑上安装和配置</h2>
+      <p>先填写电视型号和 IP 地址，再把下方指令复制给可以执行 ADB 的电脑端 AI 助手。电脑与电视需连接同一个局域网。</p>
+      <label for="ai-prompt">安装与桌面守护指令</label>
+      <textarea id="ai-prompt" spellcheck="false">请通过 ADB 帮我安装最新版 HaloTV，并配置桌面守护。
 
 电视品牌型号：【填写】
 电视 IP 地址：【填写】
@@ -17,6 +37,16 @@
 
 安装后，请按当前版本和电视支持情况，配置默认桌面、桌面守护、守护自动恢复、开机启动及必要权限。Standard / Guard 请使用 HaloTV 仓库的独立版守护工具，不要套用 Aerial 的安装脚本或旧包名；Lite 仅配置其支持的默认桌面与启动功能。
 
-最后检查守护是否实际运行，并协助我验证 Home 键返回桌面的效果。遇到系统限制请说明原因，不要禁用系统桌面，也不要修改无关设置。</textarea><button id="copy" type="button">复制 AI 安装与守护指令</button><p id="copy-status" class="status" role="status" aria-live="polite"></p><p class="note">需使用能在电脑上执行 ADB 的 AI 助手；普通聊天网页只能提供操作指导。部分权限仍需在电视上确认，卸载会清除应用数据。</p></section>
-<p>感谢您的理解与支持，HaloTV 将持续优化！</p><p><a href="/#download">下载最新版</a> · <a href="https://github.com/Null9797/halo-tv/blob/main/INSTALL.md">详细安装教程</a></p><footer>HaloTV 基于 Aerial 开源项目二次开发，非 Aerial 官方发行版。感谢原作者及贡献者。</footer></main>
-<script>document.getElementById('copy').addEventListener('click',async()=>{const field=document.getElementById('ai-prompt'),status=document.getElementById('copy-status');try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(field.value);status.textContent='已复制，请粘贴到电脑端 AI 助手。';}catch(e){field.focus();field.select();status.textContent='已选中指令，请长按文字或使用电脑复制快捷键复制。';}});</script></body></html>
+最后检查守护是否实际运行，并协助我验证 Home 键返回桌面的效果。遇到系统限制请说明原因，不要禁用系统桌面，也不要修改无关设置。</textarea>
+      <button class="button button-primary" id="copy" type="button">复制指令</button>
+      <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+      <p class="note">部分权限需在电视上确认。卸载会清除应用数据。</p>
+    </section>
+    <p class="context-links"><a href="/#download">下载最新版</a><a href="https://github.com/Null9797/halo-tv/blob/main/INSTALL.md">详细安装教程</a></p>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner">
+    <p class="affiliation">HaloTV 基于 <a href="https://github.com/pengchujin/aerial-tv">Aerial</a> 二次开发，感谢原作者和开源贡献者。</p>
+  </div></footer>
+<script>document.getElementById('copy').addEventListener('click',async()=>{const field=document.getElementById('ai-prompt'),status=document.getElementById('copy-status');try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(field.value);status.textContent='已复制，请粘贴到电脑端 AI 助手。';}catch(e){field.focus();field.select();status.textContent='已选中指令，请长按文字或使用电脑复制快捷键复制。';}});</script>
+</body>
+</html>
