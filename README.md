@@ -41,9 +41,17 @@ Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型�
 - 手机同网扫码管理、上传素材与验证后的更新包推送。
 - 在线更新、性能模式及常用系统入口；具体能力受电视系统限制。
 
-![HaloTV 桌面](screenshots/home-3.0.jpg)
+## HaloTV 3.5 真机截图
 
-3.0 系列实机素材展示现有功能；部分画面保留采集时的版本编号，实际外观依用户设置而定。
+[![电视桌面与音乐灵动岛](website/images/home-3.5.jpg)](website/images/home-3.5.jpg)
+
+| 桌面灵动岛设置 | 控制中心 |
+| --- | --- |
+| [![桌面灵动岛设置](website/images/island-settings-3.5.jpg)](website/images/island-settings-3.5.jpg) | [![毛玻璃控制中心](website/images/control-3.5.jpg)](website/images/control-3.5.jpg) |
+| **壁纸与屏保** | **翻页时钟屏保** |
+| [![壁纸与屏保](website/images/wallpaper-3.5.jpg)](website/images/wallpaper-3.5.jpg) | [![翻页时钟屏保](website/images/flip-3.5.jpg)](website/images/flip-3.5.jpg) |
+
+图片来自 HaloTV 3.5 Guard，保留 1920 × 1080。局域网地址和二维码已遮挡。 [查看全部实机截图](screenshots/README.md)
 
 [安装教程](INSTALL.md) · [常见问题](FAQ.md) · [守护诊断工具](docs/HALO_GUARD_TOOL.md) · [累计更新记录](RELEASE_NOTES.md)
 
