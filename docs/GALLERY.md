@@ -32,3 +32,12 @@
 - [软件更新](../website/images/update-3.5.jpg)
 
 </details>
+
+<details>
+<summary>3.0 实机截图</summary>
+
+- [主桌面](../website/images/home-3.0.jpg) · [控制中心](../website/images/control-3.0.jpg) · [设置](../website/images/settings-3.0.jpg)
+- [时钟居中](../website/images/clock-center-3.0.jpg) · [时钟在右](../website/images/clock-right-3.0.jpg) · [翻页时钟](../website/images/flip-3.0.jpg)
+- [儿童答题](../website/images/quiz-3.0.jpg) · [手机互联](../website/images/phone-3.0.jpg)
+
+</details>

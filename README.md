@@ -3,7 +3,7 @@
   <h1>HaloTV</h1>
   <p><strong>你的电视，你的桌面。</strong></p>
   <p>免费开源的 Android TV 桌面 · 3.5 正式版</p>
-  <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="README.en.md">English</a></p>
+  <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="docs/README.en.md">English</a></p>
 </div>
 
 [![HaloTV 主桌面实拍，展示电视上的玻璃 Dock、壁纸与音乐灵动岛](website/images/showcase/main.jpg)](website/images/showcase/main.jpg)
@@ -39,7 +39,7 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 | :---: | :---: | :---: |
 | [![控制中心](website/images/showcase/control.jpg)](website/images/showcase/control.jpg) | [![桌面灵动岛设置](website/images/showcase/settings.jpg)](website/images/showcase/settings.jpg) | [![儿童趣味答题](website/images/showcase/quiz.jpg)](website/images/showcase/quiz.jpg) |
 
-[全部实拍](screenshots/README.md) · [翻页时钟](website/images/showcase/flip.jpg) · [静态壁纸](website/images/showcase/wallpaper.jpg) · [动态壁纸](website/images/showcase/wallpaper-dynamic.jpg)
+[全部实拍](docs/GALLERY.md) · [翻页时钟](website/images/showcase/flip.jpg) · [静态壁纸](website/images/showcase/wallpaper.jpg) · [动态壁纸](website/images/showcase/wallpaper-dynamic.jpg)
 
 图集采集自 HaloTV 3.5 系列测试构建，原图为 1920 × 1080。界面随电视和个人设置而异。
 
@@ -63,7 +63,7 @@ Standard / Guard 内部号 `270`，Lite `118`。[完整更新说明](docs/releas
 
 ## 开源与致谢
 
-- 上游为 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv)。请参阅 [LICENSE](LICENSE) 和 [NOTICE](NOTICE.md)。
+- 上游为 [pengchujin/aerial-tv](https://github.com/pengchujin/aerial-tv)。请参阅 [LICENSE](LICENSE) 和 [NOTICE](docs/NOTICE.md)。
 - Bing 壁纸归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供。在线媒体目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。媒体版权归各权利人所有。
 - HaloTV 与 Aerial 原作者、Apple 或电视厂商无隶属或背书关系。
 
