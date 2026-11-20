@@ -1,9 +1,40 @@
-<p align="center"><img src="screenshots/halo-independent-3.1.png" width="128" alt="HaloTV Logo"></p>
-<h1 align="center">HaloTV · 3.5 正式版</h1>
-<p align="center">让电视桌面，回到你喜欢的样子。</p>
-<p align="center"><a href="https://halo-tv.pages.dev/">官方网站</a> · <a href="https://github.com/Null9797/halo-tv/releases/tag/v3.5-halo">3.5 正式版</a> · <a href="https://github.com/Null9797/halo-tv/releases/latest">最新正式版</a> · <a href="INSTALL.md">安装教程</a></p>
+<p align="center"><img width="100%" src="website/images/halo-readme-banner.svg" alt="HaloTV，免费开源的 Android TV 桌面"></p>
 
-**HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，非 Aerial 原作者或官方发行版。感谢原作者和所有开源贡献者。保留原版权与 MIT 许可，免费分享。**
+# HaloTV · 3.5 正式版
+
+让电视桌面，回到你喜欢的样子。HaloTV 是免费开源的 Android TV 桌面，提供玻璃 Dock、自定义壁纸与屏保，以及儿童和长辈模式。
+
+**[官方网站](https://halo-tv.pages.dev/) · [下载与安装](#下载与安装) · [安装指南](INSTALL.md) · [更新日志](RELEASE_NOTES.md) · [Issues](https://github.com/Null9797/halo-tv/issues)**
+
+基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，由 Null_ 整理发布，非上游官方版本。感谢原作者及开源贡献者，保留原版权与 [MIT 许可](LICENSE)。
+
+## 实机画面
+
+以下画面采集自 HaloTV 3.5 系列测试构建。点击查看原图。
+
+| 主桌面 | 控制中心 | HaloTV 设置 |
+| :---: | :---: | :---: |
+| [![主桌面](website/images/showcase/main.jpg)](website/images/showcase/main.jpg) | [![控制中心](website/images/showcase/control.jpg)](website/images/showcase/control.jpg) | [![HaloTV 设置](website/images/showcase/settings.jpg)](website/images/showcase/settings.jpg) |
+| **翻页时钟屏保** | **在线壁纸** | **儿童模式答题** |
+| [![翻页时钟屏保](website/images/showcase/flip.jpg)](website/images/showcase/flip.jpg) | [![在线壁纸](website/images/showcase/wallpaper.jpg)](website/images/showcase/wallpaper.jpg) | [![儿童模式答题](website/images/showcase/quiz.jpg)](website/images/showcase/quiz.jpg) |
+
+在线壁纸：[静态壁纸实拍](website/images/showcase/wallpaper.jpg) · [动态壁纸实拍](website/images/showcase/wallpaper-dynamic.jpg)
+
+[历史截图](screenshots/README.md) · [English](README.en.md)
+
+## 下载与安装
+
+**3.5 已进入正式在线更新通道：官网下载优先，GitHub 备用。也可手动下载覆盖安装。**
+
+| 类型 | 官网下载 | GitHub 备用 | 适用范围 |
+|---|---|---|---|
+| Standard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-standard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-standard.apk) | Android 5.0+，优先尝试 |
+| Guard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-guard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-guard.apk) | Android 5.0+，限制第三方 HOME 的固件可尝试 |
+| Lite | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-lite.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-lite.apk) | Android 4.0+，老设备；不含完整版动态桌面 |
+
+Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型。Lite 使用另一包名。安装新版独立版时保留现有应用数据，无需先卸载。
+
+[3.5 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.5-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest)
 
 ## 3.5 更新内容
 
@@ -19,18 +50,6 @@ Standard / Guard 内部号 `270`，Lite `118`。沿用独立包名和签名，�
 
 [完整更新说明](docs/releases/RELEASE-3.5.md) · [构建与代码检查](docs/releases/VERIFICATION-3.5.json)
 
-## 下载
-
-**3.5 已进入正式在线更新通道：官网下载优先，GitHub 备用。也可手动下载覆盖安装。**
-
-| 类型 | 官网下载 | GitHub 备用 | 适用范围 |
-|---|---|---|---|
-| Standard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-standard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-standard.apk) | Android 5.0+，优先尝试 |
-| Guard | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-guard.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-guard.apk) | Android 5.0+，限制第三方 HOME 的固件可尝试 |
-| Lite | [下载](https://halo-tv.pages.dev/updates/HaloTV-3.5-lite.apk) | [下载](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-lite.apk) | Android 4.0+，老设备；不含完整版动态桌面 |
-
-Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型。Lite 使用另一包名。安装新版独立版时保留现有应用数据，无需先卸载。
-
 ## 独立版与使用说明
 
 从 3.2.4 起已移除旧版/过渡版配置导入，不再维护跨包迁移流程。旧版本说明仅作为历史资料保留；旧包名不能通过新 APK 原地覆盖。独立版可以与 Aerial 共存，系统权限和私有数据各自独立。请勿同时启用两个桌面守护。
@@ -40,18 +59,6 @@ Standard 与 Guard 同包名、二选一；升级选择与当前一致的类型�
 - 儿童应用名单、观看限额与趣味答题；长辈大图标和休息提醒。
 - 手机同网扫码管理、上传素材与验证后的更新包推送。
 - 在线更新、性能模式及常用系统入口；具体能力受电视系统限制。
-
-## HaloTV 3.5 真机截图
-
-[![电视桌面与音乐灵动岛](website/images/home-3.5.jpg)](website/images/home-3.5.jpg)
-
-| 桌面灵动岛设置 | 控制中心 |
-| --- | --- |
-| [![桌面灵动岛设置](website/images/island-settings-3.5.jpg)](website/images/island-settings-3.5.jpg) | [![毛玻璃控制中心](website/images/control-3.5.jpg)](website/images/control-3.5.jpg) |
-| **壁纸与屏保** | **翻页时钟屏保** |
-| [![壁纸与屏保](website/images/wallpaper-3.5.jpg)](website/images/wallpaper-3.5.jpg) | [![翻页时钟屏保](website/images/flip-3.5.jpg)](website/images/flip-3.5.jpg) |
-
-图片来自 HaloTV 3.5 Guard，保留 1920 × 1080。局域网地址和二维码已遮挡。 [查看全部实机截图](screenshots/README.md)
 
 [安装教程](INSTALL.md) · [常见问题](FAQ.md) · [守护诊断工具](docs/HALO_GUARD_TOOL.md) · [累计更新记录](RELEASE_NOTES.md)
 
