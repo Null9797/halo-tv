@@ -1,11 +1,11 @@
-# HaloTV 3.5 安装、升级与守护配置
+# HaloTV 3.5.1 安装、升级与守护配置
 
-[官网](https://halo-tv.pages.dev/) · [GitHub Releases](https://github.com/Null9797/halo-tv/releases/tag/v3.5-halo) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)
+[官网](https://halo-tv.pages.dev/) · [GitHub Releases](https://github.com/Null9797/halo-tv/releases/tag/v3.5.1-halo) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)
 
-Standard / Guard：Android 5.0+，内部号 **270**；Lite：Android 4.0+，内部号 **118**。三个包均显示 **3.5**，使用 HaloTV 独立包名和专属签名。
+Standard / Guard：Android 5.0+，内部号 **274**；Lite：Android 4.0+，内部号 **121**。三个包均显示 **3.5.1**，使用 HaloTV 独立包名和专属签名。
 
 - 新用户：Android 5.0+ 优先 Standard；固件明确拒绝第三方 HOME 桌面时尝试 Guard；Android 4.0–4.4 使用 Lite。
-- 已安装独立版：可安装 3.5（Standard / Guard 270，Lite 118）同类型包覆盖升级，保留现有数据。
+- 已安装独立版：可安装 3.5.1（Standard / Guard 274，Lite 121）同类型包覆盖升级，保留现有数据。
 
 不要同时启用两套桌面守护。旧 `app.orchard.tv` 可能是 Aerial 或旧 HaloTV，不能只凭包名自动卸载它。新包名不等于旧应用的原地覆盖。
 
@@ -93,16 +93,16 @@ adb devices -l
 macOS / Linux：
 
 ```shell
-adb install -r "$HOME/Downloads/HaloTV-3.5-standard.apk"
+adb install -r "$HOME/Downloads/HaloTV-3.5.1-standard.apk"
 ```
 
 Windows PowerShell：
 
 ```powershell
-adb install -r "$env:USERPROFILE\Downloads\HaloTV-3.5-standard.apk"
+adb install -r "$env:USERPROFILE\Downloads\HaloTV-3.5.1-standard.apk"
 ```
 
-Guard 改为 `HaloTV-3.5-guard.apk`，Lite 改为 `HaloTV-3.5-lite.apk`。显示 `Success` 说明安装器接受了安装，随后打开应用检查版本。
+Guard 改为 `HaloTV-3.5.1-guard.apk`，Lite 改为 `HaloTV-3.5.1-lite.apk`。显示 `Success` 说明安装器接受了安装，随后打开应用检查版本。
 
 Standard / Guard 的完整启动组件：
 
@@ -145,7 +145,7 @@ TV=电视IP bash tools/halo-guard.sh --repair
 
 ## 7. 更新、手机推送与卸载
 
-独立版使用独立更新清单，默认官网优先、GitHub 备用，当前正式版为 3.5。只接收同包名、同签名、同类型且内部号更高的安装包。当前独立版不提供旧包名数据导入或跨包升级。
+独立版使用独立更新清单，默认官网优先、GitHub 备用，当前正式版为 3.5.1。只接收同包名、同签名、同类型且内部号更高的安装包。当前独立版不提供旧包名数据导入或跨包升级。
 
 电视：控制中心 → 软件更新 → 检查更新。自动下载默认关闭；开启后下载完成仍需电视确认安装。
 
@@ -165,7 +165,7 @@ adb uninstall app.halotv.launcher.lite
 ## 8. 可交给本地 AI 助手的安装指令
 
 ```text
-请帮我把 HaloTV 3.5 安装到安卓电视或电视盒子。官网 https://halo-tv.pages.dev/，GitHub https://github.com/Null9797/halo-tv。请先确认电视 Android 版本和当前 HaloTV 包名/类型；5.0+优先Standard，固件拒绝HOME应用时试Guard，4.0–4.4用Lite。独立包是app.halotv.launcher或app.halotv.launcher.lite；当前独立版不提供旧包名配置导入，新包名不能覆盖旧应用；不能盲目卸载app.orchard.tv。请一步步指导我开启ADB、查看IP与端口，按系统要求配对和确认连接。下载后核对来源、版本、包名、签名，用ADB安装，尽量保留现有数据。打开验证成功后，再根据我的授权配置默认桌面及守护。独立版的类仍是app.orchard.tv.MainActivity。遇到错误解释并排查，不删除或停用系统桌面、不修改网络、不自动卸载Aerial或旧HaloTV。
+请帮我把 HaloTV 3.5.1 安装到安卓电视或电视盒子。官网 https://halo-tv.pages.dev/，GitHub https://github.com/Null9797/halo-tv。请先确认电视 Android 版本和当前 HaloTV 包名/类型；5.0+优先Standard，固件拒绝HOME应用时试Guard，4.0–4.4用Lite。独立包是app.halotv.launcher或app.halotv.launcher.lite；当前独立版不提供旧包名配置导入，新包名不能覆盖旧应用；不能盲目卸载app.orchard.tv。请一步步指导我开启ADB、查看IP与端口，按系统要求配对和确认连接。下载后核对来源、版本、包名、签名，用ADB安装，尽量保留现有数据。打开验证成功后，再根据我的授权配置默认桌面及守护。独立版的类仍是app.orchard.tv.MainActivity。遇到错误解释并排查，不删除或停用系统桌面、不修改网络、不自动卸载Aerial或旧HaloTV。
 ```
 
 纯网页聊天通常不能直接操作本地电视；需要可在自己电脑执行 ADB 的本地代理。配对、RSA授权和安装确认按电视系统要求完成。

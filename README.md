@@ -2,7 +2,7 @@
   <img src="website/images/brand/halotv.png" alt="HaloTV Logo" width="120" height="120">
   <h1>HaloTV</h1>
   <p><strong>你的电视，你的桌面。</strong></p>
-  <p>免费开源的 Android TV 桌面 · 3.5 正式版</p>
+  <p>免费开源的 Android TV 桌面 · 3.5.1 正式版</p>
   <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="docs/README.en.md">English</a></p>
 </div>
 
@@ -18,11 +18,11 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 | 版本 | 适合的设备 | 官网下载 | GitHub 备用 |
 | :--- | :--- | :--- | :--- |
-| **Standard** | Android 5.0+，大多数电视优先尝试 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-standard.apk) |
-| **Guard** | Android 5.0+，可尝试用于限制第三方桌面的固件 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-guard.apk) |
-| **Lite** | Android 4.0+，老旧或低配置设备 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-lite.apk) |
+| **Standard** | Android 5.0+，大多数电视优先尝试 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5.1-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-standard.apk) |
+| **Guard** | Android 5.0+，可尝试用于限制第三方桌面的固件 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5.1-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-guard.apk) |
+| **Lite** | Android 4.0+，老旧或低配置设备 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.5.1-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-lite.apk) |
 
-[安装教程](INSTALL.md) · [3.5 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.5-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.5.txt) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（以网盘页面显示为准）
+[安装教程](INSTALL.md) · [3.5.1 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.5.1-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.5.1.txt) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（以网盘页面显示为准）
 
 电视端可通过「控制中心 → 软件更新」获取新版，优先从官网下载，失败时尝试 GitHub。Standard 和 Guard 使用同一个包名，二选一。Lite 使用独立包名，沿用其轻量功能范围。
 
@@ -43,15 +43,15 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 图集采集自 HaloTV 3.5 系列测试构建，原图为 1920 × 1080。界面随电视和个人设置而异。
 
-## 3.5 更新内容
+## 3.5.1 更新内容
 
-桌面灵动岛默认关闭。进入「HaloTV 设置 → 桌面灵动岛」开启。显示音乐时，授予「Halo TV 桌面守护」通知使用权，选择音乐来源，并在音乐 App 开启后台播放。网易云音乐已有实机测试，其他播放器需提供 Android 媒体会话。
+- 修复壁纸页按 Home 返回时短暂闪出设置页的问题。普通入口重开后回到「静态壁纸」，本地照片和视频快捷入口保留各自的定位。 [#69](https://github.com/Null9797/halo-tv/issues/69) · [#71](https://github.com/Null9797/halo-tv/issues/71)
+- 修复 Android 5.0–5.1 的翻页时钟大数字可能不显示的问题。 [#72](https://github.com/Null9797/halo-tv/issues/72)
+- 修复切换动态壁纸后 Dock 和菜单继续沿用上一部影片的玻璃配色。 [#63](https://github.com/Null9797/halo-tv/issues/63)
+- 补齐 Android 5/6 上 Apple 在线视频缩略图所需的证书信任。预览偏暗或串入二维码仍待确认。 [#56](https://github.com/Null9797/halo-tv/issues/56)
+- 合入 Aerial 2.15 的手机图标库搜索、网格展示和部分机型兼容改进，清理已停用的实验性刷新率代码。
 
-- 航拍画质保留「自动」与「1080p」，并说明 4K 可用条件。 [#55](https://github.com/Null9797/halo-tv/issues/55)
-- 改善 Android 5/6 本地动态壁纸开机时的首帧交接。 [#58](https://github.com/Null9797/halo-tv/issues/58)
-- 修复老系统守护工具的主用户确认及 Windows 中文输出。 [#59](https://github.com/Null9797/halo-tv/issues/59)
-
-Standard / Guard 内部号 `270`，Lite `118`。[完整更新说明](docs/releases/RELEASE-3.5.md) · [累计更新记录](RELEASE_NOTES.md) · [构建与代码检查](docs/releases/VERIFICATION-3.5.json)
+Standard / Guard 内部号 `274`，Lite `121`。 [完整更新说明](docs/releases/RELEASE-3.5.1.md) · [累计更新记录](RELEASE_NOTES.md) · [构建验证](docs/releases/VERIFICATION-3.5.1.json)
 
 ## 安装帮助与问题反馈
 
@@ -67,4 +67,4 @@ Standard / Guard 内部号 `270`，Lite `118`。[完整更新说明](docs/releas
 - Bing 壁纸归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供。在线媒体目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。媒体版权归各权利人所有。
 - HaloTV 与 Aerial 原作者、Apple 或电视厂商无隶属或背书关系。
 
-[3.5 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.5-halo/HaloTV-3.5-source.zip) · [全部历史版本](https://github.com/Null9797/halo-tv/releases)
+[3.5.1 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-source.zip) · [全部历史版本](https://github.com/Null9797/halo-tv/releases)
