@@ -1,0 +1,155 @@
+{
+  "version": "3.5.1",
+  "stage": "3.5.1 release verification",
+  "sourceCommit": "11e8252f7b6f4c4edd99dc12875844fda7c2cad0",
+  "baseCommit": "56ce87d030e9e9e49fa48e8498422064de6f4f00",
+  "offlineToolTests": 63,
+  "coverUpgradeValidation": "APK metadata and isolated API 36 TV emulator in-place installs on all three editions; no physical TV installation.",
+  "feedbackWorkerOfflineTests": 3,
+  "phoneWebSyntax": [
+    "index.html inline script",
+    "halo.js"
+  ],
+  "instrumentedTestSourcePresent": false,
+  "televisionOperations": false,
+  "emulatorApi": 36,
+  "emulatorNote": "Read-only disk overlay, no snapshots, explicit emulator transport only; see report.",
+  "gradleTasks": [
+    ":app:assembleStandardRelease",
+    ":app:assembleGuardRelease",
+    ":lite:assembleRelease",
+    ":app:testStandardReleaseUnitTest",
+    ":app:testGuardReleaseUnitTest",
+    ":lite:testReleaseUnitTest",
+    ":app:lintStandardRelease",
+    ":app:lintGuardRelease",
+    ":lite:lintRelease"
+  ],
+  "editions": {
+    "standard": {
+      "apk": "HaloTV-3.5.1-standard.apk",
+      "package": "app.halotv.launcher",
+      "versionCode": 274,
+      "versionName": "3.5.1",
+      "minSdk": 21,
+      "targetSdk": 34,
+      "edition": "standard",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "sha256": "f7a3244220bd489463604fdbc03ae019c52f8835d66510f7b09a34bb49f8746e",
+      "bytes": 7927075,
+      "dexMetadata": [
+        "28.dm",
+        "31.dm"
+      ],
+      "unchangedNonWebAssets": true,
+      "upgradeFromCode": 273,
+      "tests": {
+        "tests": 672,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "AerialThumbnailTlsTest": 1,
+        "FlipClockSecondsTest": 2,
+        "LocalVideoSurfacePolicyTest": 8,
+        "WallpaperReturnShieldTest": 7,
+        "WallpaperPresentationTest": 1,
+        "AerialPlaybackTest": 3,
+        "OnlineWallpaperRefreshTest": 2
+      },
+      "lint": {
+        "Warning": 355,
+        "Hint": 22
+      }
+    },
+    "guard": {
+      "apk": "HaloTV-3.5.1-guard.apk",
+      "package": "app.halotv.launcher",
+      "versionCode": 274,
+      "versionName": "3.5.1",
+      "minSdk": 21,
+      "targetSdk": 34,
+      "edition": "guard",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "sha256": "ea048cd0555aff253e3ee31b03806bbeef0c35e9cde057cf2db7b410c215a1d8",
+      "bytes": 7926664,
+      "dexMetadata": [
+        "28.dm",
+        "31.dm"
+      ],
+      "unchangedNonWebAssets": true,
+      "upgradeFromCode": 273,
+      "tests": {
+        "tests": 672,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "AerialThumbnailTlsTest": 1,
+        "FlipClockSecondsTest": 2,
+        "LocalVideoSurfacePolicyTest": 8,
+        "WallpaperReturnShieldTest": 7,
+        "WallpaperPresentationTest": 1,
+        "AerialPlaybackTest": 3,
+        "OnlineWallpaperRefreshTest": 2
+      },
+      "lint": {
+        "Warning": 356,
+        "Hint": 22
+      }
+    },
+    "lite": {
+      "apk": "HaloTV-3.5.1-lite.apk",
+      "package": "app.halotv.launcher.lite",
+      "versionCode": 121,
+      "versionName": "3.5.1",
+      "minSdk": 14,
+      "targetSdk": 34,
+      "edition": "lite",
+      "signerSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "schemes": [
+        "v1",
+        "v2"
+      ],
+      "sha256": "521b69e54b7e04f0e86f29d5d5d6230153dbdc38094e6f91f1e0d1d4473b0b64",
+      "bytes": 2465148,
+      "dexMetadata": [],
+      "unchangedNonWebAssets": true,
+      "upgradeFromCode": 120,
+      "tests": {
+        "tests": 192,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "focusTests": {
+        "OnlineWallpaperRefreshTest": 1
+      },
+      "lint": {
+        "Warning": 431
+      }
+    }
+  },
+  "sourceArchive": {
+    "file": "HaloTV-3.5.1-source.zip",
+    "sha256": "d672ebe5288df6eca9f6a1b05016fa3b5cca35fcfe353b1032b9c19635f9d1f3",
+    "files": 735
+  },
+  "hostTestTotals": {
+    "tests": 1536,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "staticAssertions": "Retired refresh tokens and tracked .orig/.rej files absent; actual refresh diagnostics and video frame-rate safeguards retained."
+}
