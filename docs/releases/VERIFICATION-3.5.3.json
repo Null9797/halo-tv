@@ -1,0 +1,70 @@
+{
+  "version": "3.5.3",
+  "baselineRelease": "3.5.2",
+  "applicationSourceBaseCommit": "b97fe5e501248ed75b43e15c0e0f07eb8ea0f32b",
+  "applicationSourceTree": "8c3dba2e1bde7940641b8237f389447f261c2603",
+  "deviceTesting": "The same rendering change was exercised on Android 5.0, 5.1, and 16 emulators. The original Mi Box 3 Pro remains to be tested.",
+  "packages": {
+    "standard": {
+      "filename": "HaloTV-3.5.3-standard.apk",
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 280,
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "61a2a8b2d7ea33f71aa73a9bbb2d65fe4dc576b68cea4fd058e06a0114af06f3",
+      "bytes": 7672692,
+      "tests": {
+        "tests": 682,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 340,
+        "Hint": 22
+      }
+    },
+    "guard": {
+      "filename": "HaloTV-3.5.3-guard.apk",
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 280,
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "52168e23424c0c0cd9b461e2266f44e12008ac366e22f6dc4fd86214e2c5022f",
+      "bytes": 7672658,
+      "tests": {
+        "tests": 682,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 341,
+        "Hint": 22
+      }
+    },
+    "lite": {
+      "filename": "HaloTV-3.5.3-lite.apk",
+      "applicationId": "app.halotv.launcher.lite",
+      "versionCode": 127,
+      "minSdk": 14,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "f92f2f546f2300270283bbc53fe9f2dc5b79f856b6907f2ccb043534af4d4b8d",
+      "bytes": 2464552,
+      "tests": {
+        "tests": 202,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 425
+      }
+    }
+  },
+  "sourceArchive": {
+    "filename": "HaloTV-3.5.3-source.zip",
+    "sha256": "a346149a47ea02ee60e3bf55d27933292a45c022031b2b0de61707e76d78bbcd",
+    "bytes": 10652588
+  }
+}
