@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.5.1",
+  "version": "3.5.2",
   "distribution": "independent",
-  "notes": "# HaloTV 3.5.1 正式版\n\n- 修复壁纸页按 Home 返回时短暂闪出设置页的问题。普通入口重开后回到「静态壁纸」，本地照片和视频快捷入口保留各自的定位。 [#69](https://github.com/Null9797/halo-tv/issues/69) · [#71](https://github.com/Null9797/halo-tv/issues/71)\n- 修复 Android 5.0–5.1 的翻页时钟大数字可能不显示的问题。 [#72](https://github.com/Null9797/halo-tv/issues/72)\n- 修复切换动态壁纸后 Dock 和菜单继续沿用上一部影片的玻璃配色。 [#63](https://github.com/Null9797/halo-tv/issues/63)\n- 补齐 Android 5/6 上 Apple 在线视频缩略图所需的证书信任。预览偏暗或串入二维码仍待确认。 [#56](https://github.com/Null9797/halo-tv/issues/56)\n- 合入 Aerial 2.15 的手机图标库搜索、网格展示和部分机型兼容改进，清理已停用的实验性刷新率代码。\n\nStandard / Guard 内部号 **274**，Lite **121**。三版沿用独立包名和签名，按原版别覆盖升级即可保留设置。三版共通过 1,536 项主机单测，并在 Android TV 模拟器验证同版别覆盖安装。暴风电视冷开机残影和老盒子的在线 4K 协商继续等待对应机型复测。 [#58](https://github.com/Null9797/halo-tv/issues/58) · [#55](https://github.com/Null9797/halo-tv/issues/55)\n\n感谢 Aerial 原作者、开源贡献者和提供日志与录屏的用户。 [Aerial 项目](https://github.com/pengchujin/aerial-tv) · [HaloTV 官网](https://halo-tv.pages.dev/)\n",
+  "notes": "# HaloTV 3.5.2 正式版\n\n- **Standard／Guard** 优化 Android 5/6 本地视频壁纸冷启动。首帧交接前保持静态封面，封面未就绪时使用不透明兜底。新增封面交接诊断，暴风电视需复测断电启动。 [#58](https://github.com/Null9797/halo-tv/issues/58)\n- **Standard／Guard** 为识别到 4K 输出及厂商 HEVC 解码器、但系统未报告 4K 支持的 Android 5/6 设备加入「试播 4K SDR」。自动档沿用设备能力判断。手动试播解码失败、首帧超时或持续掉帧时回退到 1080p。小米盒子 3 Pro 待实机验证。 [#55](https://github.com/Null9797/halo-tv/issues/55)\n- **Standard／Guard** 儿童答题出现时，可请求支持 Android 媒体会话的前台播放器暂停。答题结束回原应用后，尝试继续同一播放内容。需开启通知使用权。\n- **全版本** 将日期、星期和农历并排放在时间下方，适配左侧、右侧与居中布局。应用图标填满底板，去掉图标上的版本号。\n- **Lite** 加入在线图片屏保，支持缓存轮播。原普通时钟配置自动切换为翻页时钟。电视端和手机扫码页均可设设置图标位置。\n- **Lite** 加入可选桌面守护和状态诊断，Android 5.0 及以上可主动授权。Lite 本体仍支持 Android 4.0 及以上，守护实际效果取决于电视固件。\n\nStandard／Guard 内部号 **278**，Lite **125**。沿用独立版包名和签名，可按原版别覆盖升级。\n\n感谢 Aerial 原作者、开源贡献者和提供复测反馈的用户。 [Aerial 项目](https://github.com/pengchujin/aerial-tv) · [HaloTV 官网](https://halo-tv.pages.dev/)\n",
   "packages": {
     "standard": {
-      "versionCode": 274,
-      "sha256": "f7a3244220bd489463604fdbc03ae019c52f8835d66510f7b09a34bb49f8746e",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-standard.apk"
+      "versionCode": 278,
+      "sha256": "bb703d003ae912f3299425d55fa56d6b0d5aad3e588718aa77aa2b1f36699aed",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.2-halo/HaloTV-3.5.2-standard.apk"
     },
     "guard": {
-      "versionCode": 274,
-      "sha256": "ea048cd0555aff253e3ee31b03806bbeef0c35e9cde057cf2db7b410c215a1d8",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-guard.apk"
+      "versionCode": 278,
+      "sha256": "d710dfc1c077246659e1b1d944a25fffd4bb889e870741533bd383f0e7234afd",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.2-halo/HaloTV-3.5.2-guard.apk"
     },
     "lite": {
-      "versionCode": 121,
-      "sha256": "521b69e54b7e04f0e86f29d5d5d6230153dbdc38094e6f91f1e0d1d4473b0b64",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.1-halo/HaloTV-3.5.1-lite.apk"
+      "versionCode": 125,
+      "sha256": "60963047a5364e7303c01193373e01d19b65eaa6e494f2152d8d71f236e2ff62",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.2-halo/HaloTV-3.5.2-lite.apk"
     }
   }
 }
