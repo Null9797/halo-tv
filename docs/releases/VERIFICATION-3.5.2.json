@@ -1,0 +1,72 @@
+{
+  "version": "3.5.2",
+  "applicationSourceCommit": "b97fe5e501248ed75b43e15c0e0f07eb8ea0f32b",
+  "baselineRelease": "3.5.1",
+  "deviceTesting": "Host automated regression tests and static APK verification. The original physical TVs were not exercised.",
+  "packages": {
+    "standard": {
+      "filename": "HaloTV-3.5.2-standard.apk",
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 278,
+      "minSdk": 21,
+      "previousVersionCode": 274,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "bb703d003ae912f3299425d55fa56d6b0d5aad3e588718aa77aa2b1f36699aed",
+      "bytes": 7652778,
+      "tests": {
+        "tests": 679,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 341,
+        "Hint": 22
+      }
+    },
+    "guard": {
+      "filename": "HaloTV-3.5.2-guard.apk",
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 278,
+      "minSdk": 21,
+      "previousVersionCode": 274,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "d710dfc1c077246659e1b1d944a25fffd4bb889e870741533bd383f0e7234afd",
+      "bytes": 7652564,
+      "tests": {
+        "tests": 679,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 342,
+        "Hint": 22
+      }
+    },
+    "lite": {
+      "filename": "HaloTV-3.5.2-lite.apk",
+      "applicationId": "app.halotv.launcher.lite",
+      "versionCode": 125,
+      "minSdk": 14,
+      "previousVersionCode": 121,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "sha256": "60963047a5364e7303c01193373e01d19b65eaa6e494f2152d8d71f236e2ff62",
+      "bytes": 2445534,
+      "tests": {
+        "tests": 201,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 425
+      }
+    }
+  },
+  "sourceArchive": {
+    "filename": "HaloTV-3.5.2-source.zip",
+    "sha256": "26e1fbb8c16f621d2163333c542d542a1ebfa17bb418f4474d0d9219a722affb",
+    "bytes": 10630103
+  }
+}
