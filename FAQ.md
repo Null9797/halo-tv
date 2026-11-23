@@ -6,7 +6,7 @@ HaloTV 基于 Aerial 二次开发，由 Null_ 整理发布，非 Aerial 原作�
 ## 安装哪个版本？
 Android 5.0+ 优先 Standard；明确拒绝注册第三方 HOME 时尝试 Guard。Android 4.0–4.4 使用 Lite。Standard/Guard 同包名、二选一；Lite 是另一独立包，不含正式版动态桌面与 HomeGuardService。
 
-## 3.5.3 正式版如何升级？
+## 3.5.4 正式版如何升级？
 同类型独立版可直接覆盖，保留现有设置和素材。Standard / Guard 内部号为 278，Lite 为 125。可在电视「软件更新」检查，或通过官网下载对应的安装包。
 
 ## 如何显示灵动岛里的音乐？
