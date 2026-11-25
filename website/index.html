@@ -36,7 +36,7 @@
           </div>
           <div class="hero-description">
             <p>免费开源的 Android TV 桌面。把常用应用、喜欢的壁纸和正在播放的歌，放在打开电视的第一屏。</p>
-            <div class="actions"><a class="button button-primary" href="#download">下载 HaloTV</a><a class="button button-outline" href="#showcase">浏览实机画面</a></div>
+            <div class="actions"><a class="button button-primary" href="#download">下载 HaloTV</a><a class="button button-outline" href="#quark-download">网盘下载</a></div>
           </div>
         </div>
         <figure class="hero-frame">
@@ -96,6 +96,25 @@
         <h2 id="download-title">选择你的版本</h2>
         <p>首次安装优先选 Standard。升级时选择电视上当前使用的版本类型，可保留原有设置。</p>
       </div>
+      <article class="quark-download" id="quark-download" aria-labelledby="quark-download-title">
+        <div>
+          <h3 id="quark-download-title">夸克网盘下载</h3>
+          <div class="actions quark-actions">
+            <button class="button button-primary" type="button" id="copy-quark-link" hidden>复制网盘链接</button>
+            <a class="button button-outline" id="quark-share-link" href="https://pan.quark.cn/s/1eeb43d9a7cd" rel="sponsored">打开夸克网盘 <span aria-hidden="true">↗</span></a>
+          </div>
+          <p id="quark-copy-status" class="quark-copy-status" role="status"></p>
+          <p class="quark-disclosure">通过此链接下载，维护者可能获得推广收益。</p>
+        </div>
+        <div>
+          <ol class="quark-steps">
+            <li>复制链接后用夸克网盘 App 打开分享，也可从分享页打开 App。</li>
+            <li>登录后选择 Standard、Guard 或 Lite，保存到自己的网盘。</li>
+            <li>从网盘下载 APK，按<a href="#install">安装指引</a>装到电视。</li>
+          </ol>
+          <p class="quark-update">保留原分享链接。新版上传后，回到同一分享即可查看，再转存需要的安装包。</p>
+        </div>
+      </article>
       <div class="editions">
         <article class="edition edition-preferred" id="standard">
           <p class="edition-system">Android 5.0 及以上</p><h3>Standard</h3><p>适合大多数 Android 电视，提供完整桌面、动态壁纸与灵动岛。</p>
@@ -112,7 +131,7 @@
       </div>
       <div class="download-notes">
         <p>已安装 HaloTV？打开「控制中心 → 软件更新 → 检查更新」。电视端优先从官网下载，失败时尝试 GitHub，安装需在电视上确认。</p>
-        <p class="context-links"><a href="https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo">发布页与源码</a><a href="https://github.com/Null9797/halo-tv/blob/main/docs/releases/SHA256SUMS-3.6.txt">SHA-256 校验值</a><a href="https://pan.quark.cn/s/a14e3ab2dd41">网盘</a></p>
+        <p class="context-links"><a href="https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo">发布页与源码</a><a href="https://github.com/Null9797/halo-tv/blob/main/docs/releases/SHA256SUMS-3.6.txt">SHA-256 校验值</a></p>
       </div>
     </section>
 
@@ -144,5 +163,6 @@
       <p class="affiliation">HaloTV 是独立项目，与 Aerial 原作者、Apple 和电视厂商无隶属或背书关系。</p>
     </div>
   </footer>
+  <script src="/quark-download.js" defer></script>
 </body>
 </html>

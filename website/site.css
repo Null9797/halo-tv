@@ -99,6 +99,21 @@ summary { color: var(--ink); cursor: pointer; }
 .gallery .screen:hover { outline-color: #9abbea; }
 .gallery .screen:focus-visible { outline: 2px solid #a8d3ff; }
 
+.quark-download {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 16px 30px;
+  margin-bottom: 16px; padding: 25px; border: 1px solid #45688f; border-radius: 17px;
+  background: linear-gradient(130deg, #162a46, var(--panel) 78%);
+}
+.quark-download h3 { font-size: clamp(25px, 3vw, 34px); }
+.quark-actions { margin-top: 14px; }
+.quark-actions [hidden] { display: none; }
+.quark-actions a span { margin-inline-start: 6px; }
+.quark-steps { margin: 0; padding-inline-start: 1.4em; color: var(--muted); }
+.quark-steps li + li { margin-top: 4px; }
+.quark-steps a { color: var(--accent); text-decoration: underline; text-underline-offset: .2em; }
+.quark-disclosure, .quark-update { margin-top: 11px; color: var(--muted); font-size: 14px; }
+.quark-copy-status { color: var(--accent); font-size: 14px; }
+.quark-copy-status:not(:empty) { margin-top: 9px; }
 .editions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
 .edition { display: flex; flex-direction: column; padding: 25px; border: 1px solid var(--edge); border-radius: 17px; background: var(--panel); }
 .edition-preferred { background: linear-gradient(150deg, #19365c, #101c33 60%); border-color: #789dcb; }
@@ -151,7 +166,7 @@ summary { color: var(--ink); cursor: pointer; }
   .hero h1 { font-size: clamp(40px, 8vw, 70px); }
   .hero-description { gap: 17px; }
   .hero-description p { font-size: 16px; }
-  .edition, .feature-copy { padding: 18px; }
+  .edition, .feature-copy, .quark-download { padding: 18px; }
 }
 @media (max-width: 640px) {
   html { scroll-padding-top: 115px; }
@@ -165,7 +180,7 @@ summary { color: var(--ink); cursor: pointer; }
   .header-inner-compact { padding-block: 10px; }
   .header-inner-compact .navigation { grid-column: 2; }
   .hero { padding: 29px 0 23px; }
-  .section-head, .feature-main, .help-grid { grid-template-columns: 1fr; }
+  .section-head, .feature-main, .help-grid, .quark-download { grid-template-columns: 1fr; }
   .hero h1 br { display: initial; }
   .hero-description { display: block; }
   .hero h1 { margin-top: 13px; font-size: clamp(43px, 12vw, 68px); }
