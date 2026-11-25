@@ -6,8 +6,8 @@ HaloTV 基于 Aerial 二次开发，由 Null_ 整理发布，非 Aerial 原作�
 ## 安装哪个版本？
 Android 5.0+ 优先 Standard；明确拒绝注册第三方 HOME 时尝试 Guard。Android 4.0–4.4 使用 Lite。Standard/Guard 同包名、二选一；Lite 是另一独立包，不含正式版动态桌面与 HomeGuardService。
 
-## 3.5.4 正式版如何升级？
-同类型独立版可直接覆盖，保留现有设置和素材。Standard / Guard 内部号为 281，Lite 为 128。可在电视「软件更新」检查，或通过官网下载对应的安装包。
+## 3.6 正式版如何升级？
+同类型独立版可直接覆盖，保留现有设置和素材。Standard / Guard 内部号为 292，Lite 为 137。可在电视「软件更新」检查，或通过官网下载对应的安装包。
 
 ## 如何显示灵动岛里的音乐？
 Standard 和 Guard 进入「HaloTV 设置 → 桌面灵动岛」，打开开关并授予通知使用权，选择音乐来源 App。播放歌曲后按 Home 返回桌面。播放器需要支持后台播放及安卓系统媒体会话。
@@ -60,7 +60,7 @@ Standard/Guard最低Android5.0，Lite最低Android4.0。Samsung Tizen、LG webOS
 
 ## 如何向作者反馈问题？
 
-请在 [GitHub Issues](https://github.com/Null9797/halo-tv/issues) 搜索是否已有相同问题，或[提交新问题](https://github.com/Null9797/halo-tv/issues/new?template=bug_report.yml)。请附电视型号、Android 版本、HaloTV 版本、Standard / Guard / Lite 安装类型和复现步骤。Issue 是公开的，发布截图或日志前请遮掉二维码、IP、账号和其他个人信息。电视端可通过控制中心的「公告与反馈」扫码进入 GitHub。旧反馈渠道已关闭。
+请在 [GitHub Issues](https://github.com/Null9797/halo-tv/issues) 搜索是否已有相同问题，或[提交新问题](https://github.com/Null9797/halo-tv/issues/new?template=bug_report.yml)。请附电视型号、Android 版本、HaloTV 版本、Standard / Guard / Lite 安装类型和复现步骤。Issue 是公开的，发布截图或日志前请遮掉二维码、IP、账号和其他个人信息。电视端可从「控制中心 → 打赏｜联系作者·问题反馈·功能建议 → 问题反馈」扫码进入 GitHub。旧反馈渠道已关闭。
 
 ## 新欢迎页会每次启动都出现吗？
 不会。3.3.3 会保留此前 3.x 欢迎页的完成状态，已完成引导的用户升级后可直接进入桌面。新安装、尚未完成引导时仍显示一次静态欢迎页，确认后保存状态。
