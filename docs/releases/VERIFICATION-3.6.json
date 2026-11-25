@@ -1,0 +1,89 @@
+{
+  "version": "3.6",
+  "baselineRelease": "3.5.4",
+  "testSourceCommit": "3e805de1847d460c00d9cb9f7999228fb100e46a",
+  "applicationSourceCommit": "f998a5548f14d5aa1510ca5dda3114f0418322fa",
+  "applicationSourceTree": "8bcc8dc2e1c5bca76295bc5fecd5a601c51de05d",
+  "upstreamAerial": "2.17",
+  "issues": [
+    33,
+    58,
+    66,
+    78,
+    79
+  ],
+  "guardToolTestsPassed": 32,
+  "deviceTesting": "Release build, signature and host regressions verified. Original TV models require retests.",
+  "packages": {
+    "standard": {
+      "filename": "HaloTV-3.6-standard.apk",
+      "sha256": "78ef3ecbdb0eb6a4247f4985494dc72c553885276fd0d6866e74fd75f5baf84c",
+      "bytes": 7735866,
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 292,
+      "versionName": "3.6",
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "standard",
+      "hasHome": true,
+      "tests": {
+        "tests": 791,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 354,
+        "Hint": 21
+      }
+    },
+    "guard": {
+      "filename": "HaloTV-3.6-guard.apk",
+      "sha256": "23c5745e6b642c048d7c4c1f38421928a106f1236102f9fa0bb7cbbc3d0c7237",
+      "bytes": 7735819,
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 292,
+      "versionName": "3.6",
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "guard",
+      "hasHome": false,
+      "tests": {
+        "tests": 791,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 355,
+        "Hint": 21
+      }
+    },
+    "lite": {
+      "filename": "HaloTV-3.6-lite.apk",
+      "sha256": "218144e9049241c01a2df954dbab7fd6d30b608b2b5af7171038174d39cec68f",
+      "bytes": 2560318,
+      "applicationId": "app.halotv.launcher.lite",
+      "versionCode": 137,
+      "versionName": "3.6",
+      "minSdk": 14,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "lite",
+      "hasHome": true,
+      "tests": {
+        "tests": 231,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 435
+      }
+    }
+  },
+  "sourceArchive": {
+    "filename": "HaloTV-3.6-source.zip",
+    "sha256": "8345048a47e1f0e2fd13524c0e8a4c68ce9b1db498f507f418c44c78d058cde7",
+    "bytes": 10720947
+  }
+}
