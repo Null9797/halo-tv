@@ -41,7 +41,7 @@ def bound_state(dump, component, user=None):
     # expose one user; multi-user/vendor dumps need an explicit current-user-aware inspection.
     if len(re.findall(r"(?im)^\s*User\s+state\[", dump)) > 1:
         return None
-    explicit_user = re.search(r"(?im)^\s*User\s+state\[[^\n]*\bid\s*=\s*(\d+)", dump)
+    explicit_user = re.search(r"(?im)^\s*User\s+state\[\s*(?:[^\n]*\bid\s*=\s*)?(\d+)\b", dump)
     if explicit_user and (user is None or int(explicit_user.group(1)) != user):
         return None
     headings = list(re.finditer(r"(?im)^\s*(?:mBoundServices|Bound\s+services)\s*[:=]\s*", dump))
@@ -74,9 +74,33 @@ def bound_state(dump, component, user=None):
         components = COMPONENT.findall(section)
         if any(canonical(item) == component for item in components):
             return True
+        if any(not COMPONENT.search(record) for record in re.split(r"\bService\[", section)[1:]):
+            unrecognized = True
         if not components and re.search(r"[A-Za-z0-9\u4e00-\u9fff]", section):
             unrecognized = True
     return None if unrecognized else False
+
+
+def listener_bound_state(dump, user):
+    """Use the live listener's own guard status when an OEM lists only accessibility labels."""
+    if user != 0:
+        return None
+    headers = re.findall(r"(?m)^ *SERVICE[ \t]+(\S+)[^\n]*$", dump)
+    if len(headers) != 1 or canonical(headers[0]) != LISTENER:
+        return None
+    start = re.search(r"(?m)^ *SERVICE[ \t]+\S+[^\n]*\buser=0\b[^\n]*\n", dump)
+    if not start:
+        return None
+    # RevivalListener.dump writes these consecutive lines before the historical log buffer.
+    live = re.search(
+        r"(?m)^ *Aerial revival: active=(?:true|false)[^\n]*\n"
+        r" *userUnlocked=true guardRunning=(true|false)[ \t]*\n"
+        r" *Home Guard bound=(true|false) resumed=(?:true|false)\b",
+        dump[start.end():],
+    )
+    if not live or live[1] != live[2]:
+        return None
+    return live[1] == "true"
 
 
 def safe_error(value):
@@ -200,6 +224,8 @@ def snapshot(adb):
         "secure": bool(re.search(r"android\.permission\.WRITE_SECURE_SETTINGS:\s*granted=true", package)),
     }
     state["registered"] = contains(state["enabled"], GUARD)
+    if adb.user == 0 and state["bound"] is None and state["registered"] and state["global"] == "1":
+        state["bound"] = listener_bound_state(read(adb, "dumpsys", "activity", "service", LISTENER), adb.user)
     state["boot_entry"] = read(adb, "settings", "get", "system", "boot_app_componentname")
     return state
 

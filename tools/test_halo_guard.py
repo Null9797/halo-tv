@@ -56,9 +56,12 @@ if a[:2]==['pm','path']:
 if a[:2]==['dumpsys','package']:
  finish('versionCode=196 targetSdk=34\nversionName=3.1.1\nandroid.permission.WRITE_SECURE_SETTINGS: granted='+str(state.get('secure',False)).lower())
 if a==['dumpsys','accessibility']:
+ if 'accessibility_dump' in state: finish(state['accessibility_dump'])
  if state.get('unknown_bound'): finish('vendor accessibility status unavailable')
  bound='Service[label=Halo TV, id='+guard+']' if state.get('bound') else ''
  finish('User state[\n Bound services:{'+bound+'}\n Enabled services:{'+state['enabled']+'}\n Binding services:{}\n]')
+if a==['dumpsys','activity','service',listener]:
+ finish(state.get('listener_dump','No services match'))
 if a[:3]==['settings','get','system']:
  finish(state.get('boot_entry','null'))
 if a[:3]==['am','broadcast','-n']:
@@ -133,6 +136,21 @@ class HaloGuardCliTest(unittest.TestCase):
         self.assertIn("可能互相争抢", result.stdout)
         self.assertIn("versionName：3.1.1", result.stdout)
         self.assertNotIn("已实际绑定", result.stdout)
+
+    def test_coocaa_label_only_dump_can_be_confirmed_via_the_live_owner_listener(self):
+        header = 'SERVICE '+LISTENER+' abc123 pid=4200 user=0\n  Client:\n'
+        live = '    Aerial revival: active=false attempts=0 outcome=idle\n    userUnlocked=true guardRunning=true\n    Home Guard bound=true resumed=false\n'
+        state = dict(enabled=GUARD, listeners=LISTENER, accessibility_dump=
+                     'User state[0]\n Bound services:{Service[label=HaloTV 桌面守护 · 独立版]}\n Enabled services:{{'+GUARD+'}}')
+        result, calls, _ = self.run_cli(**state, **{'global':'1'}, listener_dump=header+live)
+        self.assertIn("已实际绑定", result.stdout)
+        self.assertEqual(self.mutations(calls), [])
+        for output in (header.replace('user=0','user=10')+live, header.replace(LISTENER, OTHER_LISTENER)+live,
+                       header+live.replace('bound=true','bound=false'), header+live.splitlines()[-1],
+                       header+live+header+live):
+            with self.subTest(output=output):
+                result, _, _ = self.run_cli(**state, **{'global':'1'}, listener_dump=output)
+                self.assertNotIn("已实际绑定", result.stdout)
 
     def test_connect_is_server_command_without_premature_transport_selector(self):
         result, _, state = self.run_cli()
@@ -343,6 +361,8 @@ class BoundDumpTest(unittest.TestCase):
 
     def test_vendor_labels_without_components_are_unknown(self):
         self.assertIsNone(self.module.bound_state('Bound services:{Service[label=Halo TV]}',GUARD))
+        self.assertIsNone(self.module.bound_state('Bound services:{Service[id='+OTHER+'], Service[label=HaloTV]}',GUARD))
+        self.assertIsNone(self.module.bound_state('User state[10]\nBound services:{'+GUARD+'}',GUARD,user=0))
 
     def test_unclosed_bound_container_does_not_swallow_enabled_services(self):
         dump='Bound services:{broken\nEnabled services:{'+GUARD+'}'
