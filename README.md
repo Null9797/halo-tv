@@ -3,7 +3,7 @@
   <h1>HaloTV</h1>
   <p><strong>你的电视，你的桌面。</strong></p>
   <p>免费开源的 Android TV 桌面 · 3.6 正式版</p>
-  <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="docs/README.en.md">English</a></p>
+  <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#夸克网盘下载"><strong>网盘下载</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="docs/README.en.md">English</a></p>
 </div>
 
 [![HaloTV 主桌面实拍，展示电视上的桌面快捷栏、玻璃 Dock 与音乐灵动岛](website/images/showcase/main.jpg)](website/images/showcase/main.jpg)
@@ -14,6 +14,24 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 ## 下载与安装
 
+### 夸克网盘下载
+
+[打开夸克网盘分享](https://pan.quark.cn/s/1eeb43d9a7cd) · [到官网一键复制链接](https://halo-tv.pages.dev/#quark-download)
+
+```text
+https://pan.quark.cn/s/1eeb43d9a7cd
+```
+
+1. 复制链接，用夸克网盘 App 打开分享。也可以从分享页打开 App。
+2. 登录后选择 Standard、Guard 或 Lite，保存到自己的网盘。
+3. 从网盘下载 APK，按[安装教程](INSTALL.md)安装到电视。
+
+保留原分享链接。新版上传后，打开同一分享即可查看，再转存需要的安装包。
+
+通过此链接下载，维护者可能获得推广收益。
+
+### 官网与 GitHub 直链
+
 首次安装可按设备选择。已在使用独立版时，选择相同类型覆盖安装即可保留设置。
 
 | 版本 | 适合的设备 | 官网下载 | GitHub 备用 |
@@ -22,7 +40,7 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 | **Guard** | Android 5.0+，可尝试用于限制第三方桌面的固件 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-guard.apk) |
 | **Lite** | Android 4.0+，老旧或低配置设备 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-lite.apk) |
 
-[安装教程](INSTALL.md) · [3.6 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.6.txt) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)（以网盘页面显示为准）
+[安装教程](INSTALL.md) · [3.6 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.6.txt)
 
 电视端可通过「控制中心 → 软件更新」获取新版，优先从官网下载，失败时尝试 GitHub。Standard 和 Guard 使用同一个包名，二选一。Lite 使用独立包名，Android 5.0 及以上支持主动开启轻量桌面守护。
 

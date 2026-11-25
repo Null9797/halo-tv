@@ -1,6 +1,6 @@
 # HaloTV 3.6 安装、升级与守护配置
 
-[官网](https://halo-tv.pages.dev/) · [GitHub Releases](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [网盘](https://pan.quark.cn/s/a14e3ab2dd41)
+[官网](https://halo-tv.pages.dev/) · [GitHub Releases](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [网盘下载](README.md#夸克网盘下载)
 
 Standard / Guard：Android 5.0+，内部号 **292**；Lite：Android 4.0+，内部号 **137**。三个包均显示 **3.6**，使用 HaloTV 独立包名和专属签名。Lite 在 Android 5.0 及以上可从「控制中心 → 桌面守护设置」主动授权轻量守护。
 
