@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.5.4",
+  "version": "3.6",
   "distribution": "independent",
-  "notes": "# HaloTV 3.5.4 正式版\n\n- **遥控器 · 三版** 主桌面、设置和弹窗会过滤同一次短按产生的重复方向信号，保留快按和长按连续移动。\n- **在线视频预览 · Standard／Guard** 在图库窗口内独立合成预览，打开图库时隐藏下层扫码面板。换片时保留对应封面，补齐老系统的 HTTPS 分段读取。预览亮度待小米盒子原机对比。 [#56](https://github.com/Null9797/halo-tv/issues/56)\n- **旧盒子 4K 壁纸 · Standard／Guard** Android 5／6 手动试播 4K 时，有效封面保留到首帧，减少从其他应用返回桌面时的黑屏。 [#55](https://github.com/Null9797/halo-tv/issues/55)\n- **本地视频冷启动 · Standard／Guard** 暴风 MST_6A838 在适用的 SDR 视频上等应用窗口收到实际视频帧再撤封面，解码失败时回退。 [#58](https://github.com/Null9797/halo-tv/issues/58)\n- **全部应用背景 · Standard／Guard** 拦截带异常右侧绿条的壁纸静帧，避免把绿条带入全部应用背景。播放中的绿条待原机复测。 [#54](https://github.com/Null9797/halo-tv/issues/54)\n- **必应图片屏保** 优化旧 Android 的 HTTPS 连接。Standard／Guard 在归档源失败时尝试必应日图，Lite 同步连接兼容修正。 [#76](https://github.com/Null9797/halo-tv/issues/76)\n- **Aerial 2.17 整合** 合入桌面守护的前台识别、小米背光、海尔信号源、Sony 静音状态和部分应用图标等兼容改进。\n\nStandard／Guard 内部号 **281**，Lite **128**。升级请选择电视当前使用的版别。三版共 1,607 项主机测试通过，另有 31 项守护工具测试通过。上述机型问题仍需原机复测。\n\n感谢 Aerial 原作者和提供复测资料的用户。 [HaloTV 官网](https://halo-tv.pages.dev/)\n",
+  "notes": "# HaloTV 3.6 正式版 · 更便捷，更懂你\n\n## 新增功能\n\n- **桌面快捷栏** 可从信号源、网络、清理后台、电源和更换壁纸中选最多 3 项。快捷图标和设置图标一起常驻、淡出或隐藏。\n- **一键换壁纸** 从桌面快捷栏或控制中心直接随机换同类型壁纸。Standard／Guard 支持静态和动态壁纸，Lite 支持静态壁纸。\n- **家长出题** 三版均支持在手机「儿童与长辈 → 家长出题」验证密码后自建、导入和导出题库。最多 6 套、合计 80 题，答题优先使用选中的题库。 [#33](https://github.com/Null9797/halo-tv/issues/33)\n- **儿童与长辈模式** 支持开机进入指定模式。已配置并设置家长密码后，可从普通桌面的控制中心直接进入，退出仍需验证家长密码。\n- **灵动岛音乐面板** Standard／Guard 选中音乐胶囊后长按确认键，可播放、暂停和切歌。\n- **更新提醒** 检测到可用新版时，控制中心「软件更新」显示橙色提醒点。\n\n## 优化与修复\n\n- **手机管理中心** 放大桌面预览，集中显示上传、安装包推送、打赏和诊断反馈入口。按桌面、壁纸、图标、家庭等分类设置电视。\n- **控制中心与公告** 调整家庭模式和关于入口。打赏、联系作者和 GitHub 反馈入口集中展示，普通和重要公告在主桌面弹窗提醒。\n- **儿童答题** 弹题前尝试暂停前台播放器，答完由用户自行恢复。优化跨午夜计时、遥控器操作及长题干和选项显示。\n- **日常稳定性** 改善快捷栏焦点、大时钟避让、壁纸切换和预览刷新，补强下载中断恢复和已下载更新包的保留逻辑。\n- **电视应用图标** 适配搜剧 TV 和看剧 AI TV 的横向卡片，保留已选择的自定义图标。 [#66](https://github.com/Null9797/halo-tv/issues/66)\n- **本地视频冷启动** Standard／Guard 补强暴风 MST_6A838 对本地 SDR 视频轨道的识别和首帧诊断，两份实验素材仍待原机复测。 [#58](https://github.com/Null9797/halo-tv/issues/58)\n- **创维桌面守护** Standard／Guard 增加创维 85A5F Mini 实体 Home 键所打开的系统桌面识别，同步改进守护诊断工具。待原机复测。 [#78](https://github.com/Null9797/halo-tv/issues/78)\n- **当贝黑屏排查** Standard／Guard 新增启动无窗口焦点的诊断记录，方便定位 DBSmart1 首次打开黑屏。 [#79](https://github.com/Null9797/halo-tv/issues/79)\n\n升级请选择电视当前使用的版别。Standard／Guard 内部版本号为 292，Lite 为 137。\n\n感谢 Aerial 原作者和提供反馈、复测资料的用户。 [HaloTV 官网](https://halo-tv.pages.dev/)\n",
   "packages": {
     "standard": {
-      "versionCode": 281,
-      "sha256": "e89105985d74f92bf37b7bb4782d58a0a7f6389304c7a8fdec912dec51a57663",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.4-halo/HaloTV-3.5.4-standard.apk"
+      "versionCode": 292,
+      "sha256": "78ef3ecbdb0eb6a4247f4985494dc72c553885276fd0d6866e74fd75f5baf84c",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-standard.apk"
     },
     "guard": {
-      "versionCode": 281,
-      "sha256": "f88563d55e1f5d6c4ae3f1ad205fb58c6129fc4352e319923e8448484744a782",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.4-halo/HaloTV-3.5.4-guard.apk"
+      "versionCode": 292,
+      "sha256": "23c5745e6b642c048d7c4c1f38421928a106f1236102f9fa0bb7cbbc3d0c7237",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-guard.apk"
     },
     "lite": {
-      "versionCode": 128,
-      "sha256": "4fd700e1b551c631daab959a41c16fdf446671840c5fa2fd76ef098c4bf6b334",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.5.4-halo/HaloTV-3.5.4-lite.apk"
+      "versionCode": 137,
+      "sha256": "218144e9049241c01a2df954dbab7fd6d30b608b2b5af7171038174d39cec68f",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-lite.apk"
     }
   }
 }
