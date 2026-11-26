@@ -105,13 +105,17 @@ summary { color: var(--ink); cursor: pointer; }
   background: linear-gradient(130deg, #162a46, var(--panel) 78%);
 }
 .quark-download h3 { font-size: clamp(25px, 3vw, 34px); }
+.quark-share-content {
+  margin: 12px 0 0; padding: 12px; border-radius: 9px; background: #0b1527;
+  color: var(--ink); font: inherit; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere;
+}
 .quark-actions { margin-top: 14px; }
 .quark-actions [hidden] { display: none; }
 .quark-actions a span { margin-inline-start: 6px; }
 .quark-steps { margin: 0; padding-inline-start: 1.4em; color: var(--muted); }
 .quark-steps li + li { margin-top: 4px; }
 .quark-steps a { color: var(--accent); text-decoration: underline; text-underline-offset: .2em; }
-.quark-disclosure, .quark-update { margin-top: 11px; color: var(--muted); font-size: 14px; }
+.quark-update { margin-top: 11px; color: var(--muted); font-size: 14px; }
 .quark-copy-status { color: var(--accent); font-size: 14px; }
 .quark-copy-status:not(:empty) { margin-top: 9px; }
 .editions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
