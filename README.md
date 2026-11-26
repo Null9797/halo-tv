@@ -16,19 +16,19 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 ### 夸克网盘下载
 
-[打开夸克网盘分享](https://pan.quark.cn/s/1eeb43d9a7cd) · [到官网一键复制链接](https://halo-tv.pages.dev/#quark-download)
+[打开夸克网盘分享](https://pan.quark.cn/s/96c264d59e08) · [到官网一键复制分享内容](https://halo-tv.pages.dev/#quark-download)
 
 ```text
-https://pan.quark.cn/s/1eeb43d9a7cd
+我用夸克网盘给你分享了「HaloTV 电视桌面软件」，点击链接或复制整段内容，打开「夸克APP」即可获取。
+/~6e093cYlwa~:/
+链接：https://pan.quark.cn/s/96c264d59e08
 ```
 
-1. 复制链接，用夸克网盘 App 打开分享。也可以从分享页打开 App。
+1. 复制上方整段分享内容，打开夸克 App 查看。也可以直接打开分享页。
 2. 登录后选择 Standard、Guard 或 Lite，保存到自己的网盘。
 3. 从网盘下载 APK，按[安装教程](INSTALL.md)安装到电视。
 
 保留原分享链接，之后可回去查看已上传的新版。转存前先核对 APK 版本，网盘尚未更新时可用下方直链下载当前正式版。
-
-通过此链接下载，维护者可能获得推广收益。
 
 ### 官网与 GitHub 直链
 
