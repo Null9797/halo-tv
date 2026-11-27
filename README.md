@@ -2,7 +2,7 @@
   <img src="website/images/brand/halotv.png" alt="HaloTV Logo" width="120" height="120">
   <h1>HaloTV</h1>
   <p><strong>你的电视，你的桌面。</strong></p>
-  <p>免费开源的 Android TV 桌面 · 3.6 正式版</p>
+  <p>免费开源的 Android TV 桌面 · 3.6.1 正式版</p>
   <p><a href="https://halo-tv.pages.dev/"><strong>官方网站</strong></a> · <a href="#夸克网盘下载"><strong>网盘下载</strong></a> · <a href="#下载与安装"><strong>下载与安装</strong></a> · <a href="docs/README.md">文档</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a> · <a href="docs/README.en.md">English</a></p>
 </div>
 
@@ -36,11 +36,11 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 | 版本 | 适合的设备 | 官网下载 | GitHub 备用 |
 | :--- | :--- | :--- | :--- |
-| **Standard** | Android 5.0+，大多数电视优先尝试 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-standard.apk) |
-| **Guard** | Android 5.0+，可尝试用于限制第三方桌面的固件 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-guard.apk) |
-| **Lite** | Android 4.0+，老旧或低配置设备 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-lite.apk) |
+| **Standard** | Android 5.0+，大多数电视优先尝试 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-standard.apk) |
+| **Guard** | Android 5.0+，可尝试用于限制第三方桌面的固件 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-guard.apk) |
+| **Lite** | Android 4.0+，老旧或低配置设备 | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-lite.apk) |
 
-[安装教程](INSTALL.md) · [3.6 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.6.txt)
+[安装教程](INSTALL.md) · [3.6.1 正式版](https://github.com/Null9797/halo-tv/releases/tag/v3.6.1-halo) · [最新正式版](https://github.com/Null9797/halo-tv/releases/latest) · [SHA-256 校验值](docs/releases/SHA256SUMS-3.6.1.txt)
 
 电视端可通过「控制中心 → 软件更新」获取新版，优先从官网下载，失败时尝试 GitHub。Standard 和 Guard 使用同一个包名，二选一。Lite 使用独立包名，Android 5.0 及以上支持主动开启轻量桌面守护。
 
@@ -61,29 +61,22 @@ HaloTV 基于 [Aerial](https://github.com/pengchujin/aerial-tv) 二次开发，�
 
 实机图集原图为 1920 × 1080，包含历次构建的画面。界面随电视和个人设置而异。
 
-## 3.6 更新内容
+## 3.6.1 更新内容
 
 ### 新增功能
 
-- **桌面快捷栏** 可从信号源、网络、清理后台、电源和更换壁纸中选最多 3 项。快捷图标和设置图标一起常驻、淡出或隐藏。
-- **一键换壁纸** 从桌面快捷栏或控制中心直接随机换同类型壁纸。Standard／Guard 支持静态和动态壁纸，Lite 支持静态壁纸。
-- **家长出题** 三版均支持在手机「儿童与长辈 → 家长出题」验证密码后自建、导入和导出题库。最多 6 套、合计 80 题，答题优先使用选中的题库。 [#33](https://github.com/Null9797/halo-tv/issues/33)
-- **儿童与长辈模式** 支持开机进入指定模式。已配置并设置家长密码后，可从普通桌面的控制中心直接进入，退出仍需验证家长密码。
-- **灵动岛音乐面板** Standard／Guard 选中音乐胶囊后长按确认键，可播放、暂停和切歌。
-- **更新提醒** 检测到可用新版时，控制中心「软件更新」显示橙色提醒点。
+- **儿童模式定时休息**　可分别设置每日总时长、单次观看时长和休息间隔。到达单次时长后，可选「强制休息」或继续使用「答题续看」。休息结束后自动解锁，单次时长或休息间隔设为 0 可关闭定时休息。电视和手机管理页均可设置。 [#82](https://github.com/Null9797/halo-tv/issues/82)
 
-### 优化与修复
+### 修复与优化
 
-- **手机管理中心** 放大桌面预览，集中显示上传、安装包推送、打赏和诊断反馈入口。按桌面、壁纸、图标、家庭等分类设置电视。
-- **控制中心与公告** 调整家庭模式和关于入口。打赏、联系作者和 GitHub 反馈入口集中展示，普通和重要公告在主桌面弹窗提醒。
-- **儿童答题** 弹题前尝试暂停前台播放器，答完由用户自行恢复。优化跨午夜计时、遥控器操作及长题干和选项显示。
-- **日常稳定性** 改善快捷栏焦点、大时钟避让、壁纸切换和预览刷新，补强下载中断恢复和已下载更新包的保留逻辑。
-- **电视应用图标** 适配搜剧 TV 和看剧 AI TV 的横向卡片，保留已选择的自定义图标。 [#66](https://github.com/Null9797/halo-tv/issues/66)
-- **本地视频冷启动** Standard／Guard 补强暴风 MST_6A838 对本地 SDR 视频轨道的识别和首帧诊断，两份实验素材仍待原机复测。 [#58](https://github.com/Null9797/halo-tv/issues/58)
-- **创维桌面守护** Standard／Guard 增加创维 85A5F Mini 实体 Home 键所打开的系统桌面识别，同步改进守护诊断工具。待原机复测。 [#78](https://github.com/Null9797/halo-tv/issues/78)
-- **当贝黑屏排查** Standard／Guard 新增启动无窗口焦点的诊断记录，方便定位 DBSmart1 首次打开黑屏。 [#79](https://github.com/Null9797/halo-tv/issues/79)
+- **天气更易读**　突出当前温度，分开显示最高和最低温。自动定位匹配到城市后，城市名称和预报使用同一地点的坐标。 [#92](https://github.com/Null9797/halo-tv/issues/92)
+- **本地视频壁纸**　启用壁纸声音时，等待首帧就绪后再出声。康佳 V560 冷开机的音量表现待原机复测。 [#84](https://github.com/Null9797/halo-tv/issues/84)
+- **遥控器焦点**　打开设置时聚焦当前分类，首个选项按左键回到分类。改善信号源设置、隐藏应用与控制中心返回时的焦点，以及 PIN 面板和长应用文件夹的方向键操作。 [Aerial #1766](https://github.com/pengchujin/aerial-tv/issues/1766) · [Aerial #1748](https://github.com/pengchujin/aerial-tv/issues/1748)
+- **动态壁纸与待机**　改善待机后的播放恢复，取帧按设备能力选择路径，减少重复读帧。 [Aerial #1759](https://github.com/pengchujin/aerial-tv/issues/1759) · [Aerial #1789](https://github.com/pengchujin/aerial-tv/issues/1789)
+- **音量与电视兼容**　收到音量键松手事件时取消待执行的连调，并记录按键诊断。优化开机守护和信号源回退顺序，补充部分创维、TCL 和国美固件的兼容路径。 [Aerial #1783](https://github.com/pengchujin/aerial-tv/issues/1783) · [Aerial #1787](https://github.com/pengchujin/aerial-tv/issues/1787) · [Aerial #1712](https://github.com/pengchujin/aerial-tv/issues/1712)
+- **Lite**　改善旧显卡的时钟数字显示。跨日后会继续检查尚未更新的每日壁纸。 [Aerial #1658](https://github.com/pengchujin/aerial-tv/issues/1658) · [Aerial #1750](https://github.com/pengchujin/aerial-tv/issues/1750)
 
-Standard / Guard 内部号 `292`，Lite `137`。 [完整更新说明](docs/releases/RELEASE-3.6.md) · [累计更新记录](RELEASE_NOTES.md) · [构建验证](docs/releases/VERIFICATION-3.6.json)
+Standard / Guard 内部号 `294`，Lite `139`。 [完整更新说明](docs/releases/RELEASE-3.6.1.md) · [累计更新记录](RELEASE_NOTES.md) · [构建验证](docs/releases/VERIFICATION-3.6.1.json)
 
 ## 安装帮助与问题反馈
 
@@ -99,4 +92,4 @@ Standard / Guard 内部号 `292`，Lite `137`。 [完整更新说明](docs/relea
 - Bing 壁纸归档由 [YanGN](https://github.com/ygnstudio/bing_wallpaper_archive) 提供。在线媒体目录参考 [Aerial Views](https://github.com/theothernt/AerialViews)，视频来自 Apple。媒体版权归各权利人所有。
 - HaloTV 与 Aerial 原作者、Apple 或电视厂商无隶属或背书关系。
 
-[3.6 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-source.zip) · [全部历史版本](https://github.com/Null9797/halo-tv/releases)
+[3.6.1 完整应用源码](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-source.zip) · [全部历史版本](https://github.com/Null9797/halo-tv/releases)
