@@ -6,18 +6,19 @@
 
 | 我想做什么 | 从这里开始 |
 | :--- | :--- |
-| 下载或安装 HaloTV | [3.6 正式版](https://github.com/Null9797/halo-tv/releases/latest) · [安装教程](../INSTALL.md) |
+| 下载或安装 HaloTV | [3.6.1 正式版](https://github.com/Null9797/halo-tv/releases/latest) · [安装教程](../INSTALL.md) |
 | 设置桌面守护 | [守护诊断工具](HALO_GUARD_TOOL.md) · [官网更新与守护指引](https://halo-tv.pages.dev/help/update-and-setup.html) |
 | 查询兼容性或反馈问题 | [常见问题](../FAQ.md) · [GitHub Issues](https://github.com/Null9797/halo-tv/issues) |
-| 校验安装包、查看构建结果 | [3.6 校验值](releases/SHA256SUMS-3.6.txt) · [构建验证](releases/VERIFICATION-3.6.json) · [最新校验值](../SHA256SUMS.txt) |
+| 校验安装包、查看构建结果 | [3.6.1 校验值](releases/SHA256SUMS-3.6.1.txt) · [构建验证](releases/VERIFICATION-3.6.1.json) · [最新校验值](../SHA256SUMS.txt) |
 
 ## 版本记录
 
-[3.6 更新说明](releases/RELEASE-3.6.md) · [累计更新记录](../RELEASE_NOTES.md) · [历史安装包、源码和校验文件](https://github.com/Null9797/halo-tv/releases)
+[3.6.1 更新说明](releases/RELEASE-3.6.1.md) · [累计更新记录](../RELEASE_NOTES.md) · [历史安装包、源码和校验文件](https://github.com/Null9797/halo-tv/releases)
 
 <details>
 <summary>历史版本文档</summary>
 
+- 3.6 · [更新说明](releases/RELEASE-3.6.md) · [校验值](releases/SHA256SUMS-3.6.txt) · [构建验证](releases/VERIFICATION-3.6.json)
 - 3.3.7 · [3.3.7 更新说明](releases/RELEASE-3.3.7.md) · [3.3.7 文件校验值](releases/SHA256SUMS-3.3.7.txt) · [3.3.7 构建验证](releases/VERIFICATION-3.3.7.json)
 - 3.3.6 · [3.3.6 更新说明](releases/RELEASE-3.3.6.md) · [3.3.6 文件校验值](releases/SHA256SUMS-3.3.6.txt) · [3.3.6 构建验证](releases/VERIFICATION-3.3.6.json)
 - 3.3.5 · [3.3.5.2 更新说明](releases/RELEASE-3.3.5.1.md) · [3.3.5 文件校验值](releases/SHA256SUMS-3.3.5.1.txt) · [3.3.5 构建验证](releases/VERIFICATION-3.3.5.1.json)

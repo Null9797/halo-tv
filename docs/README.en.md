@@ -2,7 +2,7 @@
   <img src="../website/images/brand/halotv.png" width="112" height="112" alt="HaloTV logo">
   <h1>HaloTV</h1>
   <p><strong>Your TV, your home screen.</strong></p>
-  <p>Free, open-source launcher for Android TV · Release 3.6</p>
+  <p>Free, open-source launcher for Android TV · Release 3.6.1</p>
   <p><a href="https://halo-tv.pages.dev/">Website</a> · <a href="../README.md">简体中文</a> · <a href="../INSTALL.md">Installation guide</a> · <a href="https://github.com/Null9797/halo-tv/issues">Issues</a></p>
 </div>
 
@@ -14,31 +14,29 @@ HaloTV is a community-maintained derivative of [Aerial](https://github.com/pengc
 
 | Edition | Use case | Website | GitHub |
 | --- | --- | --- | --- |
-| **Standard** | Android 5.0+; try this first | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-standard.apk) |
-| **Guard** | Android 5.0+; try it on firmware that restricts third-party launchers | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-guard.apk) |
-| **Lite** | Android 4.0+; designed for older or lower-powered TVs | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-lite.apk) |
+| **Standard** | Android 5.0+; try this first | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-standard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-standard.apk) |
+| **Guard** | Android 5.0+; try it on firmware that restricts third-party launchers | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-guard.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-guard.apk) |
+| **Lite** | Android 4.0+; designed for older or lower-powered TVs | [APK](https://halo-tv.pages.dev/updates/HaloTV-3.6.1-lite.apk) | [APK](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-lite.apk) |
 
 Install the matching edition over an existing independent installation to retain its settings. Aerial and independent HaloTV can coexist with separate permissions and data. Use only one desktop guard at a time. Cross-package configuration import was removed in 3.2.4.
 
-[Website downloads](https://halo-tv.pages.dev/#download) · [Release 3.6](https://github.com/Null9797/halo-tv/releases/tag/v3.6-halo) · [Application source](https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-source.zip)
+[Website downloads](https://halo-tv.pages.dev/#download) · [Release 3.6.1](https://github.com/Null9797/halo-tv/releases/tag/v3.6.1-halo) · [Application source](https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-source.zip)
 
-## What's new in 3.6
+## What's new in 3.6.1
 
 ### New features
 
-- Customize up to three desktop shortcuts. Shuffle the current wallpaper type from the desktop or Control Center.
-- Create, import and export custom question banks from the phone management page. [#33](https://github.com/Null9797/halo-tv/issues/33)
-- Set Kids or Senior mode to start on boot. Enter a configured mode from the normal desktop and verify the parent PIN when exiting.
-- Long-press the music capsule for playback controls on Standard / Guard. Control Center shows a dot when an update is available.
+- Set a continuous viewing limit and a timed rest in Kids mode. Pick a timed break or the existing quiz option. [#82](https://github.com/Null9797/halo-tv/issues/82)
 
-### Improvements and fixes
+### Fixes and improvements
 
-- Streamlined phone management and Control Center. Improved quiz playback handling, wallpaper switching, update recovery and TV app icon layout. [#66](https://github.com/Null9797/halo-tv/issues/66)
-- Improved cold-start video track detection and Skyworth Home handling on the reported devices. Added startup diagnostics for the reported Dangbei black screen. [#58](https://github.com/Null9797/halo-tv/issues/58) · [#78](https://github.com/Null9797/halo-tv/issues/78) · [#79](https://github.com/Null9797/halo-tv/issues/79)
+- Separate current temperature from the daily high and low. When automatic location matches a city, use that city's coordinates for the forecast. [#92](https://github.com/Null9797/halo-tv/issues/92)
+- Wait for the first video wallpaper frame before enabling sound. The reported Konka model needs a cold-start retest. [#84](https://github.com/Null9797/halo-tv/issues/84)
+- Improved remote focus, wallpaper playback after standby, signal-source fallbacks and volume-key handling. Lite retries an out-of-date daily wallpaper after a date rollover.
 
-Build 292 for Standard / Guard and 137 for Lite. Upgrade using the same edition. Affected TV models still need hardware retests.
+Build 294 for Standard / Guard and 139 for Lite. Upgrade with the same edition.
 
-[TV screenshots](GALLERY.md) · [Release notes](releases/RELEASE-3.6.md) · [Build verification](releases/VERIFICATION-3.6.json)
+[TV screenshots](GALLERY.md) · [Release notes](releases/RELEASE-3.6.1.md) · [Build verification](releases/VERIFICATION-3.6.1.json)
 
 Screenshot credit: HaloTV 3.5-series test build captured on a TV.
 
