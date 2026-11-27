@@ -1,23 +1,23 @@
 {
   "schema": 1,
-  "version": "3.6",
+  "version": "3.6.1",
   "distribution": "independent",
-  "notes": "# HaloTV 3.6 正式版 · 更便捷，更懂你\n\n## 新增功能\n\n- **桌面快捷栏** 可从信号源、网络、清理后台、电源和更换壁纸中选最多 3 项。快捷图标和设置图标一起常驻、淡出或隐藏。\n- **一键换壁纸** 从桌面快捷栏或控制中心直接随机换同类型壁纸。Standard／Guard 支持静态和动态壁纸，Lite 支持静态壁纸。\n- **家长出题** 三版均支持在手机「儿童与长辈 → 家长出题」验证密码后自建、导入和导出题库。最多 6 套、合计 80 题，答题优先使用选中的题库。 [#33](https://github.com/Null9797/halo-tv/issues/33)\n- **儿童与长辈模式** 支持开机进入指定模式。已配置并设置家长密码后，可从普通桌面的控制中心直接进入，退出仍需验证家长密码。\n- **灵动岛音乐面板** Standard／Guard 选中音乐胶囊后长按确认键，可播放、暂停和切歌。\n- **更新提醒** 检测到可用新版时，控制中心「软件更新」显示橙色提醒点。\n\n## 优化与修复\n\n- **手机管理中心** 放大桌面预览，集中显示上传、安装包推送、打赏和诊断反馈入口。按桌面、壁纸、图标、家庭等分类设置电视。\n- **控制中心与公告** 调整家庭模式和关于入口。打赏、联系作者和 GitHub 反馈入口集中展示，普通和重要公告在主桌面弹窗提醒。\n- **儿童答题** 弹题前尝试暂停前台播放器，答完由用户自行恢复。优化跨午夜计时、遥控器操作及长题干和选项显示。\n- **日常稳定性** 改善快捷栏焦点、大时钟避让、壁纸切换和预览刷新，补强下载中断恢复和已下载更新包的保留逻辑。\n- **电视应用图标** 适配搜剧 TV 和看剧 AI TV 的横向卡片，保留已选择的自定义图标。 [#66](https://github.com/Null9797/halo-tv/issues/66)\n- **本地视频冷启动** Standard／Guard 补强暴风 MST_6A838 对本地 SDR 视频轨道的识别和首帧诊断，两份实验素材仍待原机复测。 [#58](https://github.com/Null9797/halo-tv/issues/58)\n- **创维桌面守护** Standard／Guard 增加创维 85A5F Mini 实体 Home 键所打开的系统桌面识别，同步改进守护诊断工具。待原机复测。 [#78](https://github.com/Null9797/halo-tv/issues/78)\n- **当贝黑屏排查** Standard／Guard 新增启动无窗口焦点的诊断记录，方便定位 DBSmart1 首次打开黑屏。 [#79](https://github.com/Null9797/halo-tv/issues/79)\n\n升级请选择电视当前使用的版别。Standard／Guard 内部版本号为 292，Lite 为 137。\n\n感谢 Aerial 原作者和提供反馈、复测资料的用户。 [HaloTV 官网](https://halo-tv.pages.dev/)\n",
+  "notes": "# HaloTV 3.6.1 正式版\n\n## 新增功能\n\n- **儿童模式定时休息**　可分别设置每日总时长、单次观看时长和休息间隔。到达单次时长后，可选「强制休息」或继续使用「答题续看」。休息结束后自动解锁，单次时长或休息间隔设为 0 可关闭定时休息。电视和手机管理页均可设置。 [#82](https://github.com/Null9797/halo-tv/issues/82)\n\n## 修复与优化\n\n- **天气更易读**　突出当前温度，分开显示最高和最低温。自动定位匹配到城市后，城市名称和预报使用同一地点的坐标。 [#92](https://github.com/Null9797/halo-tv/issues/92)\n- **本地视频壁纸**　启用壁纸声音时，等待首帧就绪后再出声。康佳 V560 冷开机的音量表现待原机复测。 [#84](https://github.com/Null9797/halo-tv/issues/84)\n- **遥控器焦点**　打开设置时聚焦当前分类，首个选项按左键回到分类。改善信号源设置、隐藏应用与控制中心返回时的焦点，以及 PIN 面板和长应用文件夹的方向键操作。 [Aerial #1766](https://github.com/pengchujin/aerial-tv/issues/1766) · [Aerial #1748](https://github.com/pengchujin/aerial-tv/issues/1748)\n- **动态壁纸与待机**　改善待机后的播放恢复，取帧按设备能力选择路径，减少重复读帧。 [Aerial #1759](https://github.com/pengchujin/aerial-tv/issues/1759) · [Aerial #1789](https://github.com/pengchujin/aerial-tv/issues/1789)\n- **音量与电视兼容**　收到音量键松手事件时取消待执行的连调，并记录按键诊断。优化开机守护和信号源回退顺序，补充部分创维、TCL 和国美固件的兼容路径。 [Aerial #1783](https://github.com/pengchujin/aerial-tv/issues/1783) · [Aerial #1787](https://github.com/pengchujin/aerial-tv/issues/1787) · [Aerial #1712](https://github.com/pengchujin/aerial-tv/issues/1712)\n- **Lite**　改善旧显卡的时钟数字显示。跨日后会继续检查尚未更新的每日壁纸。 [Aerial #1658](https://github.com/pengchujin/aerial-tv/issues/1658) · [Aerial #1750](https://github.com/pengchujin/aerial-tv/issues/1750)\n\n本版整合了 Aerial 2.19、2.20、2.21 的应用端改动及 2.18 的衔接补丁。 [上游版本记录](https://github.com/pengchujin/aerial-tv/releases)\n\n升级请选择当前已安装的版别。Standard／Guard 内部版本号为 294，Lite 为 139。三版通过签名校验和 Android TV 模拟器复测，1,839 项单元测试通过。厂商实体遥控和 HDMI-CEC 的表现仍以真机验证为准。 [HaloTV 官网下载](https://halo-tv.pages.dev/#download)\n",
   "packages": {
     "standard": {
-      "versionCode": 292,
-      "sha256": "78ef3ecbdb0eb6a4247f4985494dc72c553885276fd0d6866e74fd75f5baf84c",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-standard.apk"
+      "versionCode": 294,
+      "sha256": "0ae5e4ae262a938952ba4593ef3b0500bd95163b553a00c9d49559d23adee17e",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-standard.apk"
     },
     "guard": {
-      "versionCode": 292,
-      "sha256": "23c5745e6b642c048d7c4c1f38421928a106f1236102f9fa0bb7cbbc3d0c7237",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-guard.apk"
+      "versionCode": 294,
+      "sha256": "6e2655f8ed68d82b6818211f30558e0661758597a8bdf60b4f099f46425f5645",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-guard.apk"
     },
     "lite": {
-      "versionCode": 137,
-      "sha256": "218144e9049241c01a2df954dbab7fd6d30b608b2b5af7171038174d39cec68f",
-      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6-halo/HaloTV-3.6-lite.apk"
+      "versionCode": 139,
+      "sha256": "45038dc00f47a699beea3210b8965645fcdd100555b2bedb8c218ce8e3f2d07d",
+      "github": "https://github.com/Null9797/halo-tv/releases/download/v3.6.1-halo/HaloTV-3.6.1-lite.apk"
     }
   }
 }
