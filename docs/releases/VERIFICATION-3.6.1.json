@@ -1,0 +1,92 @@
+{
+  "version": "3.6.1",
+  "baselineRelease": "3.6",
+  "applicationSourceCommit": "bb17ea0d7c4304d52f7f114ec1e9b9692f14cdde",
+  "applicationSourceTree": "4e59fcab3e5c264156225ab6d93e80221f81b213",
+  "upstreamAerial": "2.21",
+  "integratedAerialVersions": [
+    "2.18",
+    "2.19",
+    "2.20",
+    "2.21"
+  ],
+  "issues": [
+    82,
+    84,
+    92
+  ],
+  "validation": "Identical APKs to the accepted 3.6.1 emulator regression delivery. Android 16 TV emulator, 1839 host tests, release lint and signing checks.",
+  "hardwareRetest": "Original TV firmware, remote and HDMI-CEC. Lite on Android 4.x.",
+  "packages": {
+    "standard": {
+      "filename": "HaloTV-3.6.1-standard.apk",
+      "sha256": "0ae5e4ae262a938952ba4593ef3b0500bd95163b553a00c9d49559d23adee17e",
+      "bytes": 7754147,
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 294,
+      "versionName": "3.6.1",
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "standard",
+      "hasHome": true,
+      "tests": {
+        "tests": 803,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 358,
+        "Hint": 21
+      }
+    },
+    "guard": {
+      "filename": "HaloTV-3.6.1-guard.apk",
+      "sha256": "6e2655f8ed68d82b6818211f30558e0661758597a8bdf60b4f099f46425f5645",
+      "bytes": 7754462,
+      "applicationId": "app.halotv.launcher",
+      "versionCode": 294,
+      "versionName": "3.6.1",
+      "minSdk": 21,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "guard",
+      "hasHome": false,
+      "tests": {
+        "tests": 803,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 359,
+        "Hint": 21
+      }
+    },
+    "lite": {
+      "filename": "HaloTV-3.6.1-lite.apk",
+      "sha256": "45038dc00f47a699beea3210b8965645fcdd100555b2bedb8c218ce8e3f2d07d",
+      "bytes": 2565127,
+      "applicationId": "app.halotv.launcher.lite",
+      "versionCode": 139,
+      "versionName": "3.6.1",
+      "minSdk": 14,
+      "signingCertificateSha256": "ed28a19770dac5f926e7adf27224f05dd07d1a6dd54af89fc663bbcf102c41dd",
+      "edition": "lite",
+      "hasHome": true,
+      "tests": {
+        "tests": 233,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "lint": {
+        "Warning": 437
+      }
+    }
+  },
+  "sourceArchive": {
+    "filename": "HaloTV-3.6.1-source.zip",
+    "sha256": "7874dce92fca1af604077614df5dc7bb6b0ecdfc8b8dc03c1cfcc2b5e0c0f7b7",
+    "bytes": 10747155
+  }
+}
